@@ -6,10 +6,10 @@ fetch data from the Siemens SINUMERIK 840D series.
 To configure a Siemens SINUMERIK 840D connection, navigate to
 **Connectivity-\>PLC-\>Siemens SINUMERIK 840D** as depicted in the
 navigation tree below:
-![sinumerik 840d_navigatiin](documentation_pics/154.png)  
+![sinumerik 840d_navigatiin](documentation_pics/image154.png)  
 
  The page provides an overview of the currently configured connections including the `Name`, the `IP address`, the connection `Status` and the `Enabled` state.  
-![sinumerik 840d_overview](documentation_pics/155.png)  
+![sinumerik 840d_overview](documentation_pics/image155.png)  
 
 
 | Column name | Information details |
