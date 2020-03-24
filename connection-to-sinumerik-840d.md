@@ -26,7 +26,6 @@ To edit an existing connection, first select it from the overview table and clic
 To delete an existing connection, first select it from the overview table and click the ![delete_connection](documentation_pics/delete_connection.png) button.  
 
 Adding a new connection and editing an existing connection, each open the same page. The only difference is, that for an existing connection the `Connection Name` property can not be changed.  
-![s71200-1500_connection_settings_basic](documentation_pics/s71200-1500_connection_settings_basic.png)  
 The `Connection Name` must be unique and can only be assigned when adding a new connection.  
 The state of `Enabled` checkbox determines if the connection shall be used.  
 The `PLC Address` holds the address of the target device (Sinumerik 840d). This is either an IP address or a hostname.  
