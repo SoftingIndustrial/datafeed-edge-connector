@@ -105,6 +105,7 @@ On the left hand side a navigation pane is provided to switch between the differ
 The connectivity section contains the configuration sections for OPCUA and PLC related settings.  
 
   - [Siemens S7 1200/1500 connection configuration](./connection-to-s7-1200-1500.md)
+  - [Sinumerik 840d](./connection-to-sinumerik-840d.md)
 
 ### General Section
 The general section contains several subsections related to different configuration aspects of the application that don't fit into any of the other main sections.
