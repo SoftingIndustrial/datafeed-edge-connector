@@ -79,6 +79,20 @@ docker container rm -f edgeConnector
 ```  
 Please refer to [official documentation](https://docs.docker.com/engine/reference/commandline/container_rm/) for more details.
 
+### Configuration Volume
+
+Optionally a docker volume to store the configuration permanently could be created:
+
+```bash
+docker volume create edge-connector-config
+```
+
+In this case the container should be started like this, to use the volume:
+
+```bash
+docker container run -d -v edge-connector-config:/config -p 1443:443 -p 8099:8099 -p 4800-4900:4800-4900 --name edgeConnector ${REGISTRY}/datafeed-edgeconnector-siemens
+```
+
 ## Configuration
 After the docker container has been successfully started the dataFEED edgeConnector application runtime can be configured via the web interface. To connect to the web interface of the application point a browser to the address of the system executing the docker application. For exmaple:  
 
