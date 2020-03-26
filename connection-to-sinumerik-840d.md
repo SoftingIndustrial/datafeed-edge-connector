@@ -31,3 +31,25 @@ The `Connection Name` must be unique and can only be assigned when adding a new 
 The state of `Enabled` checkbox determines if the connection shall be used.  
 The `PLC Address` holds the address of the target device (Sinumerik 840d). This is either an IP address or a hostname.  
 
+#### Siemens Sinumerik 840d connection advanced configuration
+
+![Advanced 840d connection configuration page](documentation_pics/s480d-advanced-settings.png)
+
+The advanced configuration page of 840d connection allows to change the following settings:
+
+  1. **Destination port:** This should remain on the default value 102.
+  2. **NCK TSAP Selection:** This allows to switch between the TSAP for "Simatik 840D SL" and a user defined TSAP.
+      This setting should only be changed, if a connection to "Simatik 840D PL" or other none Solution Line series device
+	  is desired.
+  3. **User-Defined:** Input field for customized TSAP setting. Allowed input are hexa-dezimal diggits. E.g.:
+     - `02 01`
+	 - `2 1`
+	 - `0201`
+  4. **PLC TSAP Selection:** This allows to switch between the TSAP for "Simatik 840D SL" and a user defined TSAP.
+      This setting should only be changed, if a connection to "Simatik 840D PL" or other none Solution Line series device
+	  is desired.
+  5. **User-Defined:** Input field for customized TSAP setting. Allowed input are hexa-dezimal diggits. E.g.:
+     - `02 01`
+	 - `2 1`
+	 - `0201`
+  6. **Enable NCU Alarm:** This checkbox enables or disables the subscriptions of NCU alarms from the Simatic 840D.
