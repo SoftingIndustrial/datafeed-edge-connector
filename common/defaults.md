@@ -14,4 +14,4 @@ The ports in use by the different services:
 | :-- | --: |
 | web interface HTTP | 8099 |
 | web interface HTTPS | 443 |
-| OPC UA server endpoint | 4897 |
+| OPC UA server default endpoint | 4897 |
