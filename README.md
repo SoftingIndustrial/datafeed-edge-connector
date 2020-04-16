@@ -29,12 +29,11 @@ In order to run the dataFEED edgeConnectors a working docker environment is requ
 For docker installation instructions please refer to the [official documentation](https://docs.docker.com/install/)
 
 ### Pulling the image
-The docker images are provided through a private registry.
+The docker images are provided through a public registry.
 To get the latest docker image you need to login to the docker registry and pull the image.
 ```bash
-docker image pull ${REGISTRY}/datafeed-edgeconnector-siemens:latest
+docker image pull softingindustrial/edgeconnector-siemens:latest
 ```
-***Note:*** `${REGISTRY}` is a placeholder variable, which should be set to the docker registry providing the docker image.
 
 ### Run the docker container
 After the docker image has been pulled, a docker container can be started.
@@ -42,18 +41,18 @@ The web server and OPCUA server of the application have to be exposed on the hos
 
 To start the dataFEED edgeConnector with the default ports mapped 1:1 to the host machine:
 ```bash
-docker container run -p 443:443 -p 8099:8099 -p 4897:4897 ${REGISTRY}/datafeed-edgeconnector-siemens
+docker container run -p 443:443 -p 8099:8099 -p 4897:4897 softingindustrial/edgeconnector-siemens
 ```  
 The above example can be adapted to match the needs of your environment. For example if your host already runs a webserver and the https port is blocked, the command can be adjusted to expose the https port of dataFEED edgeConnector application on a different port.
 
 ```bash
-docker container run -p 1443:443 -p 8099:8099 -p 4897:4897 ${REGISTRY}/datafeed-edgeconnector-siemens
+docker container run -p 1443:443 -p 8099:8099 -p 4897:4897 softingindustrial/edgeconnector-siemens
 ```  
 To map a complete port range use the `-p` switch with a range `start-end:start-end`.  
 To daemonize the container use the `-d` switch.  
 To name the container use the `--name` switch.  
 ```bash
-docker container run -d -p 1443:443 -p 8099:8099 -p 4800-4900:4800-4900 --name edgeConnector ${REGISTRY}/datafeed-edgeconnector-siemens
+docker container run -d -p 1443:443 -p 8099:8099 -p 4800-4900:4800-4900 --name edgeConnector softingindustrial/edgeconnector-siemens
 ```  
 For further information about supported commandline options please refer to the [official documentation](https://docs.docker.com/engine/reference/commandline/run/)
 
@@ -90,7 +89,7 @@ docker volume create edge-connector-config
 In this case the container should be started like this, to use the volume:
 
 ```bash
-docker container run -d -v edge-connector-config:/config -p 1443:443 -p 8099:8099 -p 4800-4900:4800-4900 --name edgeConnector ${REGISTRY}/datafeed-edgeconnector-siemens
+docker container run -d -v edge-connector-config:/config -p 1443:443 -p 8099:8099 -p 4800-4900:4800-4900 --name edgeConnector softingindustrial/edgeconnector-siemens
 ```
 
 ## Configuration
