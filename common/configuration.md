@@ -4,7 +4,7 @@ After the docker container has been successfully started the dataFEED edgeConnec
 
 | With TLS | Without TLS |
 | --- | --- |
-| https://localhost:1443 | http://localhost:8099 |
+| [https://localhost:1443](https://localhost:1443) | [http://localhost:8099](http://localhost:8099) |
 
 ### Login
 A Login page is shown. If this is the first time running the application use the [default credentials](defaults.md)  
