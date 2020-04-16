@@ -29,7 +29,7 @@ In order to run the dataFEED edgeConnectors a working docker environment is requ
 For docker installation instructions please refer to the [official documentation](https://docs.docker.com/install/)
 
 ### Pulling the image
-The docker images are provided through a private registry.
+The docker images are provided through a public registry.
 To get the latest docker image you need to login to the docker registry and pull the image.
 ```bash
 docker image pull softingindustrial/edgeconnector-siemens:latest
