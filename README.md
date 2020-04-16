@@ -137,7 +137,7 @@ The application will only consume a license from the floating license server if 
 The `General -> Licenses -> Overview` section is an information page, showing the current status of the license.  
 ![license_overview](documentation_pics/license_overview.png)
 
-In addition to the general license state presented in the [status bar](documentation#status) it provides a detailed overview of the licensed feature and the amount of total and available resources for each licensed feature.  
+In addition to the general license state presented in the [status bar](#status) it provides a detailed overview of the licensed feature and the amount of total and available resources for each licensed feature.  
 
 | Type | Total | Available |
 | --- | --- | --- |
