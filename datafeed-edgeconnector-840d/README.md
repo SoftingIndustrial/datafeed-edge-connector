@@ -1,9 +1,8 @@
-# edgeconnector-siemens
+# datafeed-edgeconnector-840d
 
-Softing dataFEED edgeConnector Siemens is a containerized SIMATIC S7 connectivity module adding OPC UA Server functionality.
+Softing dataFEED edgeConnector 840d is a containerized connectivity module adding OPC UA Server functionality.
 
-It is possible to connect up to 20 Siemens S7-1200 or S7-1500 PLCs including optimized data blocks.
-The Namespace configuration is done by browsing SIMATIC STEP 7 and TIA Portal variables. 
+It is possible to connect up to 5 Siemens Sinumerik 840d SL/PL devices.
 
 ### Supported Operating Systems
 
@@ -23,7 +22,7 @@ For docker installation instructions please refer to the [official documentation
 The docker images are provided through a public registry.
 To get the latest docker image you need to login to the docker registry and pull the image.
 ```bash
-docker image pull softingindustrial/edgeconnector-siemens:latest
+docker image pull softingindustrial/datafeed-edgeconnector-840d:latest
 ```
 
 ### Run the docker container
@@ -33,18 +32,18 @@ The web server and OPCUA server of the application have to be exposed on the hos
 
 To start the dataFEED edgeConnector with the default ports mapped 1:1 to the host machine:
 ```bash
-docker container run -p 443:443 -p 8099:8099 -p 4897:4897 softingindustrial/edgeconnector-siemens
+docker container run -p 443:443 -p 8099:8099 -p 4897:4897 softingindustrial/datafeed-edgeconnector-840d
 ```  
 The above example can be adapted to match the needs of your environment. For example if your host already runs a webserver and the https port is blocked, the command can be adjusted to expose the https port of dataFEED edgeConnector application on a different port.
 
 ```bash
-docker container run -p 1443:443 -p 8099:8099 -p 4897:4897 softingindustrial/edgeconnector-siemens
+docker container run -p 1443:443 -p 8099:8099 -p 4897:4897 softingindustrial/datafeed-edgeconnector-840d
 ```  
 To map a complete port range use the `-p` switch with a range `start-end:start-end`.  
 To daemonize the container use the `-d` switch.  
 To name the container use the `--name` switch.  
 ```bash
-docker container run -d -p 1443:443 -p 8099:8099 -p 4800-4900:4800-4900 --name edgeConnector softingindustrial/edgeconnector-siemens
+docker container run -d -p 1443:443 -p 8099:8099 -p 4800-4900:4800-4900 --name edgeConnector softingindustrial/datafeed-edgeconnector-840d
 ```  
 For further information about supported commandline options please refer to the [official documentation](https://docs.docker.com/engine/reference/commandline/run/)
 
@@ -83,17 +82,26 @@ docker volume create edge-connector-config
 In this case the container should be started like this, to use the volume:
 
 ```bash
-docker container run -d -v edge-connector-config:/config -p 1443:443 -p 8099:8099 -p 4800-4900:4800-4900 --name edgeConnector softingindustrial/edgeconnector-siemens
+docker container run -d -v edge-connector-config:/config -p 1443:443 -p 8099:8099 -p 4800-4900:4800-4900 --name edgeConnector softingindustrial/datafeed-edgeconnector-840d
 ```
 
 ## Configuration
 
 The configuration part, which is common for all kinds of edge connectors is decribed in [configuration.md](../common/configuration.md).
 
-### Siemens S7 1200/1500 connection configuration
+### Siemens Sinumerik 840d connection configuration
 
-Configuration related to Siemens S7 1200 and S7 1500 controllers is done in the `Connectivity -> PLC -> Siemens S7 1200/1500` section. The page provides an overview of the currently configured connections including the `Name`, the `IP address`, the connection `Status` and the `Enabled` state.  
-![s71200-1500_overview](../documentation_pics/s71200-1500_overview.png)  
+dataFEED edgeConnector Siemens provides an interface to connect and
+fetch data from the Siemens SINUMERIK 840D series.
+
+To configure a Siemens SINUMERIK 840D connection, navigate to
+**Connectivity-\>PLC-\>Siemens SINUMERIK 840D** as depicted in the
+navigation tree below:
+
+![sinumerik 840d_navigatiin](../documentation_pics/image154.png)  
+
+ The page provides an overview of the currently configured connections including the `Name`, the `IP address`, the connection `Status` and the `Enabled` state.  
+![sinumerik 840d_overview](../documentation_pics/image155.png)  
 
 
 | Column name | Information details |
@@ -110,8 +118,29 @@ To edit an existing connection, first select it from the overview table and clic
 To delete an existing connection, first select it from the overview table and click the ![delete_connection](../documentation_pics/delete_connection.png) button.  
 
 Adding a new connection and editing an existing connection, each open the same page. The only difference is, that for an existing connection the `Connection Name` property can not be changed.  
-![s71200-1500_connection_settings_basic](../documentation_pics/s71200-1500_connection_settings_basic.png)  
 The `Connection Name` must be unique and can only be assigned when adding a new connection.  
 The state of `Enabled` checkbox determines if the connection shall be used.  
-The `PLC Address` holds the address of the target device (S7 1200/1500 PLC). This is either an IP address or a hostname.  
+The `PLC Address` holds the address of the target device (Sinumerik 840d). This is either an IP address or a hostname.  
 
+#### Siemens Sinumerik 840d connection advanced configuration
+
+![Advanced 840d connection configuration page](../documentation_pics/s480d-advanced-settings.png)
+
+The advanced configuration page of 840d connection allows to change the following settings:
+
+  1. **Destination port:** This should remain on the default value 102.
+  2. **NCK TSAP Selection:** This allows to switch between the TSAP for "Simatik 840D SL" and a user defined TSAP.
+      This setting should only be changed, if a connection to "Simatik 840D PL" or other none Solution Line series device
+	  is desired.
+  3. **User-Defined:** Input field for customized TSAP setting. Allowed input are hexa-dezimal diggits. E.g.:
+     - `02 01`
+	 - `2 1`
+	 - `0201`
+  4. **PLC TSAP Selection:** This allows to switch between the TSAP for "Simatik 840D SL" and a user defined TSAP.
+      This setting should only be changed, if a connection to "Simatik 840D PL" or other none Solution Line series device
+	  is desired.
+  5. **User-Defined:** Input field for customized TSAP setting. Allowed input are hexa-dezimal diggits. E.g.:
+     - `02 01`
+	 - `2 1`
+	 - `0201`
+  6. **Enable NCU Alarm:** This checkbox enables or disables the subscriptions of NCU alarms from the Simatic 840D.
