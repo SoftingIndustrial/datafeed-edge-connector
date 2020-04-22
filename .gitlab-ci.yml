@@ -1,0 +1,21 @@
+image: ${CI_REGISTRY}/nuernberg/echo-sources/oriole-build-amd64:7.15
+stages:
+  - deploy
+
+# jobs:
+
+deploy:toGithub:
+  stage: deploy
+  when: manual
+  only:
+    - branches
+  environment:
+    name: github
+    url: https://github.com/SoftingIndustrial/datafeed-edge-connector
+  script:
+    - git config http.proxy ${http_proxy}
+    - git config https.proxy ${https_proxy}
+    - git remote add -f public https://oauth2:${OAUTH2TOKEN}@github.com/SoftingIndustrial/datafeed-edge-connector.git
+    - git push public HEAD:refs/heads/${CI_COMMIT_REF_NAME}
+  after_script:
+    - git remote remove public
