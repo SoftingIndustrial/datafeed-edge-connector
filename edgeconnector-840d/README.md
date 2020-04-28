@@ -1,7 +1,5 @@
 # edgeconnector-840d
 
-[[_TOC_]]
-
 Softing dataFEED edgeConnector 840d is a containerized connectivity module adding OPC UA Server functionality.
 
 It is possible to connect up to 5 Siemens Sinumerik 840d SL/PL devices.
