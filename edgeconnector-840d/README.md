@@ -1,5 +1,7 @@
 # edgeconnector-840d
 
+[[_TOC_]]
+
 Softing dataFEED edgeConnector 840d is a containerized connectivity module adding OPC UA Server functionality.
 
 It is possible to connect up to 5 Siemens Sinumerik 840d SL/PL devices.
@@ -144,3 +146,7 @@ The advanced configuration page of 840d connection allows to change the followin
 	 - `2 1`
 	 - `0201`
   6. **Enable NCU Alarm:** This checkbox enables or disables the subscriptions of NCU alarms from the Simatic 840D.
+
+# Licenses
+
+For the licenses of the open source components used in the connector images, please read [Licenses/README.md](../Licenses/README.md).

@@ -1,5 +1,7 @@
 # edgeconnector-siemens
 
+[[_TOC_]]
+
 Softing dataFEED edgeConnector Siemens is a containerized SIMATIC S7 connectivity module adding OPC UA Server functionality.
 
 It is possible to connect up to 20 Siemens S7-1200 or S7-1500 PLCs including optimized data blocks.
@@ -115,3 +117,6 @@ The `Connection Name` must be unique and can only be assigned when adding a new 
 The state of `Enabled` checkbox determines if the connection shall be used.  
 The `PLC Address` holds the address of the target device (S7 1200/1500 PLC). This is either an IP address or a hostname.  
 
+# Licenses
+
+For the licenses of the open source components used in the connector images, please read [Licenses/README.md](../Licenses/README.md).
