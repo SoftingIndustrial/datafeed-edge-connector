@@ -1,5 +1,7 @@
 # Configuration
 
+[[_TOC_]]
+
 After the docker container has been successfully started the dataFEED edgeConnector application runtime can be configured via the web interface. To connect to the web interface of the application point a browser to the address of the system executing the docker application. For exmaple:  
 
 | With TLS | Without TLS |
@@ -26,7 +28,8 @@ The general section contains several subsections related to different configurat
 
 #### Licenses
 The dataFEED edgeConnectors come with a time limited and functionality unlimited demo mode. The demo is immediately started when the application starts up without a valid license. The demo mode will expire after 72 hours and the application stops working.  
-To remove the time limitaion of the demo mode the application can be licensed. The dataFEED edgeConnectors use a flaoting license mechanism. A [working floating license server](documentation#floating-license-server) is required to have the application successfully licensed.  
+To remove the time limitaion of the demo mode the application can be licensed. The dataFEED edgeConnectors use a floating license mechanism. A working floating license server is required to have the application successfully licensed.  
+
 ##### License Server Configuration
 In the `General -> Licenses -> License Server Configuration` section the floating license server can be specified.  
 ![license_serverconfig](../documentation_pics/license_serverconfig.png)  
