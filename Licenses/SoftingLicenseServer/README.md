@@ -12,7 +12,7 @@ Activation the license requires a computer with internet access. If the connecti
 
   * First of all, please enable Provide all PC-Id’s under Settings ![](LM_provide_all_pc_id.png)
   * Please verify that the Softing License Manager V4 can correctly communicate with the Softing license server by performing a connection test - Test server connection... button.  
-    ![](LM_provide_all_pc_id.png)  
+    ![](LM_test_connection.png)  
     If the connection test is not successful, please double-check the proxy settings. The connection test status must return 200 in order to properly activate a license.
 	If you cannot set up a connection, please refer to [Activate license without internet connection](#activate-license-without-internet-connection).
   * If the connection test is successful, please proceed with the license activation by selecting the desired PC-Id, which should be used for the activation process then type in the License Key and press the Activate license button. ![](LM_activate_license.png)
