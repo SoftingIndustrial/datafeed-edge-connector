@@ -117,4 +117,10 @@ The `PLC Address` holds the address of the target device (S7 1200/1500 PLC). Thi
 
 # Licenses
 
-For the licenses of the open source components used in the connector images, please read [Licenses/README.md](../Licenses/README.md).
+## Softing License
+
+The activation of the connector license from Softing is described in [Licenses/SoftingLicenseServer](../Licenses/SoftingLicenseServer/README.md).
+
+## Open Source Licenses
+
+For the licenses of the open source components used in the connector images, please read [Licenses/OpenSourceLicenses.md](../Licenses/OpenSourceLicenses.md).
