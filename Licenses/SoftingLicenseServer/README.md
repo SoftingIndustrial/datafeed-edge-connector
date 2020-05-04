@@ -1,0 +1,1 @@
+# Softing License Server
