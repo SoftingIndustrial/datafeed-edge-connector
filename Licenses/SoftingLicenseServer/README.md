@@ -36,3 +36,18 @@ Activation the license requires a computer with internet access. If the connecti
   * Restart the Softing License Server and refresh the list of the available licenses (Softing License Manager application, top-right green circular arrow button - reload_button).  
     ![](LM_restart_license_server.png)
   * If the entire process was successful, the Softing License Manager should correctly display the newly imported license.
+
+## End-user tools
+
+LM-X end-user Tools provide the functionality for the floating (network) licensing mechanism. These tools are deployed by Softing License Manager installer at location: `C:\Program Files (x86)\Softing\LicenseManager\LicenseServer\`
+
+| Tool | File Name | Documentation |
+| :--- | :-------- | :------------ |
+| [LM-X License Server](https://docs.x-formation.com/display/LMX/LM-X+License+Server) | `lmx-serv.exe` | [https://docs.x-formation.com/display/LMX/LM-X+License+Server](https://docs.x-formation.com/display/LMX/LM-X+License+Server) |
+| [LM-X end-user Utility](https://docs.x-formation.com/display/LMX/LM-X+End-user+utility) | `lmxendutil.exe` | [https://docs.x-formation.com/display/LMX/LM-X+End-user+utility](https://docs.x-formation.com/display/LMX/LM-X+End-user+utility) |
+| [LM-X End-user Configuration Tool](https://docs.x-formation.com/display/LMX/LM-X+End-user+Configuration+Tool) | `lmxconfigtool.exe` | [https://docs.x-formation.com/display/LMX/LM-X+End-user+Configuration+Tool](https://docs.x-formation.com/display/LMX/LM-X+End-user+Configuration+Tool) |
+
+  * The LM-X License Server will automatically run as a Windows Service after a successful installation of the Softing License Manager, should the Softing License Server component be selected during the installation process.
+    - The client can stop the Softing License Server Windows Service and instead run it from the command line.
+	- The LM-X License Server is listening on both TCP and UDP ports 6200. Please create a Windows Defender Firewall - Inbound Rule for port 6200 for both TCP and UDP protocol types in order to allow other PCs to connect to this floating license server.
+  * The additional LM-X end-user Utility can be used to display the HostIDs and the statistics, and lists what licenses are currently being used by which users on a specific license server. It also allows the restart and shutdown of the license server.
