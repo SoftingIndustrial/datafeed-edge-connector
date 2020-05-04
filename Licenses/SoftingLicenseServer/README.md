@@ -27,7 +27,6 @@ Activation the license requires a computer with internet access. If the connecti
     ![](LM_export_pc_ids.png)
   * Install the Softing License Manager V4 on another PC with internet connection (download link: [https://data-intelligence.softing.com/products/opc-software-platform/datafeed-opc-suite/#tx-dftabs-tabContent2](https://data-intelligence.softing.com/products/opc-software-platform/datafeed-opc-suite/#tx-dftabs-tabContent2)).
   * Please make sure that the PC which will activate the license has a working internet connection (perform a connection test) - see [Activate license with internet connection](#activate-license-with-internet-connection).
-  * Go to the Generate license file for remote PC section.
   * Use the previously exported PC-Id and the valid license key received in the order.  
     ![](LM_activate_license_for_another_pc.png)
   * Click the Generate and export license file button and save the generated license file for transfer to the offline machine.
