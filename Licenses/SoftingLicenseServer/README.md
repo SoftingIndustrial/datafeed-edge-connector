@@ -6,6 +6,8 @@ The Softing License Server is a machine used to host network software licenses (
 
 Softing License Server fulfills requests to run the network application if the requested licenses are available. When the network license is released (for example, a user closes the application), the license is moved in the license server's available license pool and is made available for other checkout requests.
 
+Install the Softing License Manager V4 on a PC with internet connection (download link: [https://data-intelligence.softing.com/products/edge-connector-docker/datafeed-edgeconnector-siemens/#tx-dftabs-tabContent2](https://data-intelligence.softing.com/products/edge-connector-docker/datafeed-edgeconnector-siemens/#tx-dftabs-tabContent2)).
+
 ## Activate license with internet connection
 
 Activation the license requires a computer with internet access. If the connection to the internet requires a proxy server, please make sure the connection settings are properly configured using the Proxy Settings... button in the Settings page of the Configuration section.
@@ -25,7 +27,7 @@ Activation the license requires a computer with internet access. If the connecti
 
   * Export a single PC-Id, from the PC on which the Softing License Server runs on; the license will be activated against the exported HostIDs.  
     ![](LM_export_pc_ids.png)
-  * Install the Softing License Manager V4 on another PC with internet connection (download link: [https://data-intelligence.softing.com/products/opc-software-platform/datafeed-opc-suite/#tx-dftabs-tabContent2](https://data-intelligence.softing.com/products/opc-software-platform/datafeed-opc-suite/#tx-dftabs-tabContent2)).
+  * Install the Softing License Manager V4 on another PC with internet connection (download link: [https://data-intelligence.softing.com/products/edge-connector-docker/datafeed-edgeconnector-siemens/#tx-dftabs-tabContent2](https://data-intelligence.softing.com/products/edge-connector-docker/datafeed-edgeconnector-siemens/#tx-dftabs-tabContent2)).
   * Please make sure that the PC which will activate the license has a working internet connection (perform a connection test) - see [Activate license with internet connection](#activate-license-with-internet-connection).
   * Use the previously exported PC-Id and the valid license key received in the order.  
     ![](LM_activate_license_for_another_pc.png)
