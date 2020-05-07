@@ -17,6 +17,7 @@ A restart of the application is required to activate a license for the applicati
 The application will only consume a license from the floating license server if it requires a license, for example if a connection is configured and enabled.  
 
 #### Overview
+
 The `General -> Licenses -> Overview` section is an information page, showing the current status of the license.  
 ![license_overview](../documentation_pics/license_overview.png)
 

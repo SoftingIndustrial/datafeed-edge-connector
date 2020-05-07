@@ -122,9 +122,22 @@ The **PLC Address** holds the address of the target device (S7 1200/1500 PLC). T
 
 # Licenses
 
+The dataFEED edgeConnectors come with a time limited and functionality unlimited demo mode.
+The demo is immediately started when the application starts up without a valid license.
+The demo mode will expire after 72 hours and the application stops working.  
+To remove the time limitation of the demo mode the application can be licensed.
+The dataFEED edgeConnectors use a floating license mechanism.
+A working floating license server is required to have the application successfully licensed.  
+
+Please read [Licenses/README.md](../Licenses/README.md) for further details.
+
 ## Softing License
 
 The activation of the connector license from Softing is described in [Licenses/SoftingLicenseServer](../Licenses/SoftingLicenseServer/README.md).
+
+### License Server Connection Configuration
+
+Please read [Licenses/README.md](../Licenses/README.md#license-server-connection-configuration) for further details.
 
 ## Open Source Licenses
 
