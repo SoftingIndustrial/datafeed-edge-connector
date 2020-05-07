@@ -13,6 +13,7 @@ In the `General -> Licenses -> License Server Configuration` section the floatin
 ![license_serverconfig](../documentation_pics/license_serverconfig.png)  
 If the `Enable` checkbox is activated, the address and port of a floating license server can be specified. The address can either be a hostname or IP address. Use the `Save` button to save the configuration.  
 A restart of the application is required to activate a license for the application.  
+![Restart application](../documentation_pics/restart-application.png)
 The application will only consume a license from the floating license server if it requires a license, for example if a connection is configured and enabled.  
 
 #### Overview
