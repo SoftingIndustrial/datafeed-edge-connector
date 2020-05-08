@@ -23,9 +23,9 @@ The `General -> Licenses -> Overview` section is an information page, showing th
 
 In addition to the general license state presented in the [status bar](#status) it provides a detailed overview of the licensed feature and the amount of total and available resources for each licensed feature.  
 
-| Type | Total | Available |
-| --- | --- | --- |
-| The licensed feature. If this is a demo license, the `DEMO` keyword is appended | Total number of resources for this feature | Number of available resources for this feature |
+| Type | Total | Available | Server Slots | Server Slots Used |
+| --- | --- | --- | -- | -- |
+| The licensed feature. If this is a demo license, the `DEMO` keyword is appended | Total number of resources for this feature | Always 0 (kept here for future use) | The sum of licenses for the feature at the license server | The sum of used licenses for the feature at the license server |
 
 ## Open Source Licenses
 
