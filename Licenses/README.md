@@ -14,12 +14,23 @@ In the `General -> Licenses -> License Server Configuration` section the floatin
 If the `Enable` checkbox is activated, the address and port of a floating license server can be specified. The address can either be a hostname or IP address. Use the `Save` button to save the configuration.  
 A restart of the application is required to activate a license for the application.  
 ![Restart application](../documentation_pics/restart-application.png)
+
 The application will only consume a license from the floating license server if it requires a license, for example if a connection is configured and enabled.  
 
-#### Overview
+### Overview
 
 The `General -> Licenses -> Overview` section is an information page, showing the current status of the license.  
 ![license_overview](../documentation_pics/license_overview.png)
+
+#### License Server Information
+
+The License Server Information table provides an over view of the provided Softing Licenses of the connected floating license servers.
+
+| Product | Server | Version | Expires | Order ID | Total | Used |
+| :------ | :----- | :------ | :------ | :------- | :---- | :--- |
+| The product name of the license | The floating lisense server address | The licensed product version | The date when the license will become invalid | The order-id of the product | The number of connections which could be used with this license | The number of connections currently using this license |
+
+#### Application License Details
 
 In addition to the general license state presented in the [status bar](#status) it provides a detailed overview of the licensed feature and the amount of total and available resources for each licensed feature.  
 
