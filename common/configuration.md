@@ -14,7 +14,7 @@ A Login page is shown. If this is the first time running the application use the
 
 **Recommendation:**
 We strongly recommend to replace the default admin password with an individual, secure password.  
-To change the admin password navigate to "General Settings" -> "Users & Identity Management" and select the "admin" user, as in the following screenshot:  
+To change the admin password navigate to **General Settings -> Users & Identity Management** and select the **admin** user, as in the following screenshot:  
 !["General Settings" -> "Users & Identies"](../documentation_pics/edit-admin1.png)
   - Then click the ![edit_user](../documentation_pics/edit_user.png) "Edit user" button.
   - On the following user settings page select "Change Password".
@@ -30,6 +30,7 @@ Use the Logout button to logout the current user, close the session and return t
 
 ## Navigation
 On the left hand side a navigation pane is provided to switch between the different configuration sections.  
+
 ![navpane](../documentation_pics/navpane.png)
 
 ## General Section

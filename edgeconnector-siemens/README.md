@@ -1,4 +1,4 @@
-# edgeconnector-siemens
+# edgeConnector Siemens
 
 Softing dataFEED edgeConnector Siemens is a containerized SIMATIC S7 connectivity module adding OPC UA Server functionality.
 
@@ -93,9 +93,14 @@ The configuration part, which is common for all kinds of edge connectors is desc
 
 ### Siemens S7 1200/1500 connection configuration
 
-Configuration related to Siemens S7 1200 and S7 1500 controllers is done in the `Connectivity -> PLC -> Siemens S7 1200/1500` section. The page provides an overview of the currently configured connections including the `Name`, the `IP address`, the connection `Status` and the `Enabled` state.  
-![s71200-1500_overview](../documentation_pics/s71200-1500_overview.png)  
+dataFEED edgeConnnector Siemens provides an interface to connect and fetch data from a Siemens S7 1200 or 1500 series controllers.
 
+To configure a connection to a Siemens S7 1200 or S7 1500 controller, navigate to **Connectivity -> PLC -> Siemens S7 1200/1500** as depicted in the navigation tree below:
+
+![s7_navigation](../documentation_pics/s7_navigation.png)
+
+The page provides an overview of the currently configured connections including the **Name**, the **IP Address**, the connection **Status** and the **Enabled** state.
+![s7_overview](../documentation_pics/s7_overview.png)
 
 | Column name | Information details |
 | :-- | :-- |
@@ -109,11 +114,11 @@ To add a new connection click the ![add_connection](../documentation_pics/add_co
 To edit an existing connection, first select it from the overview table and click the ![edit_connection](../documentation_pics/edit_connection.png) button.  
 To delete an existing connection, first select it from the overview table and click the ![delete_connection](../documentation_pics/delete_connection.png) button.  
 
-Adding a new connection and editing an existing connection, each open the same page. The only difference is, that for an existing connection the `Connection Name` property can not be changed.  
-![s71200-1500_connection_settings_basic](../documentation_pics/s71200-1500_connection_settings_basic.png)  
-The `Connection Name` must be unique and can only be assigned when adding a new connection.  
-The state of `Enabled` checkbox determines if the connection shall be used.  
-The `PLC Address` holds the address of the target device (S7 1200/1500 PLC). This is either an IP address or a hostname. 
+Adding a new connection and editing an existing connection, each open the same page. The only difference is, that for an existing connection the **Connection Name** property can not be changed.  
+![s71200-1500_connection_settings_basic](../documentation_pics/s7_connection_settings_basic.png)  
+The **Connection Name** must be unique and can only be assigned when adding a new connection.  
+The state of **Enabled** checkbox determines if the connection shall be used.  
+The **PLC Address** holds the address of the target device (S7 1200/1500 PLC). This is either an IP address or a hostname. 
 
 # Licenses
 
