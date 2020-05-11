@@ -105,9 +105,9 @@ The page provides an overview of the currently configured connections including 
 | :-- | :-- |
 | Name | Connection name as defined at creation time. |
 | IP Address | IP Address or host name of the PLC |
-| Status NCK | Describes the state of the NCK connection. The connection state can be Connected when the connection to the NCK is established; Disconnected when there is no connection to the NCK or it could be Not Configured when the connection to the NCK was not configured for this entry. The connection status is dynamically updated each 2 seconds. |
-| Status PLC | Describes the state of the PLC connection. The connection state can be Connected when the connection to the PLC is established; Disconnected when there is no connection to the PLC or it could be **not** configured when the connection to the PLC was not configured for this entry. The connection status is dynamically updated each 2 seconds. |
-| Enabled | Describes the configuration state of the PLC connection. Possible values are Enabled or Disabled. Note: Clicking on the current configuration state icon would trigger a state toggle: Enabled -> Disabled; Disabled -> Enabled. |
+| Status NCK | Describes the state of the NCK connection. The connection state can be Connected when the connection to the NCK is established; Disconnected when there is no connection to the NCK or it could be Disabled when the connection to the NCK was not configured for this entry. The connection status is dynamically updated each 2 seconds. |
+| Status PLC | Describes the state of the PLC connection. The connection state can be Connected when the connection to the PLC is established; Disconnected when there is no connection to the PLC or it could be Disabled when the connection to the PLC was not configured for this entry. The connection status is dynamically updated each 2 seconds. |
+| Enabled | Describes the configuration state of the PLC connection. Possible values are Enabled or Disabled. Note: Clicking on the current configuration state icon would trigger a state toggle: Enabled -> Disabled; Disabled -> Enabled. When in Disabled state both the NCK and PLC connections are disabled. When Enabled only the connection types initially configured for this connection are enabled. |
 
 From the title bar of the connection overview table a new connection can be added and existing connections can be either edited or deleted.  
 To add a new connection click the ![add_connection](../documentation_pics/add_connection.png) button.  
