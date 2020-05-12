@@ -107,12 +107,13 @@ The page provides an overview of the currently configured connections including 
 | IP Address | IP Address or host name of the PLC |
 | Status NCK | Describes the state of the NCK connection. The connection state can be Connected when the connection to the NCK is established; Disconnected when there is no connection to the NCK or it could be Disabled when the connection to the NCK was not configured for this entry. The connection status is dynamically updated each 2 seconds. |
 | Status PLC | Describes the state of the PLC connection. The connection state can be Connected when the connection to the PLC is established; Disconnected when there is no connection to the PLC or it could be Disabled when the connection to the PLC was not configured for this entry. The connection status is dynamically updated each 2 seconds. |
-| Enabled | Describes the configuration state of the PLC connection. Possible values are Enabled or Disabled. Note: Clicking on the current configuration state icon would trigger a state toggle: Enabled -> Disabled; Disabled -> Enabled. When in Disabled state both the NCK and PLC connections are disabled. When Enabled only the connection types initially configured for this connection are enabled. |
+| Enabled | Describes the configuration state of the PLC connection. Possible values are Enabled or Disabled.<br>Note: Clicking on the current configuration state icon would trigger a state toggle: Enabled -> Disabled; Disabled -> Enabled. <br>When in Disabled state both the NCK and PLC connections are disabled. When Enabled only the connection types initially configured for this connection are enabled. |
 
 From the title bar of the connection overview table a new connection can be added and existing connections can be either edited or deleted.  
-To add a new connection click the ![add_connection](../documentation_pics/add_connection.png) button.  
-To edit an existing connection, first select it from the overview table and click the ![edit_connection](../documentation_pics/edit_connection.png) button.  
-To delete an existing connection, first select it from the overview table and click the ![delete_connection](../documentation_pics/delete_connection.png) button.  
+
+- To add a new connection click the ![add_connection](../documentation_pics/add_connection.png) button.  
+- To edit an existing connection, first select it from the overview table and click the ![edit_connection](../documentation_pics/edit_connection.png) button.  
+- To delete an existing connection, first select it from the overview table and click the ![delete_connection](../documentation_pics/delete_connection.png) button.  
 
 Adding a new connection and editing an existing connection, each open the same page. The only difference is, that for an existing connection the **Connection Name** property can not be changed.
 ![S840D connection settings](../documentation_pics/s840d_connection_settings_basic.png)
