@@ -41,7 +41,20 @@ In the **OPC UA Server Endpoints** table, all configured OPC UA server endpoints
 | Access Protection IPs or certificated prevented authentication | ![](../documentation_pics/SwitchOn_WarnYellow.png) | The endpoint is **configured as enabled**, it is accessible and shall be able to accept incoming connection requests, but it rejects some connections attempts based on IPs or certificates  as resulted from the access protection configuration.<br>This state can be manually reset by accessing the access protection settings and disabling/enabling the authentication restrictions for remote IPs and certificates.<br>Clicking on the current configuration state icon would trigger a state toggle, but it **shall not reset** the access protection state:<br>Access protection IPs or certificates prevented authentication -> Disabled |
 
 From the title bar of the OPC UA Server Endpoints table a new endpoint can be added or an exiting endpoint can be edited or deleted:
-
 - To add a new connection click the ![add_endpoint](../documentation_pics/add_connection.png) button.  
 - To edit an existing endpoint, first select it from the overview table and click the ![edit_connection](../documentation_pics/edit_connection.png) button. 
 - To delete an existing endpoint, first select it from the overview table and click the ![delete_connection](../documentation_pics/delete_connection.png) button.  
+
+### Endpoint Users - Identities ###
+
+In this table details about the users assigned to the currently selected endpoint are provided.
+
+![OPC UA Endpoint users](../documentation_pics/opc_ua_server_endpoints_users_table.png)
+
+| Column Name   | Information details                                          |
+| ------------- | ------------------------------------------------------------ |
+| Username      | Name of the user.                                            |
+| Address Space | Address space exposed to the OPC UA client connection to the selected endpoint  and authenticated with the current. |
+| Certificate   | Highlights the validity status of the certificates attached to the user or the absence of any certificate<br>Possible values are:<br> - Certificates were found and all are fine: <img src="../documentation_pics/OkGreen.png" alt="OkGreen" style="zoom:40%;" /> <br> - At least one certificate will expire soon: <img src="../documentation_pics/WarningExpire_Yellow.png" alt="WarningExpire_Yellow" style="zoom:40%;" /><br> - At least one certificate is already expired: <img src="../documentation_pics/WarningExpireRed.png" alt="WarningExpireRed" style="zoom:40%;" /><br> - No certificates are attached to the current user: <img src="../documentation_pics/DeleteRed.png" alt="DeleteRed" style="zoom:40%;" /> |
+| Enabled       |                                                              |
+
