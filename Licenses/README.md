@@ -36,7 +36,7 @@ In addition to the general license state presented in the [status bar](#status) 
 
 | Type | Total | Available | Server Slots | Server Slots Used |
 | --- | --- | --- | -- | -- |
-| The licensed feature. If this is a demo license, the `DEMO` keyword is appended | Total number of resources for this feature | Number of available resources for this feature | The sum of licenses for the feature at the license server | The sum of used licenses for the feature at the license server |
+| The licensed feature. If this is a demo license, the `DEMO` keyword is appended | Total number of licensed features ( features which were checked out from the licensing server) | Number of available licensed features ( features which can be created without checking out a new one from the licensing server) | The sum of licenses for the feature at the license server | The sum of used licenses for the feature at the license server |
 
 ## Open Source Licenses
 
