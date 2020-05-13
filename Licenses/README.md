@@ -24,7 +24,7 @@ The `General -> Licenses -> Overview` section is an information page, showing th
 
 #### License Server Information
 
-The License Server Information table provides an over view of the provided Softing Licenses of the connected floating license servers.
+The License Server Information table provides an overview of the provided Softing Licenses of the connected floating license servers.
 
 | Product | Server | Version | Expires | Order ID | Total | Used |
 | :------ | :----- | :------ | :------ | :------- | :---- | :--- |
