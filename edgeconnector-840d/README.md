@@ -147,7 +147,7 @@ The advanced configuration page of 840d connection allows to change the followin
 The dataFEED edgeConnectors come with a time limited and functionality unlimited demo mode.
 The demo is immediately started when the application starts up without a valid license.
 The demo mode will expire after 72 hours and the application stops working.  
-To remove the time limitation of the demo mode the application can be licensed.
+To remove the time limitation of the demo mode the application must be licensed.
 The dataFEED edgeConnectors use a floating license mechanism.
 A working floating license server is required to have the application successfully licensed.  
 
