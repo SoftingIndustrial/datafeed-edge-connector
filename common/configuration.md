@@ -33,7 +33,19 @@ On the left hand side a navigation pane is provided to switch between the differ
 
 ![navpane](../documentation_pics/navpane.png)
 
+## Connectivity
+
+The Connectivity section contains the configuration of the OPC UA Server Applications and the PLC Connectivity subsections.
+
+The OPC UA Server Application functionality and configuration is described in the document about the [OPC UA Configuration](../common/opcua.md).
+
+The PLC Connectivity is described in details in the connector specific documents:
+
+- edgeConnector Siemens [Configuration](../edgeconnector-siemens/README.md#configuration)
+- edgeConnector 840D [Configuration](../edgeconnector-840d/README.md#configuration)
+
 ## General Section
+
 The general section contains several subsections related to different configuration aspects of the application that don't fit into any of the other main sections.
 
 ### Licenses
@@ -56,3 +68,4 @@ In addition to the general license state presented in the [status bar](#status) 
 | Type | Total | Available |
 | --- | --- | --- |
 | The licensed feature. If this is a demo license, the `DEMO` keyword is appended | Total number of resources for this feature | Number of available resources for this feature |
+
