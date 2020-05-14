@@ -117,10 +117,18 @@ From the title bar of the connection overview table a new connection can be adde
 
 Adding a new connection and editing an existing connection, each open the same page. The only difference is, that for an existing connection the **Connection Name** property can not be changed.
 ![S840D connection settings](../documentation_pics/s840d_connection_settings_basic.png)
-The **Connection Name** must be unique and can only be assigned when adding a new connection.  
-To enable the **NCK Connection** the checkbox must be ticked. This enables the file upload input to select a custom AWL symbol file. Uploading a symbol file is optional. In case no AWL file is uploaded a generic symbol file is used by the application.
-To enable the **PLC Connection** the checkbox must be ticked. This enables the file upload input to select a custom SDFI symbol file. Uploading a symbol file is optional. In case no SDFI file is uploaded a generic symbol file is used by the application.
-The **PLC Address** holds the address of the target device (Sinumerik 840d). This is either an IP address or a hostname.  
+
+The configuration parameters are described below:
+
+| Parameter name        | Default value                 | Description                                                  |
+| --------------------- | ----------------------------- | ------------------------------------------------------------ |
+| Connection Name       | empty                         | Defines the connection name as it will show up in the connection overview page. It must be unique and can only be assigned when adding a new connection.<br>Note: The following characters are not supported in this field:  **# ^ < > / $** |
+| NCK Connection        |                               | Controls whether the NCK Connection for this 840D connection is enabled or not. Ticking the checkbox enables the connection and allows the user to upload a custom AWL symbol file. Uploading a symbol file is optional. In case no AWL file is uploaded a generic symbol file is used by the application |
+| PLC Connection        |                               | Controls whether the PLC Connection for this 840D connection is enabled or not. Ticking the checkbox enables the connection and allows the user to upload a custom SDFI symbol file. Uploading a symbol file is optional. In case no SDFI file is uploaded a generic symbol file is used by the application. |
+| PLC Address           | empty                         | The address of the target device (Sinumerik 840D). This is either an IP address or a hostname. |
+| Select Address Spaces | AllConnection<br>AddressSpace | Defines the destination aggregation address space used to store the address space corresponding to this PLC connection.<br>It is possible to create additional aggregation address spaces by filling in the desired address space name in the input field and clicking on the **Add** button. All available address spaces are visible in a list and can be selected as destination address space for the OPC UA client connection by checking the corresponding checkbox.<br>More details about the OPC UA Server functionality and configuration please read [OPC UA Configuration](../common/opcua.md). |
+
+
 
 #### Siemens Sinumerik 840d connection advanced configuration
 
@@ -128,27 +136,25 @@ The **PLC Address** holds the address of the target device (Sinumerik 840d). Thi
 
 The advanced configuration page of 840d connection allows to change the following settings:
 
-  1. **Destination port:** This should remain on the default value 102.
-  2. **NCK TSAP Selection:** This allows to switch between the TSAP for "Simatik 840D SL" and a user defined TSAP.
-      This setting should only be changed, if a connection to "Simatik 840D PL" or other none Solution Line series device is desired.
-  3. **User-Defined:** Input field for customized TSAP setting. Allowed input are hexa-dezimal diggits. E.g.:
-     - `02 01`
-	 - `2 1`
-	 - `0201`
-  4. **PLC TSAP Selection:** This allows to switch between the TSAP for "Simatik 840D SL" and a user defined TSAP.
-      This setting should only be changed, if a connection to "Simatik 840D PL" or other none Solution Line series device is desired.
-  5. **User-Defined:** Input field for customized TSAP setting. Allowed input are hexa-dezimal diggits. E.g.:
-     - `02 01`
-	 - `2 1`
-	 - `0201`
-  6. **Enable NCU Alarm:** This checkbox enables or disables the subscriptions of NCU alarms from the Simatic 840D.
+| Parameter name       | Default value       | Description                                                  |
+| -------------------- | ------------------- | ------------------------------------------------------------ |
+| TCP Port             | 102                 | The port used to connect to the target device (Sinumerik 840D). This should remain on the default value. |
+| NCK TSAP Selection   | Simatic 840D SL NCK | This allows to switch between the TSAP for **Simatik 840D SL** and a user defined TSAP.<br/>This setting should only be changed, if a connection to **Simatik 840D PL** or other none Solution Line series device is desired. |
+| NCK TSAP Destination | empty               | Input field for customized TSAP setting. Allowed input are hexa-dezimal digits. E.g.: `02 01`, `2 1`, `0201`. |
+| PLC TSAP Selection   | Simatic 840D SL PLC | This allows to switch between the TSAP for **Simatik 840D SL** and a user defined TSAP.<br/>This setting should only be changed, if a connection to **Simatik 840D PL** or other none Solution Line series device is desired. |
+| PLC TSAP Destination | empty               | Input field for customized TSAP setting. Allowed input are hexa-dezimal digits. E.g.: `02 01`, `2 1`, `0201`. |
+| Enable NCU Alarm     | Disabled            | This checkbox enables or disables the subscriptions of NCU alarms from the Simatic 840D |
 
-# Licenses
+## OPC UA Server
 
-## Softing License
+The OPC UA Server functionality and configuration is described in the document about the [OPC UA Configuration](../common/opcua.md).
+
+## Licenses
+
+### Softing License
 
 The activation of the connector license from Softing is described in [Licenses/SoftingLicenseServer](../Licenses/SoftingLicenseServer/README.md).
 
-## Open Source Licenses
+### Open Source Licenses
 
 For the licenses of the open source components used in the connector images, please read [Licenses/OpenSourceLicenses.md](../Licenses/OpenSourceLicenses.md).

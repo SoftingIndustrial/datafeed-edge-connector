@@ -116,17 +116,27 @@ From the title bar of the connection overview table a new connection can be adde
 - To delete an existing connection, first select it from the overview table and click the ![delete_connection](../documentation_pics/delete_connection.png) button.  
 
 Adding a new connection and editing an existing connection, each open the same page. The only difference is, that for an existing connection the **Connection Name** property can not be changed.  
-![s71200-1500_connection_settings_basic](../documentation_pics/s7_connection_settings_basic.png)  
-The **Connection Name** must be unique and can only be assigned when adding a new connection.  
-The state of **Enabled** checkbox determines if the connection shall be used.  
-The **PLC Address** holds the address of the target device (S7 1200/1500 PLC). This is either an IP address or a hostname. 
+![s71200-1500_connection_settings_basic](../documentation_pics/s7_connection_settings_basic.png)
 
-# Licenses
+The configuration parameters are described below:
 
-## Softing License
+| Parameter name        | Default value                 | Description                                                  |
+| --------------------- | ----------------------------- | ------------------------------------------------------------ |
+| Connection Name       | empty                         | Defines the connection name as it will show up in the connection overview page. It must be unique and can only be assigned when adding a new connection.<br>Note: The following characters are not supported in this field:  **# ^ < > / $** |
+| Enabled               | Enabled                       | Instructs the dataFEED edgeConnector to either enable (checked) or disable (unchecked) the currently configured PLC connection. |
+| PLC Address           | empty                         | The address of the target device (S7 1200/1500 PLC). This is either an IP address or a hostname. |
+| Select Address Spaces | AllConnection<br>AddressSpace | Defines the destination aggregation address space used to store the address space corresponding to this PLC connection.<br>It is possible to create additional aggregation address spaces by filling in the desired address space name in the input field and clicking on the **Add** button. All available address spaces are visible in a list and can be selected as destination address space for the OPC UA client connection by checking the corresponding checkbox.<br>More details about the OPC UA Server functionality and configuration please read the document about the [OPC UA Configuration](../common/opcua.md). |
+
+## OPC UA Server
+
+The OPC UA Server functionality and configuration is described in the document about the [OPC UA Configuration](../common/opcua.md).
+
+## Licenses
+
+### Softing License
 
 The activation of the connector license from Softing is described in [Licenses/SoftingLicenseServer](../Licenses/SoftingLicenseServer/README.md).
 
-## Open Source Licenses
+### Open Source Licenses
 
 For the licenses of the open source components used in the connector images, please read [Licenses/OpenSourceLicenses.md](../Licenses/OpenSourceLicenses.md).
