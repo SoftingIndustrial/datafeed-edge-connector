@@ -12,9 +12,10 @@ deploy:toGithub:
     name: github
     url: https://github.com/SoftingIndustrial/datafeed-edge-connector
   script:
+    - git lfs fetch --all
     - git config http.proxy ${http_proxy}
     - git config https.proxy ${https_proxy}
-    - git remote add -f public https://oauth2:${OAUTH2TOKEN}@github.com/SoftingIndustrial/datafeed-edge-connector.git
+    - git remote add public https://oauth2:${OAUTH2TOKEN}@github.com/SoftingIndustrial/datafeed-edge-connector.git
     - git push public HEAD:refs/heads/${CI_COMMIT_REF_NAME}
   after_script:
     - git remote remove public
