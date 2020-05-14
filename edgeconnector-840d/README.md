@@ -116,6 +116,7 @@ From the title bar of the connection overview table a new connection can be adde
 - To delete an existing connection, first select it from the overview table and click the ![delete_connection](../documentation_pics/delete_connection.png) button.  
 
 Adding a new connection and editing an existing connection, each open the same page. The only difference is, that for an existing connection the **Connection Name** property can not be changed.
+
 ![S840D connection settings](../documentation_pics/s840d_connection_settings_basic.png)
 
 The configuration parameters are described below:
