@@ -125,7 +125,7 @@ The configuration parameters are described below:
 | Connection Name       | empty                         | Defines the connection name as it will show up in the connection overview page. It must be unique and can only be assigned when adding a new connection.<br>Note: The following characters are not supported in this field:  **# ^ < > / $** |
 | Enabled               | Enabled                       | Instructs the dataFEED edgeConnector to either enable (checked) or disable (unchecked) the currently configured PLC connection. |
 | PLC Address           | empty                         | The address of the target device (S7 1200/1500 PLC). This is either an IP address or a hostname. |
-| Select Address Spaces | AllConnection<br>AddressSpace | Defines the destination aggregation address space used to store the address space corresponding to this PLC connection.<br>It is possible to create additional aggregation address spaces by filling in the desired address space name in the input field and clicking on the **Add** button. All available address spaces are visible in a list and can be selected as destination address space for the OPC UA client connection by checking the corresponding checkbox.<br>More details about the OPC UA Server functionality and configuration please read the document about the [OPC UA Configuration](../common/opcua.md). |
+| Select Address Spaces | AllConnection<br>AddressSpace | Defines the destination aggregation address space used to store the address space corresponding to this PLC connection.<br>It is possible to create additional aggregation address spaces by filling in the desired address space name in the input field and clicking on the **Add** button. All available address spaces are visible in a list and can be selected as destination address space for the OPC UA client connection by checking the corresponding checkbox.<br>For more details about the OPC UA Server functionality and configuration please read the document about the [OPC UA Configuration](../common/opcua.md). |
 
 ## OPC UA Server
 
@@ -134,8 +134,22 @@ The OPC UA Server functionality and configuration is described in the document a
 ## Licenses
 
 ### Softing License
+The dataFEED edgeConnectors come with a time limited and functionality unlimited demo mode.
+The demo is immediately started when the application starts up without a valid license.
+The demo mode will expire after 72 hours and the application stops working.  
+To remove the time limitation of the demo mode the application must be licensed.
+The dataFEED edgeConnectors use a floating license mechanism.
+A working floating license server is required to have the application successfully licensed.  
+
+Please read [Licenses/README.md](../Licenses/README.md) for further details.
+
+### Softing License
 
 The activation of the connector license from Softing is described in [Licenses/SoftingLicenseServer](../Licenses/SoftingLicenseServer/README.md).
+
+#### License Server Connection Configuration
+
+Please read [Licenses/README.md](../Licenses/README.md#license-server-connection-configuration) for further details.
 
 ### Open Source Licenses
 

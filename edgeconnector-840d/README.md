@@ -127,9 +127,7 @@ The configuration parameters are described below:
 | NCK Connection        |                               | Controls whether the NCK Connection for this 840D connection is enabled or not. Ticking the checkbox enables the connection and allows the user to upload a custom AWL symbol file. Uploading a symbol file is optional. In case no AWL file is uploaded a generic symbol file is used by the application |
 | PLC Connection        |                               | Controls whether the PLC Connection for this 840D connection is enabled or not. Ticking the checkbox enables the connection and allows the user to upload a custom SDFI symbol file. Uploading a symbol file is optional. In case no SDFI file is uploaded a generic symbol file is used by the application. |
 | PLC Address           | empty                         | The address of the target device (Sinumerik 840D). This is either an IP address or a hostname. |
-| Select Address Spaces | AllConnection<br>AddressSpace | Defines the destination aggregation address space used to store the address space corresponding to this PLC connection.<br>It is possible to create additional aggregation address spaces by filling in the desired address space name in the input field and clicking on the **Add** button. All available address spaces are visible in a list and can be selected as destination address space for the OPC UA client connection by checking the corresponding checkbox.<br>More details about the OPC UA Server functionality and configuration please read [OPC UA Configuration](../common/opcua.md). |
-
-
+| Select Address Spaces | AllConnection<br>AddressSpace | Defines the destination aggregation address space used to store the address space corresponding to this PLC connection.<br>It is possible to create additional aggregation address spaces by filling in the desired address space name in the input field and clicking on the **Add** button. All available address spaces are visible in a list and can be selected as destination address space for the OPC UA client connection by checking the corresponding checkbox.<br>For more details about the OPC UA Server functionality and configuration please read [OPC UA Configuration](../common/opcua.md). |
 
 #### Siemens Sinumerik 840d connection advanced configuration
 
@@ -153,8 +151,22 @@ The OPC UA Server functionality and configuration is described in the document a
 ## Licenses
 
 ### Softing License
+The dataFEED edgeConnectors come with a time limited and functionality unlimited demo mode.
+The demo is immediately started when the application starts up without a valid license.
+The demo mode will expire after 72 hours and the application stops working.  
+To remove the time limitation of the demo mode the application must be licensed.
+The dataFEED edgeConnectors use a floating license mechanism.
+A working floating license server is required to have the application successfully licensed.  
+
+Please read [Licenses/README.md](../Licenses/README.md) for further details.
+
+### Softing License
 
 The activation of the connector license from Softing is described in [Licenses/SoftingLicenseServer](../Licenses/SoftingLicenseServer/README.md).
+
+#### License Server Connection Configuration
+
+Please read [Licenses/README.md](../Licenses/README.md#license-server-connection-configuration) for further details.
 
 ### Open Source Licenses
 
