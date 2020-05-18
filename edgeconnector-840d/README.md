@@ -142,7 +142,7 @@ The advanced configuration page of 840d connection allows to change the followin
 | NCK TSAP Destination | empty               | Input field for customized TSAP setting. Allowed input are hexa-dezimal digits. E.g.: `02 01`, `2 1`, `0201`. |
 | PLC TSAP Selection   | Simatic 840D SL PLC | This allows to switch between the TSAP for **Simatik 840D SL** and a user defined TSAP.<br/>This setting should only be changed, if a connection to **Simatik 840D PL** or other none Solution Line series device is desired. |
 | PLC TSAP Destination | empty               | Input field for customized TSAP setting. Allowed input are hexa-dezimal digits. E.g.: `02 01`, `2 1`, `0201`. |
-| Enable NCU Alarm     | Disabled            | This checkbox enables or disables the subscriptions of NCU alarms from the Simatic 840D |
+| Enable NCU Alarm     | Disabled            | This checkbox enables or disables the subscriptions of NCU and PLC alarms from the Simatic 840D. The alarms are provided in two growing string-arrays within the OPC UA namespace. |
 
 ## OPC UA Server
 
