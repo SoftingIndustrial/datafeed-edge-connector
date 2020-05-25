@@ -4,13 +4,47 @@ Softing dataFEED edgeConnector 840D is a containerized connectivity module addin
 
 It is possible to connect up to 5 Siemens Sinumerik 840d SL/PL devices.
 
-### Supported Operating Systems
+## Supported Operating Systems
 
 Any docker host that can execute Linux docker containers based on an x86_64 architecture.
 
-### Defaults
+## Defaults
 
 The default settings are described in [defaults.md](../common/defaults.md).
+
+## Physical Connection to 840D device
+
+The different 840D variants provide different physical connection types.
+The 840D SL offers access by Ethernet interfaces. And the 840D offers only MPI access.
+
+## Physical Connection to 840D SL
+
+The 840D SL has 3 Ethernet interfaces:
+  1. **X120** for the device connection to HMIs and keybords.
+  2. **X130** for the company network.
+  3. **X127** for service purposes.
+
+![Interface overview](OPCUA_activate_006.png)
+
+![Network configuration](OPCUA_activate_009.png)
+
+The dataFEED edgeConnector 840D uses the S7 Communication (TCP/102) protocoll of the 840D SL.
+This protocol is by default available at interface **X120** and could be enabled for interface **X130**.
+
+So the host PC, which should run the dataFEED edgeConnector 840D needs either
+  - a physicall connection to the interface **X120** and an unique IPv4 address within the corresponding network
+  - or a physicall connection to the interface **X130**, an unique IPv4 address within the corresponding network and S7 Communication protocoll explicitly enabled for this interface.
+
+## Physical Connection to 840D PL
+
+The 840D PL provides two MPI interfaces for communication.
+Therefore an Ethernet to MPI converter is needed.
+
+The Ethernet to MPI converter translates the RFC-1006 TSAP addresses into MPI addresses.
+So the default MPI addresses of the 840D PL are translated into the following TSAP settings:
+
+  - TSAP NCK (powerline): `03 03`
+  - TSAP PLC (powerline): `03 02`
 
 ## Running dataFEED edgeConnectors
 
@@ -93,7 +127,7 @@ The configuration part, which is common for all kinds of edge connectors is desc
 
 dataFEED edgeConnector 840D provides an interface to connect and fetch data from the Siemens SINUMERIK 840D series.
 
-To configure a Siemens SINUMERIK 840D connection, navigate to **Connectivity -> PLC -> Siemens SINUMERIK 840** as depicted in the navigation tree below:
+To configure a Siemens SINUMERIK 840D connection, navigate to **Connectivity -> PLC -> Siemens SINUMERIK 840D** as depicted in the navigation tree below:
 
 ![sinumerik 840d_navigation](../documentation_pics/s840d_navigation.png)
 
@@ -124,7 +158,7 @@ The configuration parameters are described below:
 | Parameter name        | Default value                 | Description                                                  |
 | --------------------- | ----------------------------- | ------------------------------------------------------------ |
 | Connection Name       | empty                         | Defines the connection name as it will show up in the connection overview page. It must be unique and can only be assigned when adding a new connection.<br>Note: The following characters are not supported in this field:  **# ^ < > / $** |
-| NCK Connection        |                               | Controls whether the NCK Connection for this 840D connection is enabled or not. Ticking the checkbox enables the connection and allows the user to upload a custom AWL symbol file. Uploading a symbol file is optional. In case no AWL file is uploaded a generic symbol file is used by the application |
+| NCK Connection        |                               | Controls whether the NCK Connection for this 840D connection is enabled or not. Ticking the checkbox enables the connection and allows the user to upload a custom AWL symbol file. Uploading a symbol file is optional. In case no AWL file is uploaded a generic symbol file is used by the application. The default AWL symbol file is intended for 840D SL series devices. For 840D PL series devices a custom AWL symbol file like [Standard_pl.awl](Standard_pl.awl) needs to be uploaded.  |
 | PLC Connection        |                               | Controls whether the PLC Connection for this 840D connection is enabled or not. Ticking the checkbox enables the connection and allows the user to upload a custom SDFI symbol file. Uploading a symbol file is optional. In case no SDFI file is uploaded a generic symbol file is used by the application. |
 | PLC Address           | empty                         | The address of the target device (Sinumerik 840D). This is either an IP address or a hostname. |
 | Select Address Spaces | AllConnection<br>AddressSpace | Defines the destination aggregation address space used to store the address space corresponding to this PLC connection.<br>It is possible to create additional aggregation address spaces by filling in the desired address space name in the input field and clicking on the **Add** button. All available address spaces are visible in a list and can be selected as destination address space for the OPC UA client connection by checking the corresponding checkbox.<br>For more details about the OPC UA Server functionality and configuration please read [OPC UA Configuration](../common/opcua.md). |
