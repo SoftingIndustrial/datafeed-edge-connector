@@ -15,7 +15,7 @@ The default settings are described in [defaults.md](../common/defaults.md).
 ## Physical Connection to 840D device
 
 The different 840D variants provide different physical connection types.
-The 840D SL offers access by Ethernet interfaces. And the 840D offers only MPI access.
+The 840D SL offers access by Ethernet interfaces. And the 840D PL offers only MPI access.
 
 ## Physical Connection to 840D SL
 
@@ -28,12 +28,12 @@ The 840D SL has 3 Ethernet interfaces:
 
 ![Network configuration](OPCUA_activate_009.png)
 
-The dataFEED edgeConnector 840D uses the S7 Communication (TCP/102) protocoll of the 840D SL.
+The dataFEED edgeConnector 840D uses the S7 Communication (TCP/102) protocol of the 840D SL.
 This protocol is by default available at interface **X120** and could be enabled for interface **X130**.
 
 So the host PC, which should run the dataFEED edgeConnector 840D needs either
-  - a physicall connection to the interface **X120** and an unique IPv4 address within the corresponding network
-  - or a physicall connection to the interface **X130**, an unique IPv4 address within the corresponding network and S7 Communication protocoll explicitly enabled for this interface.
+  - a physical connection to the interface **X120** and an unique IPv4 address within the corresponding network
+  - or a physical connection to the interface **X130**, an unique IPv4 address within the corresponding network and S7 communication protocol explicitly enabled for this interface.
 
 ## Physical Connection to 840D PL
 
