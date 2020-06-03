@@ -2,7 +2,7 @@
 
 Softing dataFEED edgeConnector 840D is a containerized connectivity module adding OPC UA Server functionality.
 
-It is possible to connect up to 5 Siemens Sinumerik 840d SL/PL devices.
+It is possible to connect up to 5 Siemens Sinumerik 840D SL/PL devices.
 
 ## Supported Operating Systems
 
@@ -20,13 +20,13 @@ The 840D SL offers access by Ethernet interfaces. And the 840D PL offers only MP
 ## Physical Connection to 840D SL
 
 The 840D SL has 3 Ethernet interfaces:
-  1. **X120** for the device connection to HMIs and keybords.
+  1. **X120** for the device connection to HMIs and keyboards.
   2. **X130** for the company network.
   3. **X127** for service purposes.
 
-![Interface overview](OPCUA_activate_006.png)
+![Interface overview](../documentation_pics/OPCUA_activate_006.png)
 
-![Network configuration](OPCUA_activate_009.png)
+![Network configuration](../documentation_pics/OPCUA_activate_009.png)
 
 The dataFEED edgeConnector 840D uses the S7 Communication (TCP/102) protocol of the 840D SL.
 This protocol is by default available at interface **X120** and could be enabled for interface **X130**.
@@ -172,10 +172,10 @@ The advanced configuration page of 840d connection allows to change the followin
 | Parameter name       | Default value       | Description                                                  |
 | -------------------- | ------------------- | ------------------------------------------------------------ |
 | TCP Port             | 102                 | The port used to connect to the target device (Sinumerik 840D). This should remain on the default value. |
-| NCK TSAP Selection   | Simatic 840D SL NCK | This allows to switch between the TSAP for **Simatik 840D SL** and a user defined TSAP.<br/>This setting should only be changed, if a connection to **Simatik 840D PL** or other none Solution Line series device is desired. |
-| NCK TSAP Destination | empty               | Input field for customized TSAP setting. Allowed input are hexa-dezimal digits. E.g.: `02 01`, `2 1`, `0201`. |
-| PLC TSAP Selection   | Simatic 840D SL PLC | This allows to switch between the TSAP for **Simatik 840D SL** and a user defined TSAP.<br/>This setting should only be changed, if a connection to **Simatik 840D PL** or other none Solution Line series device is desired. |
-| PLC TSAP Destination | empty               | Input field for customized TSAP setting. Allowed input are hexa-dezimal digits. E.g.: `02 01`, `2 1`, `0201`. |
+| NCK TSAP Selection   | Simatic 840D SL NCK | This allows to switch between the TSAP for **Simatic 840D SL**, **Simatic 840D PL** or a user defined TSAP. |
+| NCK TSAP Destination | empty               | Input field for customized TSAP setting. Allowed input are hexadecimal digits. E.g.: `02 01`, `2 1`, `0201`. |
+| PLC TSAP Selection   | Simatic 840D SL PLC | This allows to switch between the TSAP for **Simatic 840D SL**, **Simatic 840D PL** or a user defined TSAP. |
+| PLC TSAP Destination | empty               | Input field for customized TSAP setting. Allowed input are hexadecimal digits. E.g.: `02 01`, `2 1`, `0201`. |
 | Enable NCU Alarm     | Disabled            | This checkbox enables or disables the subscriptions of NCU and PLC alarms from the Simatic 840D. The alarms are provided in two growing string-arrays within the OPC UA namespace. |
 
 ## OPC UA Server
