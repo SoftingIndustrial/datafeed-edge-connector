@@ -1,3 +1,4 @@
+image: ${CI_REGISTRY}/${CI_PROJECT_NAMESPACE}/raven/raven-build-amd64:18.04_raven2
 stages:
   - deploy
 
