@@ -9,7 +9,7 @@ dataFEED edgeConnectors are packaged as docker images. Each application consists
 For the different PLC types, the following specialized connector types are available:
 
   1. [edgeconnector-siemens](edgeconnector-siemens/README.md) for Siemens S7-1200/1500 PLCs
-  2. [edgeconnector-840d](edgeconnector-840d/README.md) **(comming soon)** for Sinumerik 840D PL/SL
+  2. [edgeconnector-840d](edgeconnector-840d/README.md) for Sinumerik 840D PL/SL
 
 # Configuration
 
