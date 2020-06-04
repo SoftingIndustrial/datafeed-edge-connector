@@ -1,13 +1,14 @@
 # Configuration
 
-After the docker container has been successfully started the dataFEED edgeConnector application runtime can be configured via the web interface. To connect to the web interface of the application point a browser to the address of the system executing the docker application. For example:  
+After the Docker container has been successfully started the dataFEED edgeConnector module runtime can be configured via the web interface. To connect to the web interface of the module point a browser to the address of the system executing the Docker module. For example:  
 
 | With TLS | Without TLS |
 | --- | --- |
-| [https://localhost:1443](https://localhost:1443) | [http://localhost:8099](http://localhost:8099) |
+| [https://localhost](https://localhost) | [http://localhost:8099](http://localhost:8099) |
+| [https://localhost:1443](https://localhost:1443) | |
 
 ## Login
-A Login page is shown. If this is the first time running the application use the [default credentials](defaults.md)  
+A login page is shown. If this is the first time running the module use the [default credentials](defaults.md)  
 ![login](../documentation_pics/login.png)
 
 ### Secure Admin account
@@ -22,9 +23,9 @@ To change the admin password navigate to **General Settings -> Users & Identity 
   - Finally use the "Save" button.
 
 ## Status
-On top of each page an application information summary is presented.  
+On top of each page a module information summary is presented.  
 ![toprow_status](../documentation_pics/toprow_status.png)  
-The status displays if the application is in running or in halted mode. It also includes information about the current license state. If the application is running in demo mode, the `DEMO` keyword is appended to the status.
+The status displays if the module is in running or in halted mode. It also includes information about the current license state. If the module is running in demo mode, the keyword `DEMO` is appended to the status.
 The user that is currently logged in is presented in separate information box.
 Use the Logout button to logout the current user, close the session and return to the [login page](#login)  
 
@@ -35,11 +36,11 @@ On the left hand side a navigation pane is provided to switch between the differ
 
 ## Connectivity
 
-The Connectivity section contains the configuration of the OPC UA Server Applications and the PLC Connectivity subsections.
+The Connectivity section contains the configuration of the OPC UA Server Modules and the PLC Connectivity subsections.
 
-The OPC UA Server Application functionality and configuration is described in the document about the [OPC UA Configuration](../common/opcua.md).
+The OPC UA Server Module functionality and configuration is described in the document about the [OPC UA Configuration](../common/opcua.md).
 
 The PLC Connectivity is described in details in the connector specific documents:
 
-- edgeConnector Siemens [Configuration](../edgeconnector-siemens/README.md#configuration)
-- edgeConnector 840D [Configuration](../edgeconnector-840d/README.md#configuration)
+- dataFEED edgeConnector Siemens [Configuration](../edgeconnector-siemens/README.md#configuration)
+- dataFEED edgeConnector 840D [Configuration](../edgeconnector-840d/README.md#configuration)

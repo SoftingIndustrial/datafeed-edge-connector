@@ -1,41 +1,42 @@
-# edgeConnector Siemens
+# dataFEED edgeConnector Siemens
 
-Softing dataFEED edgeConnector Siemens is a containerized SIMATIC S7 connectivity module adding OPC UA Server functionality.
+Softing´s dataFEED edgeConnector Siemens is a containerized SIMATIC S7 connectivity module adding OPC UA Server functionality.
 
 It is possible to connect up to 20 Siemens S7-1200 or S7-1500 PLCs including optimized data blocks.
-The Namespace configuration is done by browsing SIMATIC STEP 7 and TIA Portal variables. 
+The namespace configuration is done by browsing SIMATIC STEP 7 and TIA Portal variables.  
 
-### Supported Operating Systems
+## Supported Operating Systems
 
-Any docker host that can execute Linux docker containers based on an x86_64 architecture.
+Any Docker host that can execute Linux Docker containers based on an x86_64 architecture.
 
-### Defaults
+## Defaults
 
 The default settings are described in [defaults.md](../common/defaults.md).
 
-## Running dataFEED edgeConnectors
+## Running dataFEED edgeConnector Modules
 
-In order to run the dataFEED edgeConnectors a working docker environment is required.
-For docker installation instructions please refer to the [official documentation](https://docs.docker.com/install/)
+In order to run the dataFEED edgeConnector modules a working Docker environment is required.
+For Docker installation instructions please refer to the [official documentation](https://docs.docker.com/install/)
 
 ### Pulling the image
 
-The docker images are provided through a public registry.
-To get the latest docker image you need to login to the docker registry and pull the image.
+The Docker images are provided through a public registry.
+To get the latest Docker image you need to login to the Docker registry and pull the image.
 ```bash
 docker image pull softingindustrial/edgeconnector-siemens:latest
 ```
 
-### Run the docker container
+### Run the Docker container
 
-After the docker image has been pulled, a docker container can be started.
-The web server and OPCUA server of the application have to be exposed on the host machine if the dataFEED edgeConnectors shall be accessed from outside the dockerized environment.
+After the Docker image has been pulled, a Docker container can be started.
+The web server and OPC UA Server of the module have to be exposed on the host machine if the dataFEED edgeConnectors shall be accessed from outside the dockerized environment.
 
-To start the dataFEED edgeConnector with the default ports mapped 1:1 to the host machine:
+To start the dataFEED edgeConnector Siemens with the default ports mapped 1:1 to the host machine:
 ```bash
 docker container run -p 443:443 -p 8099:8099 -p 4897:4897 softingindustrial/edgeconnector-siemens
 ```
-The above example can be adapted to match the needs of your environment. For example if your host already runs a webserver and the https port is blocked, the command can be adjusted to expose the https port of dataFEED edgeConnector application on a different port.
+The above example can be adapted to match the needs of your environment.
+For example, if your host already runs a webserver and the https port is blocked, the command can be adjusted to expose the https port of the dataFEED edgeConnector Siemens module on a different port.
 
 ```bash
 docker container run -p 1443:443 -p 8099:8099 -p 4897:4897 softingindustrial/edgeconnector-siemens
@@ -49,25 +50,25 @@ docker container run -d -p 1443:443 -p 8099:8099 -p 4800-4900:4800-4900 --name e
 ```
 For further information about supported command line options please refer to the [official documentation](https://docs.docker.com/engine/reference/commandline/run/)
 
-### Stop the docker container
+### Stop the Docker container
 
-The application container can be stopped with the following command:
+The module container can be stopped by the following command:
 ```bash
 docker container stop edgeConnector
 ```
 Please refer to [official documentation](https://docs.docker.com/engine/reference/commandline/container_stop/) for more details.
 
-### Start the docker container
-If the application container was stopped and not removed, it can be started again from its last state.
+### Start the Docker container
+If the module container was stopped and not removed, it can be started again from its last state.
 ```bash
 docker container start edgeConnector
 ```
 Please refer to [official documentation](https://docs.docker.com/engine/reference/commandline/container_start/) for more details.
 
 
-### Remove the docker container
+### Remove the Docker container
 
-The application container can be removed at any time. After removing the container its last state is lost.
+The module container can be removed at any time. After removing the container its last state is lost.
 ```bash
 docker container rm -f edgeConnector
 ```
@@ -75,7 +76,7 @@ Please refer to [official documentation](https://docs.docker.com/engine/referenc
 
 ### Configuration Volume
 
-Optionally a docker volume to store the configuration permanently could be created:
+Optionally a Docker volume to store the configuration permanently could be created:
 
 ```bash
 docker volume create edge-connector-config
@@ -89,20 +90,20 @@ docker container run -d -v edge-connector-config:/config -p 1443:443 -p 8099:809
 
 ## Configuration
 
-The configuration part, which is common for all kinds of edge connectors is described in [configuration.md](../common/configuration.md).
+The configuration part, which is common for all kinds of dataFEED edgeConnector modules is described in [configuration.md](../common/configuration.md).
 
 ### Siemens S7 1200/1500 connection configuration
 
-dataFEED edgeConnnector Siemens provides an interface to connect and fetch data from a Siemens S7 1200 or 1500 series controllers.
+dataFEED edgeConnnector Siemens provides an interface to connect and fetch data from a Siemens S7 1200 or 1500 series PLCs.
 
-To configure a connection to a Siemens S7 1200 or S7 1500 controller, navigate to **Connectivity -> PLC -> Siemens S7 1200/1500** as depicted in the navigation tree below:
+To configure a connection to a Siemens S7 1200 or S7 1500 PLCs, navigate to **Connectivity -> PLC -> Siemens S7 1200/1500** as depicted in the navigation tree below:
 
 ![s7_navigation](../documentation_pics/s7_navigation.png)
 
 The page provides an overview of the currently configured connections including the **Name**, the **IP Address**, the connection **Status** and the **Enabled** state.
 ![s7_overview](../documentation_pics/s7_overview.png)
 
-| Column name | Information details |
+| Column Name | Information Details |
 | :-- | :-- |
 | Name | Connection name as defined at creation time. |
 | IP Address | IP Address or host name of the PLC |
@@ -115,17 +116,17 @@ From the title bar of the connection overview table a new connection can be adde
 - To edit an existing connection, first select it from the overview table and click the ![edit_connection](../documentation_pics/edit_connection.png) button. 
 - To delete an existing connection, first select it from the overview table and click the ![delete_connection](../documentation_pics/delete_connection.png) button.  
 
-Adding a new connection and editing an existing connection, each open the same page. The only difference is, that for an existing connection the **Connection Name** property can not be changed.  
+Adding a new connection and editing an existing connection, both open an identical page. The only difference is, that for an existing connection the **Connection Name** property cannot be changed.  
 ![s71200-1500_connection_settings_basic](../documentation_pics/s7_connection_settings_basic.png)
 
 The configuration parameters are described below:
 
-| Parameter name        | Default value                 | Description                                                  |
+| Parameter Name        | Default Value                 | Description                                                  |
 | --------------------- | ----------------------------- | ------------------------------------------------------------ |
-| Connection Name       | empty                         | Defines the connection name as it will show up in the connection overview page. It must be unique and can only be assigned when adding a new connection.<br>Note: The following characters are not supported in this field:  **# ^ < > / $** |
+| Connection Name       | <empty>                         | Connection name as it will show up in the connection overview page. It must be unique and can only be assigned when adding a new connection.<br>Note: The following characters are not supported in this field:  **# ^ < > / $** |
 | Enabled               | Enabled                       | Instructs the dataFEED edgeConnector to either enable (checked) or disable (unchecked) the currently configured PLC connection. |
-| PLC Address           | empty                         | The address of the target device (S7 1200/1500 PLC). This is either an IP address or a hostname. |
-| Select Address Spaces | AllConnection<br>AddressSpace | Defines the destination aggregation address space used to store the address space corresponding to this PLC connection.<br>It is possible to create additional aggregation address spaces by filling in the desired address space name in the input field and clicking on the **Add** button. All available address spaces are visible in a list and can be selected as destination address space for the OPC UA client connection by checking the corresponding checkbox.<br>For more details about the OPC UA Server functionality and configuration please read the document about the [OPC UA Configuration](../common/opcua.md). |
+| PLC Address           | <empty>                         | Address of the target device (S7 1200/1500 PLC). This is either an IP address or a hostname. |
+| Select Address Spaces | AllConnection<br>AddressSpace | Defines the destination aggregation address space used to store the address space corresponding to this PLC connection.<br>It is possible to create additional aggregation address spaces by filling in the desired address space name in the input field and clicking on the **Add** button. All available address spaces are visible in a list and can be selected as destination address space for the OPC UA Client connection by checking the corresponding checkbox.<br>For more details about the OPC UA Server functionality and configuration please read the document about the [OPC UA Configuration](../common/opcua.md). |
 
 ## Simulation Mode
 
@@ -189,11 +190,11 @@ The OPC UA Server functionality and configuration is described in the document a
 
 ### Softing License
 The dataFEED edgeConnectors come with a time limited and functionality unlimited demo mode.
-The demo is immediately started when the application starts up without a valid license.
-The demo mode will expire after 72 hours and the application stops working.  
-To remove the time limitation of the demo mode the application must be licensed.
+The demo is immediately started when the module starts up without a valid license.
+The demo mode will expire after 72 hours and the module stops working.  
+To remove the time limitation of the demo mode the module must be licensed.
 The dataFEED edgeConnectors use a floating license mechanism.
-A working floating license server is required to have the application successfully licensed.  
+A working floating license server is required to have the module successfully licensed.  
 
 Please read [Licenses/README.md](../Licenses/README.md) for further details.
 

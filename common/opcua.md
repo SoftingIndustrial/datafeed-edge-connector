@@ -1,16 +1,16 @@
-# OPC UA endpoint configuration
+# OPC UA Endpoint Configuration
 
-The OPC UA server module allows the dataFEED edgeConnectors to create OPC UA server endpoints used by external OPC UA clients to access the PLC data.
+The OPC UA Server module allows the dataFEED edgeConnector modules to create OPC UA Server endpoints used by external OPC UA Clients to access the PLC data.
 
 ## Enabling/Disabling the OPC UA Server Module
 
-To enable or disable the OPC UA server module navigate to **Connectivity -> OPC UA -> OPC UA Server Application Settings** and change the state of the module by checking/unchecking the **[Activate/Deactivate OPC UA Server]** checkbox.
+To enable or disable the OPC UA Server module navigate to **Connectivity -> OPC UA -> OPC UA Server Module Settings** and change the state of the module by checking/unchecking the **[Activate/Deactivate OPC UA Server]** checkbox.
 
 ![OPC UA server enable](../documentation_pics/opc_ua_enable_server.png)
 
 ## OPC UA Server Endpoints
 
-Information about all configured server endpoints is centralized and accessible by navigating to **Connectivity -> OPC UA -> OPC UA Server Application Settings -> OPC UA Server Endpoints**.
+Information about all configured OPC UA Server endpoints is centralized and accessible by navigating to **Connectivity -> OPC UA -> OPC UA Server Module Settings -> OPC UA Server Endpoints**.
 
 ![OPC UA Server Endpoints page](../documentation_pics/opc_ua_server_endpoints_page.png)
 
@@ -25,10 +25,10 @@ In the **OPC UA Server Endpoints** table, all configured OPC UA server endpoints
 
 ![OPC UA Server Endpoints table](../documentation_pics/opc_ua_server_endpoints_table.png)
 
-| Column name          | Information details                                          |
+| Column Name          | Information Details                                          |
 | -------------------- | ------------------------------------------------------------ |
-| Endpoint Name        | User defined endpoint name.                                  |
-| Endpoint URL         | The endpoint URL based on:<br> - the user defined transport protocol (opc.tcp or http)<br> - the fully qualified domain name of the computer running the dataFEED edgeConnector<br>- user defined port<br>- user defined url-path |
+| Endpoint Name        | User defined endpoint name                                  |
+| Endpoint URL         | Endpoint URL based on:<br> - the user defined transport protocol (opc.tcp or http)<br> - the fully qualified domain name of the computer running the dataFEED edgeConnector module<br>- user defined port<br>- user defined url-path |
 | Endpoint Description | User defined endpoint description text. It can be used to include additional information or remarks about the endpoint. |
 | URLs                 | Provides a list with all possible URLs which can be used to access the configured endpoint. |
 | Enabled              | Describes the configuration state of the OPC UA server endpoint. See the table below for more details. |
@@ -47,15 +47,15 @@ From the title bar of the OPC UA Server Endpoints table a new endpoint can be ad
 
 #### Server Endpoint Creation
 
-Adding a new endpoint or editing an existing endpoint from the on the **OPC UA Server Endpoints** page the endpoint creation page is loaded which provides a simple and intuitive interface for configuring a new or editing an existing OPC UA server endpoint.
+Adding a new OPC UA Server endpoint or editing an existing OPC UA Server endpoint from the on the **OPC UA Server Endpoints** page the endpoint creation page is loaded which provides a simple and intuitive interface for configuring a new or editing an existing OPC UA Server endpoint.
 
 ![OPC UA Server Endpoint creation](../documentation_pics/opc_ua_endpoint_creation.png)
 
 The configuration parameters are described in the table below:
 
-| Parameter name                       | Default value                      | Description                                                  |
+| Parameter Name                       | Default Value                      | Description                                                  |
 | ------------------------------------ | ---------------------------------- | ------------------------------------------------------------ |
-| Endpoint Name                        | empty                              | Defines the connection name as it will show up in the OPC UA client connection overview page.<br>This name shall also be used by the OPC Client when connecting to an external OPC UA server<br>Note: The following characters are not supported in this field:  **# ^ < > / $** |
+| Endpoint Name                        | <empty>                              | Defines the connection name as it will show up in the OPC UA client connection overview page.<br>This name shall also be used by the OPC Client when connecting to an external OPC UA server<br>Note: The following characters are not supported in this field:  **# ^ < > / $** |
 | Enabled                              | Enabled                            | Instructs the dataFEED edgeConnector to either enable (checked) or disable (unchecked) the currently configured OPC UA server endpoint. |
 | OPC UA Endpoint Protocol             | TCP                                | The server endpoint transport protocol is configurable by selecting the appropriate radio button. |
 | OPC UA Endpoint Hostname             | Hostname                           | Pre-populated, read-only field, defining the computer's hostname. |
