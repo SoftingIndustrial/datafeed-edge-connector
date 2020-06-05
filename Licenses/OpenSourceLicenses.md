@@ -1,8 +1,8 @@
-# Softing open source license declaration of dataFEED edge connector images
+# Softing open source license declaration of dataFEED edgeConnector module images
 
-Many open source component copyrights refer to one of these common public licenses, which are within the docker images in the directory `/usr/share/common-licenses/`. To avoid the need to copy and or read several times the same license text file, those licenses are collected in `/usr/share/common-licenses/` within the docker images. So if a copyright file refers to one of those licenses, please look into this directory within the docker image
+Many open source component copyrights refer to one of these common public licenses, which are within the Docker images in the directory `/usr/share/common-licenses/`. To avoid the need to copy and or read several times the same license text file, those licenses are collected in `/usr/share/common-licenses/` within the Docker images. So if a copyright file refers to one of those licenses, please look into this directory within the docker image
 
-You could download the sources of all the open source based binaries, which we have got from Ubuntu within our docker image.
+You can download the sources of all the open source based binaries, which have been got from Ubuntu within the Softing Docker image.
 To do this, use the following commands:
 
 ```bash
@@ -11,7 +11,7 @@ cd source-folder
 docker run --rm -it -w $(pwd) -v $(pwd):$(pwd) softingindustrial/edgeconnector-siemens:latest getOpenSourcePackages.sh
 ```
 
-To fully comply with the open licensing terms, we also offer for at least three years, to give any third party, for a charge no more than our cost of physically performing source distribution, a complete machine-readable copy of the corresponding source code.
+To fully comply with the open licensing terms, Softing also offers for at least three years, to give any third party, for a charge no more than the Softing cost of physically performing source distribution, a complete machine-readable copy of the corresponding source code.
 To use this offer, please contact [info.automation@softing.com](mailto:info.automation@softing.com).
 
 ## The following components are used:

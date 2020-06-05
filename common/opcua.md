@@ -33,19 +33,19 @@ In the **OPC UA Server Endpoints** table, all configured OPC UA server endpoints
 | URLs                 | Provides a list with all possible URLs which can be used to access the configured endpoint. |
 | Enabled              | Describes the configuration state of the OPC UA server endpoint. See the table below for more details. |
 
-| Endpoint state                                               | Icon                                               | Details                                                      |
+| Endpoint State                                               | Icon                                               | Details                                                      |
 | ------------------------------------------------------------ | -------------------------------------------------- | ------------------------------------------------------------ |
-| Disable                                                      | ![Enabled](../documentation_pics/SwitchOn.png)     | The endpoint is **configured as disabled** therefore it is inaccessible by any OPC UA client.<br>Clicking on the current configuration state icon would trigger a state toggle: Disabled -> Enabled |
-| Enabled                                                      | ![Disabled](../documentation_pics/SwitchOff.png)   | The endpoint is **configured as enabled,** it is accessible and shall be able to accept incoming connection requests if other environmental conditions are met (e.g.: license slots are available).<br>Clicking on the current configuration state icon would trigger a state toggle: Enabled -> Disabled |
+| Disabled                                                     | ![Enabled](../documentation_pics/SwitchOn.png)     | The endpoint is **configured as Disabled** therefore it is inaccessible by any OPC UA client.<br>Clicking on the current configuration state icon triggers a state toggle: Disabled -> Enabled |
+| Enabled                                                      | ![Disabled](../documentation_pics/SwitchOff.png)   | The endpoint is **configured as Enabled,** it is accessible and shall be able to accept incoming connection requests if other environmental conditions are met (e.g.: license slots are available).<br>Clicking on the current configuration state icon triggers a state toggle: Enabled -> Disabled |
 | Access Protection temporarily or permanently disabled        | ![](../documentation_pics/SwitchOn_WarnRed.png)    | The endpoint is **configured as enabled**, but it was **disabled by the access protection** feature because the configured access protection restrictions where met.<br>Checking the access protection applied settings it can be found if the endpoint is temporarily or permanently disabled.<br>Clicking on the current configuration state icon would trigger a state toggle resetting the current access protection state and re-enabling the endpoint:<br>Access Protection temporarily or permanently disabled-> Enabled |
-| Access Protection IPs or certificated prevented authentication | ![](../documentation_pics/SwitchOn_WarnYellow.png) | The endpoint is **configured as enabled**, it is accessible and shall be able to accept incoming connection requests, but it rejects some connections attempts based on IPs or certificates  as resulted from the access protection configuration.<br>This state can be manually reset by accessing the access protection settings and disabling/enabling the authentication restrictions for remote IPs and certificates.<br>Clicking on the current configuration state icon would trigger a state toggle, but it **shall not reset** the access protection state:<br>Access protection IPs or certificates prevented authentication -> Disabled |
+| Access Protection IPs or certificated prevented authentication | ![](../documentation_pics/SwitchOn_WarnYellow.png) | The endpoint is **configured as enabled**, it is accessible and shall be able to accept incoming connection requests, but it rejects some connections attempts based on IPs or certificates  as resulted from the access protection configuration.<br>This state can be manually reset by accessing the access protection settings and disabling/enabling the authentication restrictions for remote IPs and certificates.<br>Clicking on the current configuration state icon triggers a state toggle, but it **shall not reset** the access protection state:<br>Access protection IPs or certificates prevented authentication -> Disabled |
 
 From the title bar of the OPC UA Server Endpoints table a new endpoint can be added or an exiting endpoint can be edited or deleted:
 - To add a new endpoint click the ![add_endpoint](../documentation_pics/add_connection.png) button.  
 - To edit an existing endpoint, first select it from the overview table and click the ![edit_connection](../documentation_pics/edit_connection.png) button. 
 - To delete an existing endpoint, first select it from the overview table and click the ![delete_connection](../documentation_pics/delete_connection.png) button.  
 
-#### Server Endpoint Creation
+#### OPC UA Server Endpoint Creation
 
 Adding a new OPC UA Server endpoint or editing an existing OPC UA Server endpoint from the on the **OPC UA Server Endpoints** page the endpoint creation page is loaded which provides a simple and intuitive interface for configuring a new or editing an existing OPC UA Server endpoint.
 
@@ -57,11 +57,11 @@ The configuration parameters are described in the table below:
 | ------------------------------------ | ---------------------------------- | ------------------------------------------------------------ |
 | Endpoint Name                        | <empty>                              | Defines the connection name as it will show up in the OPC UA client connection overview page.<br>This name shall also be used by the OPC Client when connecting to an external OPC UA server<br>Note: The following characters are not supported in this field:  **# ^ < > / $** |
 | Enabled                              | Enabled                            | Instructs the dataFEED edgeConnector to either enable (checked) or disable (unchecked) the currently configured OPC UA server endpoint. |
-| OPC UA Endpoint Protocol             | TCP                                | The server endpoint transport protocol is configurable by selecting the appropriate radio button. |
+| OPC UA Endpoint Protocol             | TCP                                | The OPC UA Server endpoint transport protocol is configurable by selecting the appropriate radio button. |
 | OPC UA Endpoint Hostname             | Hostname                           | Pre-populated, read-only field, defining the computer's hostname. |
-| OPC UA Endpoint Port                 | 4810+                              | Defines the server port number. Populated with an available port, not assigned to an existing endpoint, starting with **port 4180.**<br>Note: Ports under 1024 are not allowed. Field is automatically validated. |
-| OPC UA Endpoint Path                 | endpoint1                          | User editable server endpoint URL path. Pre-populated with a string in the form **endpoint[index]** where index might change if the path already exists. |
-| Endpoint URL                         | opc.tcp://[hostname]:[port]/[path] | Configured server endpoint URL based on the selected **transport protocol**, **port number**, **URL path** and the existing **hostname.** |
+| OPC UA Endpoint Port                 | 4810+                              | Defines the OPC UA Server port number. Populated with an available port, not assigned to an existing endpoint, starting with **port 4180.**<br>Note: Ports under 1024 are not allowed. Field is automatically validated. |
+| OPC UA Endpoint Path                 | endpoint1                          | User editable OPC UA Server endpoint URL path. Pre-populated with a string in the form **endpoint[index]** where index might change if the path already exists. |
+| Endpoint URL                         | opc.tcp://[hostname]:[port]/[path] | Configured OPC UA Server endpoint URL based on the selected **transport protocol**, **port number**, **URL path** and the existing **hostname.** |
 | Authentication Settings              | All                                | Defines the authentication method supported by the endpoint.<br>Supported settings: **Anonymous, Username & Password** and **Certificate** |
 | Message Security Mode                | All                                | Defines the endpoint message security mode (whether signing or encryption is used when exchanging messages).<br>Note: Supported message security mode: None, Sign, SignAndEncrypt |
 | Security Policy                      | All                                | Defines the endpoint security policy (the encryption algorithm applied to the messages).<br>Note: Supported security policies: None, Basic256, Basic256Sha256, Basic128Rsa15, Aes128_Sha256_RsaOaep and Aes256_Sha256_RsaPss |
@@ -77,15 +77,15 @@ The certificates page provides an interface for managing the SSL certificates st
 
 ###### Own Application Certificate
 
-Lists the certificate used to identify the dataFEED edgeConnector endpoint application instance. This certificate is uniquely created for each OPC UA server endpoint.
+Lists the certificate used to identify the dataFEED edgeConnector endpoint application instance. This certificate is uniquely created for each OPC UA Server endpoint.
 
-Only one certificate should be visible in the own certificate area. This is the certificate which is used by the running OPC UA server endpoint to identify itself.
+Only one certificate should be visible in the own certificate area. This is the certificate which is used by the running OPC UA Server endpoint to identify itself.
 
 ![OPC UA Server Endpoint own certificate](../documentation_pics/opc_ua_endpoint_own_certificate.png)
 
 Several operations are accessible using the buttons placed top right:
 
-- Reuse application certificate ![OPC UA reuse certificate](../documentation_pics/opc_ua_reuse_certificate.png) button: Provides the possibility to reuse a certificate which is already in use to identify a different configured OPC UA server endpoint. Clicking the button brings up a window which lists the available server endpoints. To reuse the certificate of an existing endpoint, select the endpoint in the list and click the **Reuse Certificate** button.
+- Reuse application certificate ![OPC UA reuse certificate](../documentation_pics/opc_ua_reuse_certificate.png) button: Provides the possibility to reuse a certificate which is already in use to identify a different configured OPC UA Server endpoint. Clicking the button brings up a window which lists the available OPC UA Server endpoints. To reuse the certificate of an existing endpoint, select the endpoint in the list and click the **Reuse Certificate** button.
 
 - Generate application certificate ![OPC UA generate certificate](../documentation_pics/opc_ua_generate_certificate.png) button: Will create a new replacement certificate for the current own application certificate.
 
@@ -97,7 +97,7 @@ Several operations are accessible using the buttons placed top right:
 
 ######  Trusted Application Certificates
 
-Allows manipulation and information retrieval on the current server endpoint's trusted certificates. All remote OPC UA client application instances whose certificates are listed in this view have a trust relationship established with the current endpoint.
+Allows manipulation and information retrieval on the current OPC UA Server endpoint's trusted certificates. All remote OPC UA client application instances whose certificates are listed in this view have a trust relationship established with the current endpoint.
 
 ![OPC UA Endpoint trusted certificate](../documentation_pics/opc_ua_endpoint_trusted_certificates.png)
 
@@ -105,7 +105,7 @@ Several operations are accessible using the buttons placed on top right:
 
 - Upload certificate ![OPC UA upload certificate](../documentation_pics/opc_ua_upload_certificate.png) button: Provides a way to add a pre-owned certificate, locally stored, to the trusted folder. After clicking the **Upload Certificate** button a new view, where the new certificate file shall be selected by pressing the **Choose file** button, opens. To finalize the action press the **Upload Certificate** button. 
 
-  Uploading a trusted certificate is required  when an external OPC UA client is expected to establish a secure connection to an existing server endpoint. In this case the external OPC UA client's certificate needs to be uploaded in the server endpoint trusted certificates section. An alternative solution for the above scenario is to entrust an already rejected certificate.
+  Uploading a trusted certificate is required  when an external OPC UA client is expected to establish a secure connection to an existing OPC UA Server endpoint. In this case the external OPC UA client's certificate needs to be uploaded in the OPC UA Server endpoint trusted certificates section. An alternative solution for the above scenario is to entrust an already rejected certificate.
 
 - Delete certificate  ![OPC UA delete certificate](../documentation_pics/opc_ua_delete_certificate.png) button: Deletes the currently selected certificate from the trusted certificates folder. After deletion the trust relationship with the deleted certificate owner application will be invalidated.
 
@@ -142,7 +142,7 @@ In this table details about the users assigned to the currently selected endpoin
 | Username      | Name of the user.                                            |
 | Address Space | Address space exposed to the OPC UA client connection to the selected endpoint  and authenticated with the current. |
 | Certificate   | Highlights the validity status of the certificates attached to the user or the absence of any certificate<br><br>Possible values are:<br> - Certificates were found and all are fine: ![OkGreen](../documentation_pics/OkGreen.png) <br> - At least one certificate will expire soon: ![WarningExpireYellow](../documentation_pics/WarningExpireYellow.png)<br> - At least one certificate is already expired: ![WarningRed](../documentation_pics/WarningExpireRed.png)<br> - No certificates are attached to the current user: ![DeleteRed](../documentation_pics/DeleteRed.png) |
-| Enabled       | Describes the configuration state of the assignment of the current user to the selected OPC UA server endpoint. Possible values are Enabled or Disabled.<br>Clicking on the current configuration state icon would trigger a state toggle: Enabled -> Disabled; Disabled -> Enabled |
+| Enabled       | Describes the configuration state of the assignment of the current user to the selected OPC UA Server endpoint. Possible values are Enabled or Disabled.<br>Clicking on the current configuration state icon triggers a state toggle: Enabled -> Disabled; Disabled -> Enabled |
 
 From the title bar of the Endpoint Users - Identities table a new user can be added or an existing user can be edited or deleted:
 
@@ -152,7 +152,7 @@ From the title bar of the Endpoint Users - Identities table a new user can be ad
 
 #### User Settings
 
-Any newly created OPC UA server endpoint requires a user to be assigned before it can be used by external OPC UA clients.
+Any newly created OPC UA Server endpoint requires a user to be assigned before it can be used by external OPC UA clients.
 
 Adding a new endpoint user or editing an existing endpoint user from the **OPC UA Server Endpoints** page will load the user creation page. When editing an existing user the **Username** drop down list is deactivated, and also the creation of new users is disabled.
 

@@ -1,6 +1,6 @@
 # Defaults
 
-The application uses the following default settings.
+The module uses the following default settings.
 
 Web interface username and password:  
 
@@ -8,10 +8,10 @@ Web interface username and password:
 | :-: | :-: |
 | admin | admin |
 
-The ports in use by the different services:  
+Ports in use by the different services:  
 
 | Service | Port |
 | :-- | --: |
-| web interface HTTP | 8099 |
-| web interface HTTPS | 443 |
+| Web interface HTTP | 8099 |
+| Web interface HTTPS | 443 |
 | OPC UA server default endpoint | 4897 |
