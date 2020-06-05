@@ -178,6 +178,19 @@ The advanced configuration page of a SINUMERIK 840D connection allows to change 
 | PLC TSAP Destination | empty               | Input field for customized TSAP setting. Allowed input are hexadecimal digits. E.g.: `02 01`, `2 1`, `0201`. |
 | Enable NCU Alarm     | Disabled            | Enables or disables the subscriptions of NCU and PLC alarms from the SINUMERIK 840D. The alarms are provided in two growing string-arrays within the OPC UA namespace. |
 
+#### PLC Address Space Configuration by SDFI File
+
+The symbolic names of the PLC S7 data need to be provided in an `*.sdfi` file.
+You can generate the `*.sdfi` file with the Softing dataFEED Exporter tool.
+This tool uses the S7 TIA project files as input and allows you to select one PLC S7 to generate the `*.sdfi` file which contains the symbol definition.
+Proceed as follows to convert and import symbol files:
+	1. Download the [dataFEED Exporter](https://data-intelligence.softing.com/products/iot-gateways/datafeed-exporter/#tx-dftabs-tabContent2) to that PC where the PLC configuration software (Step7 or TIAv13) is installed.
+	2. Execute the installation file and follow the instructions from the installation wizard.
+	3. Run the dataFEED Exporter.
+	4. Follow the instructions from the dataFEED Exporter tool to load and convert your Step7 symbol files.
+	5. Save the converted `*.sdfi` file to your PC.
+	6. Upload the `*.sdfi` file within the [Siemens SINUMERIK 840D connection configuration](#siemens-sinumerik-840d-connection-configuration).
+
 ## OPC UA Server
 
 The OPC UA Server functionality and configuration is described in the document about the [OPC UA Configuration](../common/opcua.md).
