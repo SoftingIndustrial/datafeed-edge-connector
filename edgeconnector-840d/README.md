@@ -191,6 +191,10 @@ Proceed as follows to convert and import symbol files:
 	5. Save the converted `*.sdfi` file to your PC.
 	6. Upload the `*.sdfi` file within the [Siemens SINUMERIK 840D connection configuration](#siemens-sinumerik-840d-connection-configuration).
 
+#### NCK Address Space definition by awl file
+
+The creation of `.awl` files is described in ![uaGate840D_AdditionalVariables_C_EN_190801_L_100.pdf](uaGate840D_AdditionalVariables_C_EN_190801_L_100.pdf).
+
 ## OPC UA Server
 
 The OPC UA Server functionality and configuration is described in the document about the [OPC UA Configuration](../common/opcua.md).
