@@ -34,7 +34,7 @@ The license activation for Softing's dataFEED edgeConnector product family is de
 
 ### License Server Connection Configuration
 
-Please see the section [License Server Connection Configuration of the License README file](Licenses/README.md#license-server-connection-configuration) for further details.
+Please see the section [License Server Connection Configuration](Licenses/README.md#license-server-connection-configuration) of the License README file for further details.
 
 
 ## Open Source Licenses
