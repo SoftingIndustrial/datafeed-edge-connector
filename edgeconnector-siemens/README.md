@@ -21,7 +21,7 @@ For Docker installation instructions please refer to the [official Docker instal
 ### Pulling the image
 
 The Docker images are provided through a public registry.
-To get the latest Docker image you need to log to the Docker registry and pull the image:
+To get the latest Docker image you need to pull the image from [https://hub.docker.com/r/softingindustrial/edgeconnector-siemens](https://hub.docker.com/r/softingindustrial/edgeconnector-siemens):
 ```bash
 docker image pull softingindustrial/edgeconnector-siemens:latest
 ```

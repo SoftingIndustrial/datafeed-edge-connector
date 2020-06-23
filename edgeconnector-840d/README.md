@@ -54,7 +54,7 @@ For Docker installation instructions please refer to the [official documentation
 ### Pulling the image
 
 The Docker images are provided through a public registry.
-To get the latest Docker image you need to login to the Docker registry and pull the image.
+To get the latest Docker image you need to pull the image from [https://hub.docker.com/r/softingindustrial/](https://hub.docker.com/r/softingindustrial/):.
 ```bash
 docker image pull softingindustrial/edgeconnector-840d:latest
 ```
