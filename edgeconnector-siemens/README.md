@@ -7,21 +7,21 @@ The namespace configuration is done by browsing SIMATIC STEP 7 and TIA Portal va
 
 ## Supported Operating Systems
 
-Any Docker host that can execute Linux Docker containers based on an x86_64 architecture.
+dataFEED edgeConnector Siemens can be used on any Docker host that can execute Linux Docker containers based on an x86_64 architecture.
 
-## Defaults
+## Default Settings
 
-The default settings are described in [defaults.md](../common/defaults.md).
+The default settings are described in the [Default Settings](../common/defaults.md) chapter.
 
 ## Running dataFEED edgeConnector Modules
 
 In order to run the dataFEED edgeConnector modules a working Docker environment is required.
-For Docker installation instructions please refer to the [official documentation](https://docs.docker.com/install/)
+For Docker installation instructions please refer to the [official Docker installation documentation](https://docs.docker.com/install/)
 
 ### Pulling the image
 
 The Docker images are provided through a public registry.
-To get the latest Docker image you need to login to the Docker registry and pull the image.
+To get the latest Docker image you need to log to the Docker registry and pull the image:
 ```bash
 docker image pull softingindustrial/edgeconnector-siemens:latest
 ```
@@ -29,26 +29,24 @@ docker image pull softingindustrial/edgeconnector-siemens:latest
 ### Run the Docker container
 
 After the Docker image has been pulled, a Docker container can be started.
-The web server and OPC UA Server of the module have to be exposed on the host machine if the dataFEED edgeConnectors shall be accessed from outside the dockerized environment.
+The webserver and OPC UA Server of the module have to be exposed on the host machine if the dataFEED edgeConnector modules shall be accessed from outside the dockerized environment.
 
 To start the dataFEED edgeConnector Siemens with the default ports mapped 1:1 to the host machine:
 ```bash
 docker container run -p 443:443 -p 8099:8099 -p 4897:4897 softingindustrial/edgeconnector-siemens
 ```
 The above example can be adapted to match the needs of your environment.
-For example, if your host already runs a webserver and the https port is blocked, the command can be adjusted to expose the https port of the dataFEED edgeConnector Siemens module on a different port.
+For example, if your host already runs a webserver and the https port is blocked, the command can be adjusted to expose the https port of the dataFEED edgeConnector Siemens module on a different port:
 
 ```bash
 docker container run -p 1443:443 -p 8099:8099 -p 4897:4897 softingindustrial/edgeconnector-siemens
 ```
-To map a complete port range use the `-p` switch with a range `start-end:start-end`.  
-To daemonize the container use the `-d` switch.  
-To name the container use the `--name` switch.  
+The `-p` switch allows to map a complete port range `start-end:start-end`, the `-d` switch allows to daemonize the container and the `--name` switch allows to name the container:  
 
 ```bash
 docker container run -d -p 1443:443 -p 8099:8099 -p 4800-4900:4800-4900 --name edgeConnector softingindustrial/edgeconnector-siemens
 ```
-For further information about supported command line options please refer to the [official documentation](https://docs.docker.com/engine/reference/commandline/run/)
+For further information about supported command line options please refer to the [official Docker command line documentation](https://docs.docker.com/engine/reference/commandline/run/)
 
 ### Stop the Docker container
 
@@ -56,23 +54,24 @@ The module container can be stopped by the following command:
 ```bash
 docker container stop edgeConnector
 ```
-Please refer to [official documentation](https://docs.docker.com/engine/reference/commandline/container_stop/) for more details.
+Please refer to [official Docker command line documentation](https://docs.docker.com/engine/reference/commandline/container_stop/) for more details.
 
 ### Start the Docker container
-If the module container was stopped and not removed, it can be started again from its last state.
+If the module container was stopped and not removed, it can be started again from its last state:
 ```bash
 docker container start edgeConnector
 ```
-Please refer to [official documentation](https://docs.docker.com/engine/reference/commandline/container_start/) for more details.
+Please refer to [official Docker command line documentation](https://docs.docker.com/engine/reference/commandline/container_start/) for more details.
 
 
 ### Remove the Docker container
 
-The module container can be removed at any time. After removing the container its last state is lost.
+The module container can be removed at any time:
 ```bash
 docker container rm -f edgeConnector
 ```
-Please refer to [official documentation](https://docs.docker.com/engine/reference/commandline/container_rm/) for more details.
+After removing the container its last state is lost.
+Please refer to [official Docker command line documentation](https://docs.docker.com/engine/reference/commandline/container_rm/) for more details.
 
 ### Configuration Volume
 
@@ -82,7 +81,7 @@ Optionally a Docker volume to store the configuration permanently could be creat
 docker volume create edge-connector-config
 ```
 
-In this case the container should be started like this, to use the volume:
+In this case the container should be started like this, using the volume:
 
 ```bash
 docker container run -d -v edge-connector-config:/config -p 1443:443 -p 8099:8099 -p 4800-4900:4800-4900 --name edgeConnector softingindustrial/edgeconnector-siemens
@@ -90,7 +89,7 @@ docker container run -d -v edge-connector-config:/config -p 1443:443 -p 8099:809
 
 ## Configuration
 
-The configuration part, which is common for all kinds of dataFEED edgeConnector modules is described in [configuration.md](../common/configuration.md).
+The configuration part, which is common for all kinds of dataFEED edgeConnector modules is described in the [Configuration](../common/configuration.md) chapter.
 
 ### Siemens S7 1200/1500 connection configuration
 

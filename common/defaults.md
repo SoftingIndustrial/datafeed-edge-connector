@@ -1,4 +1,4 @@
-# Defaults
+# Default Settings
 
 The module uses the following default settings.
 
