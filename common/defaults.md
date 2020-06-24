@@ -1,6 +1,6 @@
 # Default Settings
 
-The module uses the following default settings.
+The **dataFEED edgeConnector** module uses the following default settings.
 
 Web interface username and password:  
 
@@ -14,4 +14,4 @@ Ports in use by the different services:
 | :-- | --: |
 | Web interface HTTP | 8099 |
 | Web interface HTTPS | 443 |
-| OPC UA server default endpoint | 4897 |
+| OPC UA Server default endpoint | 4897 |

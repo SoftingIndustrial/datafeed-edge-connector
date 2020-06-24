@@ -144,9 +144,9 @@ The page provides an overview of the currently configured connections including 
 
 From the title bar of the connection overview table a new connection can be added and existing connections can either be edited or deleted.  
 
-- To add a new connection click the ![Add Connection](../documentation_pics/add_connection.png) button.  
-- To edit an existing connection, first select it from the overview table and click the ![Edit Connection](../documentation_pics/edit_connection.png) button.  
-- To delete an existing connection, first select it from the overview table and click the ![Delete Connection](../documentation_pics/delete_connection.png) button.  
+- To add a new connection click the ***Add Connection*** ![Add Connection](../documentation_pics/add_connection.png) button.  
+- To edit an existing connection, first select it from the overview table and click the ***Edit Connection*** ![Edit Connection](../documentation_pics/edit_connection.png) button.  
+- To delete an existing connection, first select it from the overview table and click the ***Delete Connection*** ![Delete Connection](../documentation_pics/delete_connection.png) button.  
 
 Adding a new connection and editing an existing connection, both open an identical page. The only difference is, that for an existing connection the ***Connection Name*** property can not be changed.
 
