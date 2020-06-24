@@ -188,7 +188,7 @@ The OPC UA Server functionality and configuration is described in the [OPC UA Co
 ## Licenses
 
 ### Softing License
-dataFEED edgeConnector Siemens comes with a time-limited and functionaly unlimited demo mode.
+**dataFEED edgeConnector Siemens**'s scope of delivery includes a time-limited and functionaly unlimited demo mode.
 The demo mode is started immediately once the module has been started without a valid license.
 It will expire after 72 hours and dataFEED edgeConnector Siemens stops working.  
 To remove the time limitation of the demo mode dataFEED edgeConnector Siemens must be licensed.

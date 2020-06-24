@@ -1,4 +1,4 @@
-# dataFEED edgeConnector Family
+# dataFEED edgeConnector Product Family
 
 ## Indroduction
 
