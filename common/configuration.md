@@ -13,11 +13,11 @@ A login page is shown. If this is the first time running the **dataFEED edgeConn
 
 ### Secure Admin Account
 
-**Recommendation:**
+**Recommendation:**<br>
 We strongly recommend to replace the default administrator password with an individual, secure password.  
-To change the administrator password navigate to ***General Settings -> Users & Identity Management*** and select the ***admin*** user, as shown in the following screenshot:  
+To change the administrator password navigate to ***General Settings -> Users & Identity Management -> Users & Identities*** and select the ***admin*** user as shown in the following screenshot:  
 !["General Settings" -> "Users & Identies"](../documentation_pics/edit-admin1.png)
-  - Click the ***Edit user*** ![edit_user](../documentation_pics/edit_user.png) button.
+  - Click the ***Edit user*** ![edit_user](../documentation_pics/edit_user.png) button
   - On the following user settings page select ***Change Password***.
   - In the change password input fields enter the new password in each of the two fields.
   - Finally click the ***Save*** button.
@@ -25,7 +25,7 @@ To change the administrator password navigate to ***General Settings -> Users & 
 ## Status
 On top of each page a module information summary is presented.  
 ![toprow_status](../documentation_pics/toprow_status.png)  
-The status displays if the module is in running or in halted mode. It also includes information about the current license state. If the module is running in demo mode, the keyword `DEMO` is appended to the status.
+The status displays if the module is in running or in halted mode. It also includes information about the current license status. If the module is running in demo mode, the keyword *DEMO* is appended to the status.
 The user that is currently logged in is presented in a separate information box.
 Use the ***Logout*** button to logout the current user, close the session and return to the [login page](#login)  
 
@@ -36,9 +36,9 @@ On the left hand side a navigation pane is provided to switch between the differ
 
 ## Connectivity
 
-The Connectivity section contains the configuration of the OPC UA Server Modules and the PLC Connectivity subsections.
+The Connectivity section contains the configuration of the OPC UA Server modules and the PLC Connectivity subsections.
 
-The functionality and configuration of the OPC UA Server component is described in the [OPC UA Configuration](../common/opcua.md) document.
+The OPC UA Server functionality and configuration is described at the [OPC UA Configuration page](../common/opcua.md).
 
 The PLC connectivity is described in detail in the appropriate section of the **dataFEED edgeConnector** documents:
 
