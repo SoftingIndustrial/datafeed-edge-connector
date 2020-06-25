@@ -11,7 +11,7 @@ The namespace configuration is done by browsing SIMATIC STEP 7 and TIA Portal va
 
 ## Default Settings
 
-The default settings are described in the [Default Settings](../common/defaults.md) chapter.
+The default settings are described at the [Default Settings page](../common/defaults.md).
 
 ## Running **dataFEED edgeConnector Siemens**
 
@@ -26,7 +26,7 @@ To get the latest Docker image you need to pull the image from [https://hub.dock
 docker image pull softingindustrial/edgeconnector-siemens:latest
 ```
 
-### Run the Docker Container
+### Running the Docker Container
 
 After the Docker image has been pulled, a Docker container can be started.
 The webserver and OPC UA Server of the module have to be exposed on the host machine if **dataFEED edgeConnector Siemens** shall be accessed from outside the dockerized environment.
@@ -46,36 +46,36 @@ The `-p` switch allows to map a complete port range `start-end:start-end`, the `
 ```bash
 docker container run -d -p 1443:443 -p 8099:8099 -p 4800-4900:4800-4900 --name edgeConnector softingindustrial/edgeconnector-siemens
 ```
-For further information about supported command line options please refer to the [official Docker command line documentation](https://docs.docker.com/engine/reference/commandline/run/)
+For further information about supported command line options please refer to the [Run section](https://docs.docker.com/engine/reference/commandline/run/) of the official Docker command line documentation.
 
-### Stop the Docker Container
+### Stopping the Docker Container
 
 The module container can be stopped by the following command:
 ```bash
 docker container stop edgeConnector
 ```
-Please refer to the [official Docker command line documentation](https://docs.docker.com/engine/reference/commandline/container_stop/) for more details.
+Please refer to the [Stop section](https://docs.docker.com/engine/reference/commandline/container_stop/) of the official Docker command line documentation for more details.
 
-### Start the Docker Container
+### Starting the Docker Container
 If the module container was stopped and not removed, it can be started again from its last state:
 ```bash
 docker container start edgeConnector
 ```
-Please refer to the [official Docker command line documentation](https://docs.docker.com/engine/reference/commandline/container_start/) for more details.
+Please refer to the [Start section](https://docs.docker.com/engine/reference/commandline/container_start/) of the official Docker command line documentation for more details.
 
 
-### Remove the Docker Container
+### Removing the Docker Container
 
 The module container can be removed at any time:
 ```bash
 docker container rm -f edgeConnector
 ```
 After removing the container its last state is lost.
-Please refer to the [official Docker command line documentation](https://docs.docker.com/engine/reference/commandline/container_rm/) for more details.
+Please refer to the [Remove section](https://docs.docker.com/engine/reference/commandline/container_rm/) of the official Docker command line documentation for more details.
 
 ### Configuration Volume
 
-Optionally a Docker volume to store the configuration permanently could be created:
+Optionally a Docker volume can be created to store the configuration permanently:
 
 ```bash
 docker volume create edge-connector-config
@@ -89,43 +89,45 @@ docker container run -d -v edge-connector-config:/config -p 1443:443 -p 8099:809
 
 ## Configuration
 
-The configuration part, which is common for all kinds of **dataFEED edgeConnector** modules is described in the [Configuration](../common/configuration.md) chapter.
+The configuration part, which is common for all kinds of **dataFEED edgeConnector** modules is described at the [Configuration page](../common/configuration.md).
 
 ### SIMATIC S7 1200/1500 Connection Configuration
 
 **dataFEED edgeConnnector Siemens** provides an interface to connect and fetch data from SIMATIC S7 1200 or 1500 series PLCs.
 
-To configure a connection to a SIMATICs S7 1200 or S7 1500 PLC, navigate to ***Connectivity -> PLC -> Siemens S7 1200/1500*** as depicted in the navigation tree below:
+To configure a connection to a SIMATICs S7 1200 or S7 1500 PLC, navigate to ***Connectivity*** -> ***PLC*** -> ***Siemens S7 1200/1500*** in the navigation tree as depicted below:
 
 ![s7_navigation](../documentation_pics/s7_navigation.png)
 
-The page provides an overview of the currently configured connections including the ***Name***, the ***IP Address***, the connection ***Status*** and the ***Enabled*** state.
+The page provides an overview of the currently configured connections including its ***Name***, its ***IP Address***, its connection ***Status*** and its ***Enabled*** status.
+
 ![s7_overview](../documentation_pics/s7_overview.png)
 
 | Column Name | Information Details |
 | :-- | :-- |
 | Name | Connection name as defined at creation time|
 | IP Address | IP address or host name of PLC |
-| Status | Status of PLC connection<br> The connection state can be `Connected` if the connection to the PLC is established or `Disconnected` if there is no connection to the PLC<br>The connection status is dynamically updated every 2 seconds. |
-| Enabled | Configuration status of the PLC connection<br>Possible values are `Enabled` or `Disabled`.<br>Note: Clicking the current configuration state icon triggers a state toggle: *Enabled* -> *Disabled* respectively *Disabled* -> *Enabled* |
+| Status | Status of PLC connection<br> The connection status can be `Connected` if the connection to the PLC is established or `Disconnected` if there is no connection to the PLC<br>The connection status is dynamically updated every 2 seconds. |
+| Enabled | Configuration status of the PLC connection<br>Possible values are `Enabled` or `Disabled`.<br>**Note:**<br>Clicking the current configuration status icon triggers a state toggle: *Enabled* -> *Disabled* respectively *Disabled* -> *Enabled* |
 
-From the title bar of the connection overview table a new connection can be added and existing connections can be either edited or deleted.  
+From the title bar of the connection overview table a new connection can be added and existing connections can either be edited or deleted.  
 
 - To add a new connection click the ***Add Connection*** ![Add Connection](../documentation_pics/add_connection.png) button.  
 - To edit an existing connection, first select it from the overview table and click the ***Edit Connection*** ![Edit Connection](../documentation_pics/edit_connection.png) button. 
 - To delete an existing connection, first select it from the overview table and click the ***Delete Connection*** ![Delete Connection](../documentation_pics/delete_connection.png) button.  
 
 Adding a new connection and editing an existing connection, both open an identical page. The only difference is, that for an existing connection the ***Connection Name*** property cannot be changed.  
+
 ![s71200-1500_connection_settings_basic](../documentation_pics/s7_connection_settings_basic.png)
 
 The configuration parameters are described below:
 
 | Parameter Name        | Default Value                 | Description                                                  |
 | --------------------- | ----------------------------- | ------------------------------------------------------------ |
-| Connection Name       | \<empty\>                     | Connection name as it will show up in the connection overview page<br>The connection name has to be unique and can only be assigned when adding a new connection.<br>Note: The following characters are not supported in this field:  *# ^ < > / $* |
+| Connection Name       | \<empty\>                     | Connection name as it will show up in the connection overview page<br>The connection name has to be unique and can only be assigned when adding a new connection.<br>**Note:**<br>The following characters are not supported in the **Connection Name** field:  *# ^ < > / $* |
 | Enabled               | *Enabled*                     | Instructs **dataFEED edgeConnector Siemens** to either *Enable* (checked) or *Disable* (unchecked) the currently configured PLC connection. |
 | PLC Address           | \<empty\>                     | Address of the target device (SIMATIC S7 1200/1500 PLC)<br>This is either an IP address or a hostname. |
-| Select Address Spaces | AllConnection<br>AddressSpace | Destination aggregation address space used to store the address space corresponding to this PLC connection<br>It is possible to create additional aggregation address spaces by filling in the desired address space name in the input field and clicking the ***Add*** button. All available address spaces are visible in a list and can be selected as destination address space for the OPC UA Client connection by checking the corresponding checkbox.<br>For more details about the OPC UA Server functionality and configuration please refer to the [OPC UA Configuration](../common/opcua.md) documentation. |
+| Select Address Spaces | AllConnection<br>AddressSpace | Destination aggregation address space used to store the address space corresponding to this PLC connection<br>It is possible to create additional aggregation address spaces by filling in the desired address space name in the input field and clicking the ***Add*** button. All available address spaces are visible in a list and can be selected as destination address space for the OPC UA Client connection by checking the corresponding checkbox.<br>For more details about the OPC UA Server functionality and configuration please refer to the [OPC UA Configuration page](common/opcua.md). |
 
 ## Simulation Mode
 
@@ -183,7 +185,7 @@ When visualizing one of each of the simulation types, it may look like this:
 
 ## OPC UA Server
 
-The OPC UA Server functionality and configuration is described in the [OPC UA Configuration](../common/opcua.md) document.
+The OPC UA Server functionality and configuration is described at the [OPC UA Configuration page](common/opcua.md).
 
 ## Licenses
 
@@ -195,11 +197,11 @@ To remove the time limitation of the demo mode **dataFEED edgeConnector Siemens*
 **dataFEED edgeConnector Siemens** uses a floating license mechanism.
 A working floating license server is required to have **dataFEED edgeConnector Siemens** successfully licensed.  
 
-Please see the [License README file](../Licenses/README.md) for further details.
+Please see the [License README page](Licenses/README.md) for further details.
 
 ### Softing License
 
-The license activation for **dataFEED edgeConnector Siemens** is described in the [README file of the Softing License Server](Licenses/SoftingLicenseServer/README.md).
+The license activation for **dataFEED edgeConnector Siemens** is described at the [README page](Licenses/SoftingLicenseServer/README.md) of the Softing License Server.
 
 #### License Server Connection Configuration
 
@@ -207,4 +209,4 @@ Please see the section [License Server Connection Configuration](Licenses/README
 
 ### Open Source Licenses
 
-For the license information of the open source components used by **dataFEED edgeConnector Siemens**, please see the [Open Source documentation](Licenses/OpenSourceLicenses.md).
+For the license information of the open source components used by **dataFEED edgeConnector Siemens**, please see the [Open Source page](Licenses/OpenSourceLicenses.md).

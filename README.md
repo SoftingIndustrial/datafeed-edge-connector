@@ -26,17 +26,17 @@ To remove the time limitation of the demo mode the **dataFEED edgeConnector** mo
 The **dataFEED edgeConnector** modules use a floating license mechanism.
 A working floating license server is required to have the **dataFEED edgeConnector** module successfully licensed.  
 
-Please see the [License README file](Licenses/README.md) for further details.
+Please see the [License README page](Licenses/README.md) for further details.
 
 ## Softing License
 
-The license activation for Softing's **dataFEED edgeConnector** product family is described in the [README file of the Softing License Server](Licenses/SoftingLicenseServer/README.md).
+The license activation for Softing's **dataFEED edgeConnector** product family is described at the [README page](Licenses/SoftingLicenseServer/README.md) of the Softing License Server.
 
 ### License Server Connection Configuration
 
-Please see the section [License Server Connection Configuration](Licenses/README.md#license-server-connection-configuration) of the License README file for further details.
+Please see the [License Server Connection Configuration section](Licenses/README.md#license-server-connection-configuration) of the License README page for further details.
 
 
 ## Open Source Licenses
 
-For the license information of the open source components used by the **dataFEED edgeConnector** product family, please see the [Open Source documentation](Licenses/OpenSourceLicenses.md).
+For the license information of the open source components used by the **dataFEED edgeConnector** product family, please see the [Open Source page](Licenses/OpenSourceLicenses.md).

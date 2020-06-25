@@ -10,7 +10,7 @@ It is possible to connect up to 5 Siemens SINUMERIK 840D SL/PL controllers.
 
 ## Default Settings
 
-The default settings are described in the [Default Settings](../common/defaults.md) chapter.
+The default settings are described at the [Default Settings page](../common/defaults.md).
 
 ## Physical Connection to SINUMERIK 840D Controller
 
@@ -29,11 +29,11 @@ SINUMERIK 840D SL has 3 Ethernet interfaces:
 ![Network Configuration](../documentation_pics/OPCUA_activate_009.png)
 
 **dataFEED edgeConnector 840D** uses the SIMATIC S7 communication protocol (TCP/102) of SINUMERIK 840D SL.
-By default, this protocol is available at interface *X120*. Alternatively, it can be enabled for interface *X130*.
+By default, this protocol is available at the *X120* interface. Alternatively, it can be enabled for the *X130* interface.
 
 Thus, the host PC running **dataFEED edgeConnector 840D** needs either
-  - a physical connection to the interface *X120* and a unique IPv4 address within the corresponding network or
-  - a physical connection to the interface *X130*, a unique IPv4 address within the corresponding network as well as the SIMATIC S7 communication protocol explicitly enabled for this interface.
+  - a physical connection to the *X120* interface and a unique IPv4 address within the corresponding network or
+  - a physical connection to the *X130* interface, a unique IPv4 address within the corresponding network as well as the SIMATIC S7 communication protocol explicitly enabled for this interface.
 
 ## Physical Connection to SINUMERIK 840D PL
 
@@ -58,7 +58,7 @@ To get the latest Docker image you need to pull the image from [https://hub.dock
 docker image pull softingindustrial/edgeconnector-840d:latest
 ```
 
-### Run the Docker Container
+### Running the Docker Container
 
 After the Docker image has been pulled, a Docker container can be started.
 The webserver and OPC UA Server of the module have to be exposed on the host machine if **dataFEED edgeConnector 840D** shall be accessed from outside the dockerized environment.
@@ -78,36 +78,36 @@ The `-p` switch allows to map a complete port range `start-end:start-end`, the `
 ```bash
 docker container run -d -p 1443:443 -p 8099:8099 -p 4800-4900:4800-4900 --name edgeConnector softingindustrial/edgeconnector-840d
 ```
-For further information about supported command line options please refer to the [official Docker command line documentation](https://docs.docker.com/engine/reference/commandline/run/)
+For further information about supported command line options please refer to the [Run section](https://docs.docker.com/engine/reference/commandline/run/) of the official Docker command line documentation.
 
-### Stop the Docker Container
+### Stopping the Docker Container
 
 The **dataFEED edgeConnector 840D** container can be stopped by the following command:
 ```bash
 docker container stop edgeConnector
 ```
-Please refer to the [official Docker command line documentation](https://docs.docker.com/engine/reference/commandline/container_stop/) for more details.
+Please refer to the [Stop section](https://docs.docker.com/engine/reference/commandline/container_stop/) of the official Docker command line documentation for more details.
 
-### Start the Docker Container
+### Starting the Docker Container
 If the module container was stopped and not removed, it can be started again from its last state:
 ```bash
 docker container start edgeConnector
 ```
-Please refer to the [official Docker command line documentation](https://docs.docker.com/engine/reference/commandline/container_start/) for more details.
+Please refer to the [Start section](https://docs.docker.com/engine/reference/commandline/container_start/) of the official Docker command line documentation for more details.
 
 
-### Remove the Docker Container
+### Removing the Docker Container
 
 The module container can be removed at any time:
 ```bash
 docker container rm -f edgeConnector
 ```
 After removing the container its last state is lost.
-Please refer to the [official Docker command line documentation](https://docs.docker.com/engine/reference/commandline/container_rm/) for more details.
+Please refer to the [Remove section](https://docs.docker.com/engine/reference/commandline/container_rm/) of the official Docker command line documentation for more details.
 
 ### Configuration Volume
 
-Optionally a Docker volume can be creatged for storing the configuration permanently:
+Optionally a Docker volume can be created for storing the configuration permanently:
 ```bash
 docker volume create edge-connector-config
 ```
@@ -120,17 +120,18 @@ docker container run -d -v edge-connector-config:/config -p 1443:443 -p 8099:809
 
 ## Configuration
 
-The configuration part, which is common for all kinds of **dataFEED edgeConnector** modules is described in the [Configuration](../common/configuration.md) chapter.
+The configuration part, which is common for all kinds of **dataFEED edgeConnector** modules is described at the [Configuration page](../common/configuration.md).
 
 ### Siemens SINUMERIK 840D Connection Configuration
 
 **dataFEED edgeConnector 840D** provides an interface to connect and fetch data from Siemens SINUMERIK 840D series controllers.
 
-To configure a Siemens SINUMERIK 840D connection, navigate to ***Connectivity -> PLC -> Siemens SINUMERIK 840D*** as depicted in the navigation tree below:
+To configure a Siemens SINUMERIK 840D connection, navigate to ***Connectivity*** -> ***PLC*** -> ***Siemens SINUMERIK 840D*** in the navigation tree as depicted below:
 
 ![sinumerik 840d_navigation](../documentation_pics/s840d_navigation.png)
 
-The page provides an overview of the currently configured connections including the ***Name***, the ***IP address***, the connection ***NCK Status***, the ***PLC Status*** and the ***Enabled*** state.  
+The page provides an overview of the currently configured connections including its ***Name***, its ***IP address***, its connection ***Status NCK***, its ***Status PLC*** and its ***Enabled*** status.  
+
 ![sinumerik 840d_overview](../documentation_pics/s840d_overview.png)  
 
 
@@ -138,9 +139,9 @@ The page provides an overview of the currently configured connections including 
 | :-- | :-- |
 | Name | Connection name as defined at creation time |
 | IP Address | IP address or host name of PLC |
-| Status NCK | Status of NCK connection<br>The connection state can be `Connected` if the connection to the NCK is established; `Disconnected` if there is no connection to the NCK or it can be `Disabled` if the connection to the NCK has not been configured for this entry.<br>The connection status is dynamically updated every 2 seconds. |
-| Status PLC | Status of PLC connection<br>The connection state can be `Connected` if the connection to the PLC is established; `Disconnected` if there is no connection to the PLC or it can be `Disabled` if the connection to the PLC has not been configured for this entry.<br>The connection status is dynamically updated every 2 seconds. |
-| Enabled | Configuration status of PLC connection<br>Possible values are `Enabled` or `Disabled`.<br>Note: Clicking the current configuration state icon triggers a state toggle: *Enabled* -> *Disabled* respectively *Disabled* -> *Enabled*.<br>When in *Disabled* state both the NCK and PLC connections are disabled, when *Enabled* only the connection types initially configured for this connection are enabled. |
+| Status NCK | Status of NCK connection<br>The connection status can be `Connected` if the connection to the NCK is established; `Disconnected` if there is no connection to the NCK or it can be `Disabled` if the connection to the NCK has not been configured for this entry.<br>The connection status is dynamically updated every 2 seconds. |
+| Status PLC | Status of PLC connection<br>The connection status can be `Connected` if the connection to the PLC is established; `Disconnected` if there is no connection to the PLC or it can be `Disabled` if the connection to the PLC has not been configured for this entry.<br>The connection status is dynamically updated every 2 seconds. |
+| Enabled | Configuration status of PLC connection<br>Possible values are `Enabled` or `Disabled`.<br>**Note:**<br>Clicking the current configuration status icon triggers a state toggle: *Enabled* -> *Disabled* respectively *Disabled* -> *Enabled*.<br>When in *Disabled* state both the NCK and PLC connections are disabled, when *Enabled* only the connection types initially configured for this connection are enabled. |
 
 From the title bar of the connection overview table a new connection can be added and existing connections can either be edited or deleted.  
 
@@ -156,11 +157,11 @@ The configuration parameters are described below:
 
 | Parameter Name        | Default Value                 | Description                                                  |
 | --------------------- | ----------------------------- | ------------------------------------------------------------ |
-| Connection Name       | \<empty\>                     | Connection name as it will show up in the connection overview page<br>The connection name has to be unique and can only be assigned when adding a new connection.<br>Note: The following characters are not supported in this field:  *# ^ < > / $* |
+| Connection Name       | \<empty\>                     | Connection name as it will show up in the connection overview page<br>The connection name has to be unique and can only be assigned when adding a new connection.<br>**Note:**<br>The following characters are not supported in the ***Connection Name*** field:  *# ^ < > / $* |
 | NCK Connection        |                               | Controls whether the NCK Connection for this SINUMERIK 840D connection is enabled or not.<br>Ticking the checkbox enables the connection and allows the user to upload a custom *AWL* symbol file. Uploading a symbol file is optional. In case no *AWL* file is uploaded, a generic symbol file is used by **dataFEED edgeConnector 840D**. The default *AWL* symbol file is intended for SINUMERIK 840D SL series devices. For SINUMERIK 840D PL series devices a custom *AWL* symbol file like [Standard_pl.awl](Standard_pl.awl) needs to be uploaded.  |
 | PLC Connection        |                               | Controls whether the PLC Connection for this SINUMERIK 840D connection is enabled or not.<br>Ticking the checkbox enables the connection and allows the user to upload a custom *SDFI* symbol file. Uploading a symbol file is optional. In case no *SDFI* file is uploaded, a generic symbol file is used by **dataFEED edgeConnector 840D**. |
 | PLC Address           | \<empty\>                     | Address of the target device (SINUMERIK 840D)<br>This is either an IP address or a hostname. |
-| Select Address Spaces | AllConnection<br>AddressSpace | Destination aggregation address space used to store the address space corresponding to this PLC connection<br>It is possible to create additional aggregation address spaces by filling in the desired address space name in the input field and clicking the ***Add*** button. All available address spaces are visible in a list and can be selected as destination address space for the OPC UA Client connection by checking the corresponding checkbox.<br>For more details about the OPC UA Server functionality and configuration please refer to the [OPC UA Configuration](../common/opcua.md) documentation. |
+| Select Address Spaces | AllConnection<br>AddressSpace | Destination aggregation address space used to store the address space corresponding to this PLC connection<br>It is possible to create additional aggregation address spaces by filling in the desired address space name in the input field and clicking the ***Add*** button. All available address spaces are visible in a list and can be selected as destination address space for the OPC UA Client connection by checking the corresponding checkbox.<br>For more details about the OPC UA Server functionality and configuration please refer to the [OPC UA Configuration page](../common/opcua.md). |
 
 #### Siemens SINUMERIK 840D Connection Advanced Configuration
 
@@ -170,33 +171,33 @@ The advanced configuration page of a SINUMERIK 840D connection allows to change 
 
 | Parameter Name       | Default Value       | Description                                                  |
 | -------------------- | ------------------- | ------------------------------------------------------------ |
-| TCP Port             | 102                 | Port used to connect to the target device (SINUMERIK 840D)<br>This should remain on the default value. |
+| TCP Port             | 102                 | Port used to connect to the target device (SINUMERIK 840D)<br>The TCP port should remain at the default value. |
 | NCK TSAP Selection   | Simatic 840D SL NCK | Allows to switch between the TSAP for SINUMERIK 840D SL, SINUMERIK 840D PL or a user defined TSAP. |
-| NCK TSAP Destination | \<empty\>           | Input field for customized TSAP setting<br>Allowed input are hexadecimal digits, e.g.: `02 01`, `2 1`, `0201`. |
+| NCK TSAP Destination | \<empty\>           | Input field for customized TSAP setting<br>Allowed input are hexadecimal digits, e.g. `02 01`, `2 1`, `0201`. |
 | PLC TSAP Selection   | Simatic 840D SL PLC | Allows to switch between the TSAP for SINUMERIK 840D SL, SINUMERIK 840D PL or a user defined TSAP. |
-| PLC TSAP Destination | \<empty\>           | Input field for customized TSAP setting<br>Allowed input are hexadecimal digits, e.g.: `02 01`, `2 1`, `0201`. |
-| Enable NCU Alarm     | *Disabled*          | Enables or disables the subscriptions of NCU and PLC alarms from SINUMERIK 840D<br>The alarms are provided in two growing string arrays within the OPC UA Namespace. |
+| PLC TSAP Destination | \<empty\>           | Input field for customized TSAP setting<br>Allowed input are hexadecimal digits, e.g. `02 01`, `2 1`, `0201`. |
+| Enable NCU Alarm     | *Disabled*          | Enables or disables the subscription of NCU and PLC alarms from SINUMERIK 840D<br>The alarms are provided in two growing string arrays within the OPC UA Namespace. |
 
 #### PLC Address Space Configuration By *SDFI* File
 
 The symbolic names of the SIMATIC S7 data need to be provided via an *SDFI* file.
 You can generate the *SDFI* file using the Softing **dataFEED Exporter** tool.
 This tool uses the STEP 7 or TIA Portal project files as input and allows to select one SIMATIC S7 device to generate the *SDFI* file containing the symbol definition.
-Proceed as follows to convert and import symbol files:
-	1. Download [**dataFEED Exporter**](https://data-intelligence.softing.com/products/iot-gateways/datafeed-exporter/#tx-dftabs-tabContent2) to that PC where the PLC configuration software (STEP 7 or TIA Portal V13) is installed
-	2. Execute the installation file and follow the instructions of the installation wizard
-	3. Run **dataFEED Exporter**
-	4. Follow the **dataFEED Exporter** instructions to load and convert your STEP 7 or TIA Portal symbol files
-	5. Save the converted *SDFI* file to your PC
+Proceed as follows to convert and import symbol files:<br>
+	1. Download [**dataFEED Exporter**](https://data-intelligence.softing.com/products/iot-gateways/datafeed-exporter/#tx-dftabs-tabContent2) to that PC where the PLC configuration software (STEP 7 or TIA Portal V13) is installed<br>
+	2. Execute the installation file and follow the instructions of the installation wizard<br>
+	3. Run **dataFEED Exporter**<br>
+	4. Follow the **dataFEED Exporter** instructions to load and convert your STEP 7 or TIA Portal symbol files<br>
+	5. Save the converted *SDFI* file to your PC<br>
 	6. Upload the *SDFI* file to the [Siemens SINUMERIK 840D connection configuration](#siemens-sinumerik-840d-connection-configuration).
 
 #### NCK Address Space Definition By *AWL* file
 
-The creation of *AWL* files is described in ![uaGate840D_AdditionalVariables_C_EN_190801_L_100.pdf](uaGate840D_AdditionalVariables_C_EN_190801_L_100.pdf).
+The creation of *AWL* files is described in the ![uaGate840D_AdditionalVariables_C_EN_190801_L_100.pdf](uaGate840D_AdditionalVariables_C_EN_190801_L_100.pdf) document.
 
 ## OPC UA Server
 
-The OPC UA Server functionality and configuration is described in the [OPC UA Configuration](../common/opcua.md) document.
+The OPC UA Server functionality and configuration is described at the [OPC UA Configuration page](../common/opcua.md).
 
 ## Licenses
 
@@ -208,16 +209,16 @@ To remove the time limitation of the demo mode **dataFEED edgeConnector 840D** m
 **dataFEED edgeConnector 840D** uses a floating license mechanism.
 A working floating license server is required to have **dataFEED edgeConnector 840D** successfully licensed.  
 
-Please see the [License README file](../Licenses/README.md) for further details.
+Please see the [License README page](../Licenses/README.md) for further details.
 
 ### Softing License
 
-The license activation for **dataFEED edgeConnector 840D** is described in the [README file of the Softing License Server](Licenses/SoftingLicenseServer/README.md).
+The license activation for **dataFEED edgeConnector 840D** is described at the [README page](Licenses/SoftingLicenseServer/README.md) of the Softing License Server.
 
 #### License Server Connection Configuration
 
-Please see the section [License Server Connection Configuration](Licenses/README.md#license-server-connection-configuration) of the License README file for further details.
+Please see the section [License Server Connection Configuration](Licenses/README.md#license-server-connection-configuration) of the License README page for further details.
 
 ### Open Source Licenses
 
-For the license information of the open source components used by **dataFEED edgeConnector 840D**, please see the [Open Source documentation](Licenses/OpenSourceLicenses.md).
+For the license information of the open source components used by **dataFEED edgeConnector 840D**, please see the [Open Source page](Licenses/OpenSourceLicenses.md).
