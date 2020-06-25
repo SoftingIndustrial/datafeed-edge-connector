@@ -1,8 +1,8 @@
-# Softing open source license declaration of dataFEED edgeConnector module images
+# Softing Open Source License Declaration for **dataFEED edgeConnector** Product Family
 
-Many open source component copyrights refer to one of these common public licenses, which are within the Docker images in the directory `/usr/share/common-licenses/`. To avoid the need to copy and or read several times the same license text file, those licenses are collected in `/usr/share/common-licenses/` within the Docker images. So if a copyright file refers to one of those licenses, please look into this directory within the docker image
+Many open source component copyrights refer to one of the common public licenses contained in the Docker images in the directory `/usr/share/common-licenses/`. To avoid the need to copy and or read an identical license text file several times, those licenses are collected in `/usr/share/common-licenses/` within the Docker images. Thus, if a copyright file refers to one of those licenses, please look into this directory.
 
-You can download the sources of all the open source based binaries, which have been got from Ubuntu within the Softing Docker image.
+You can download the sources of all open source-based binaries, which have been got from Ubuntu within the Softing Docker image.
 To do this, use the following commands:
 
 ```bash
@@ -18,7 +18,7 @@ To use this offer, please contact [info.automation@softing.com](mailto:info.auto
 
 | Name | Source | License | Change Info |
 | ---- | ------ | ------- | ----------- |
-|      | (Link to the maintainer page or the source were we have got the software from) |  | (if modified by Softing) |
+|      | (Link to the maintainer page or the source were Softing has got the software from) |  | (if modified by Softing) |
 | jsoncpp-0 | [https://github.com/open-source-parsers/jsoncpp](https://github.com/open-source-parsers/jsoncpp) | MIT | |
 | libfcgi   | [https://github.com/toshic/libfcgi](https://github.com/toshic/libfcgi) | [LICENSE.TERMS](https://github.com/toshic/libfcgi/blob/master/LICENSE.TERMS) | |
 | libzip | [https://github.com/nih-at/libzip](https://github.com/nih-at/libzip) | BSD | |
