@@ -1,54 +1,55 @@
-# Softing License Server
+# **Softing License Server**
 
 ![](LM_available_licenses.png)
 
-The Softing License Server is a machine used to host network software licenses (also called floating or shared licenses) that are installed locally on an individual users' machine. The network licenses can be shared among many users/applications.
+**Softing License Server** is a machine used to host network software licenses (also called floating licenses or shared licenses) that are installed locally on an individual users' machines. The network licenses can be shared among many users and/or applications.
 
-Softing License Server fulfills requests to run the network application if the requested licenses are available. When the network license is released (for example, a user closes the application), the license is moved in the license server's available license pool and is made available for other checkout requests.
+**Softing License Server** fulfills requests to run a network application if the required license is available. When the network license is released (for example, a user closes the application), the license is moved to the license server's available license pool and is made available for other checkout requests.
 
-Install the Softing License Manager V4 on a PC with internet connection (download link: [https://data-intelligence.softing.com/products/edge-connector-docker/datafeed-edgeconnector-siemens/#tx-dftabs-tabContent2](https://data-intelligence.softing.com/products/edge-connector-docker/datafeed-edgeconnector-siemens/#tx-dftabs-tabContent2)).
+Install **Softing License Manager** V4 on a PC with Internet connection from [https://data-intelligence.softing.com/products/edge-connector-docker/datafeed-edgeconnector-siemens/#tx-dftabs-tabContent2](https://data-intelligence.softing.com/products/edge-connector-docker/datafeed-edgeconnector-siemens/#tx-dftabs-tabContent2).
 
-## Activate license with internet connection
+## Activate License with Internet Connection
 
-Activation the license requires a computer with internet access. If the connection to the internet requires a proxy server, please make sure the connection settings are properly configured using the Proxy Settings... button in the Settings page of the Configuration section.
+License activation requires a computer with Internet access. If the connection to the Internet requires a proxy server, please make sure the connection settings are properly configured using the ***Proxy settings...*** button at the ***Settings*** page of the ***Configuration*** section.
 
-  * First of all, please enable Provide all PC-Id’s under Settings ![](LM_provide_all_pc_id.png)
-  * Please verify that the Softing License Manager V4 can correctly communicate with the Softing license server by performing a connection test - Test server connection... button.  
+  * First of all, please enable the ***Provide all PC-Id’s*** checkbox at the ***Settings page***<br>  
+    ![](LM_provide_all_pc_id.png)
+  * Please verify that **Softing License Manager** V4 can correctly communicate with the **Softing License Server** by performing a connection test using the ***Test server connection...*** button.<br>  
     ![](LM_test_connection.png)  
-    If the connection test is not successful, please double-check the proxy settings. The connection test status must return 200 in order to properly activate a license.
-	If you cannot set up a connection, please refer to [Activate license without internet connection](#activate-license-without-internet-connection).
-  * If the connection test is successful, please proceed with the license activation by selecting the desired PC-Id, which should be used for the activation process then type in the License Key and press the Activate license button. ![](LM_activate_license.png)
-  * After the successful activation the license will be shown in the list of the available licenses. Please note that the license type (Local / Network) will be automatically provided by the Softing License Server, based on the license key. "Local" licenses can be activated either against machine HostIDs - thus having the exact "Local" term be displayed next to the license - or against an attached USB HASP Dongle - having the term "Dongle" displayed next to the license. ![](LM_license_is_activated.png)
-  * If your floating license server is not running on the current machine (with internet access) or the path to the Softing License Server from Softing License Manager V4 configuration file (`C:\Program Files (x86)\Softing\LicenseManager\SLMenduserApp.xml`) is not correct then the Softing License Server should be restarted manually. Please note that license activations for remote floating license servers is not possible with the provided HostIDs, you would rather have to use the exported HostIDs as in the [Activate license without internet connection chapter](#activate-license-without-internet-connection). ![](LM_restart_license_server.png)
-  * The ![LM-X License Server](https://docs.x-formation.com/display/LMX/LM-X+License+Server) is listening on both TCP and UDP ports 6200. Please create a Windows Defender Firewall - Inbound Rule for port 6200 for both TCP and UDP protocol types in order to allow other PCs to connect to this floating license server. ![](LM_inbound_rule.png)
+    For properly activating a license the connection test has to return the status code *200*. If the connection test is not successful, please double-check the proxy settings.<br>
+    If you cannot set up a connection, please refer to the [Activate License Without Internet Connection section](#activate-license-without-internet-connection).<br>
+  * If the connection test is successful, please proceed with the license activation by selecting the desired PC to be used for the activation process from the ***PC-Id*** selection list, enter the license key in the ***License Key*** field and click the ***Activate license*** button.<br>![](LM_activate_license.png)
+  * After the successful activation the license will be shown in the list of the available licenses.<br>Please note that the license type (*Local* resp. *Network*) will be automatically provided by the ***Softing License Server***, based on the license key. A *Local* license can be activated either using machine HostIDs (here the term *Local* is shown next to the license) or using an attached USB HASP Dongle (here the term *Dongle* is shown next to the license).<br>![](LM_license_is_activated.png)
+  * If your floating license server is not running on the current machine (with Internet access) or the path to **Softing License Server** provided by the **Softing License Manager** V4 configuration file (`C:\Program Files (x86)\Softing\LicenseManager\SLMenduserApp.xml`) is not correct, **Softing License Server** has to be restarted manually.<br>Please note that the license activation for remote floating license servers is not possible by providing the HostIDs. Rather the export of the HostID is required as described in the [Activate License Without Internet Connection chapter](#activate-license-without-internet-connection).<br>![](LM_restart_license_server.png)
+  * The ![LM-X License Server](https://docs.x-formation.com/display/LMX/LM-X+License+Server) is listening to both, the TCP and UDP ports 6200. Please create a Windows Defender Firewall - Inbound Rule for port 6200 for both TCP and UDP protocol types in order to allow other PCs to connect to this floating license server.<br>![](LM_inbound_rule.png)
 
 
-## Activate license without internet connection
+## Activate License Without Internet Connection
 
-  * Export a single PC-Id, from the PC on which the Softing License Server runs on; the license will be activated against the exported HostIDs.  
+  * Export the PC Id of the PC on which the Softing License Server runs onby clicking the ***Export PC-Ids ...*** button. The license will then be activated using the exported HostID.<br>  
     ![](LM_export_pc_ids.png)
-  * Install the Softing License Manager V4 on another PC with internet connection (download link: [https://data-intelligence.softing.com/products/edge-connector-docker/datafeed-edgeconnector-siemens/#tx-dftabs-tabContent2](https://data-intelligence.softing.com/products/edge-connector-docker/datafeed-edgeconnector-siemens/#tx-dftabs-tabContent2)).
-  * Please make sure that the PC which will activate the license has a working internet connection (perform a connection test) - see [Activate license with internet connection](#activate-license-with-internet-connection).
-  * Use the previously exported PC-Id and the valid license key received in the order.  
+  * Install **Softing License Manager** V4 on another PC with Internet connection from [https://data-intelligence.softing.com/products/edge-connector-docker/datafeed-edgeconnector-siemens/#tx-dftabs-tabContent2](https://data-intelligence.softing.com/products/edge-connector-docker/datafeed-edgeconnector-siemens/#tx-dftabs-tabContent2)).
+  * Make sure that the PC to be used to activate the license has a working Internet connection by performing a connection test (***Test server conenction ...*** button, see [Activate License With Internet Connection chapter](#activate-license-with-internet-connection)).
+  * Use the previously exported PC Id together with the valid license key received in the order.<br>  
     ![](LM_activate_license_for_another_pc.png)
-  * Click the Generate and export license file button and save the generated license file for transfer to the offline machine.
-  * Import the .lic file on the PC that had its HostID previously exported.
+  * Click the ***Generate and export license file...*** button and save the generated license file for transfer to the offline machine.
+  * Import the *.LIC* file by clicking the ***Import license file ...*** button on the PC from which the HostID has been exported previously.<br>
     ![](LM_import_license_file.png)
-  * Restart the Softing License Server and refresh the list of the available licenses (Softing License Manager application, top-right green circular arrow button - reload_button).  
+  * Restart **Softing License Server** and refresh the list of the available licenses using the relaod button (button with green circular arrow in Softing License Manager).<br>  
     ![](LM_restart_license_server.png)
-  * If the entire process was successful, the Softing License Manager should correctly display the newly imported license.
+  * After a successful activation **Softing License Manager** displays the recently imported license.
 
-## End-user tools
+## End-user Tools
 
-LM-X end-user Tools provide the functionality for the floating (network) licensing mechanism. These tools are deployed by Softing License Manager installer at location: `C:\Program Files (x86)\Softing\LicenseManager\LicenseServer\`
+LM-X end-user tools provide the functionality for the floating (network) licensing mechanism. These tools are deployed by the **Softing License Manager** installer (`C:\Program Files (x86)\Softing\LicenseManager\LicenseServer\`)
 
 | Tool | File Name | Documentation |
 | :--- | :-------- | :------------ |
 | [LM-X License Server](https://docs.x-formation.com/display/LMX/LM-X+License+Server) | `lmx-serv.exe` | [https://docs.x-formation.com/display/LMX/LM-X+License+Server](https://docs.x-formation.com/display/LMX/LM-X+License+Server) |
-| [LM-X end-user Utility](https://docs.x-formation.com/display/LMX/LM-X+End-user+utility) | `lmxendutil.exe` | [https://docs.x-formation.com/display/LMX/LM-X+End-user+utility](https://docs.x-formation.com/display/LMX/LM-X+End-user+utility) |
+| [LM-X End-user Utility](https://docs.x-formation.com/display/LMX/LM-X+End-user+utility) | `lmxendutil.exe` | [https://docs.x-formation.com/display/LMX/LM-X+End-user+utility](https://docs.x-formation.com/display/LMX/LM-X+End-user+utility) |
 | [LM-X End-user Configuration Tool](https://docs.x-formation.com/display/LMX/LM-X+End-user+Configuration+Tool) | `lmxconfigtool.exe` | [https://docs.x-formation.com/display/LMX/LM-X+End-user+Configuration+Tool](https://docs.x-formation.com/display/LMX/LM-X+End-user+Configuration+Tool) |
 
-  * The LM-X License Server will automatically run as a Windows Service after a successful installation of the Softing License Manager, should the Softing License Server component be selected during the installation process.
-    - The client can stop the Softing License Server Windows Service and instead run it from the command line.
-	- The LM-X License Server is listening on both TCP and UDP ports 6200. Please create a Windows Defender Firewall - Inbound Rule for port 6200 for both TCP and UDP protocol types in order to allow other PCs to connect to this floating license server.
-  * The additional LM-X end-user Utility can be used to display the HostIDs and the statistics, and lists what licenses are currently being used by which users on a specific license server. It also allows the restart and shutdown of the license server.
+  * LM-X License Server will automatically run as a Windows Service after a successful installation of **Softing License Manager**, if the Softing License Server component be selected during the installation process.
+    - The user can stop the Softing License Server Windows Service and instead run it from the command line.
+	- LM-X License Server is listening on both, the TCP and UDP ports 6200. Please create a Windows Defender Firewall - Inbound Rule for port 6200 for both TCP and UDP protocol types in order to allow other PCs to connect to this floating license server.
+  * The additional LM-X End-user Utility can be used to display the HostIDs and the statistics, and lists what licenses are currently being used by which users on a specific license server. It also allows the restart and shutdown of the license server.
