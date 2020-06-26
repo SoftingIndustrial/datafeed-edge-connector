@@ -106,7 +106,7 @@ The page provides an overview of the currently configured connections including 
 | :-- | :-- |
 | Name | Connection name as defined at creation time. |
 | IP Address | IP Address or host name of the PLC |
-| Status | Describes the state of the PLC connection; can be either Connected when the connection to the PLC is established or Disconnected when there is no connection to the PLC. The connection status is dynamically updated each 2 seconds. |
+| Status | Describes the state of the PLC connection; can be either Connected when the connection to the PLC is established or Disconnected when there is no connection to the PLC. The connection status is dynamically updated each 2 seconds. <br> Note: This field changes to "Simulation" when a simulated connection is added (See below for description of the Simulation mode). |
 | Enabled | Describes the configuration state of the PLC connection. Possible values are Enabled or Disabled.<br>Note: Clicking on the current configuration state icon would trigger a state toggle: Enabled -> Disabled; Disabled -> Enabled |
 
 From the title bar of the connection overview table a new connection can be added and existing connections can be either edited or deleted.  
@@ -126,6 +126,60 @@ The configuration parameters are described below:
 | Enabled               | Enabled                       | Instructs the dataFEED edgeConnector to either enable (checked) or disable (unchecked) the currently configured PLC connection. |
 | PLC Address           | empty                         | The address of the target device (S7 1200/1500 PLC). This is either an IP address or a hostname. |
 | Select Address Spaces | AllConnection<br>AddressSpace | Defines the destination aggregation address space used to store the address space corresponding to this PLC connection.<br>It is possible to create additional aggregation address spaces by filling in the desired address space name in the input field and clicking on the **Add** button. All available address spaces are visible in a list and can be selected as destination address space for the OPC UA client connection by checking the corresponding checkbox.<br>For more details about the OPC UA Server functionality and configuration please read the document about the [OPC UA Configuration](../common/opcua.md). |
+
+## Simulation Mode
+
+The edgeConnector Siemens supports simulation mode for the S7 1200/1500 controller, which means that it provides a few ways of automatically generating tag values in a similarly structured standard address space as a real PLC. All UA services are supported as for a real PLC, Browse, Subscribe, Read and Write.
+
+The available value simulation types are Random, Incremental (increasing to the data type's maximum, then starting from its minimum again), Sawtooth (increasing to the maximum and after reaching it decreasing to its minimum, then increasing again, and so on) and Waveform with anomalies (a Sine wave form of generating data, periodically adding a random anomaly). These simulation types are supported only for the basic data types and arrays of these data types, currently.
+
+The mapping of these simulation types to the different basic data types is as follows:
+- Boolean: Random
+- SByte: Sawtooth
+- Byte: Sawtooth
+- Int16: Incremental
+- UInt16: Random
+- Int32: Incremental
+- UInt32: Incremental
+- Int64: Random
+- UInt64: Random
+- Float: Waveform (250 ms update rate; min = -50, max = 50; contains anomalies)
+- Double: Waveform (500 ms update rate, min = -500, max = 500; does not contain anomalies)
+- String: Random (length of 10; containing alphanumeric, '_' and '-' characters)
+- DateTime: Random (between 1970 and 2100)
+
+Notes:
+- Where it is not specified, the update rate is 1000 milliseconds
+- The minimum and maximum values for all numerical data types (except where specified otherwise) are their corresponding values (e.g. SByte: between -128 and 127)
+- Floating point data types are restricted as specified above for more practical visualization purposes
+
+Limitations:
+- Currently, there is no customization options regarding neither the type of simulation used for a data type or tag, nor the parameters of the simulation types
+- The value generation process cannot be stopped when a simulated connection is enabled; this means that when writing to a tag the written value will be lost at the next data change, because the simulation will generate a new data value. In case of Incremental and Sawtooth simulation types the next value will depend on the written value
+
+### Configuration of a simulated connection
+
+For adding a connection which starts in Simulation mode the following steps are necessary:
+- To add a new simulated connection click the ![add_connection](../documentation_pics/add_connection.png) button.  
+- Enter a unique name in the **Connection Name** field
+- Go to the **Advanced Settings** tab on the same page
+- At the bottom check the **Simulation** check box
+- Switch back to the **Connection Settings** page
+- Press the **Save** button
+
+After a short time the simulator will start generating values for that connection, which can be browsed and monitored with a client application by subscribing to some tags with the above mentioned data types.
+
+Also, the **Address Spaces** section will show a new node with the name of the new simulated connection, which can be browsed and filtered from that moment on.
+
+Other notes and restrictions:
+- A simulated connection cannot be edited in any way after it has been added, none of its settings can be changed. All the fields are disabled after pressing the **Save** button
+- Such a connection can only be deleted using the ![delete_connection](../documentation_pics/delete_connection.png) button  
+- Any number of simulated connections can be added, but their address space will look the same, they are derived from the same standard PLC address space
+- All simulated connections are subject to the general licensing mechanisms, so they will use a license when added, and yield it back when deleted
+- A simulated connection cannot get out of Simulation mode, nor can a real PLC connection be changed to Simulation mode
+
+When visualizing one of each of the simulation types, it may look like this:
+<img src="../documentation_pics/sitewise_dashboard_with_edgeConnector_source.png" alt="SiteWise Dashboard with Simulated values" width="1200"/>
 
 ## OPC UA Server
 
