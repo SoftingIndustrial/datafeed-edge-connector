@@ -107,7 +107,7 @@ The page provides an overview of the currently configured connections including 
 | :-- | :-- |
 | Name | Connection name as defined at creation time|
 | IP Address | IP address or host name of PLC |
-| Status | Status of PLC connection<br> The connection status can be `Connected` if the connection to the PLC is established or `Disconnected` if there is no connection to the PLC<br>The connection status is dynamically updated every 2 seconds. |
+| Status | Status of PLC connection<br> The connection status can be `Connected` if the connection to the PLC is established or `Disconnected` if there is no connection to the PLC<br>The connection status is dynamically updated every 2 seconds. <br> Note: This field changes to "Simulation" when a simulated connection is added (See below for description of the Simulation mode). |
 | Enabled | Configuration status of the PLC connection<br>Possible values are `Enabled` or `Disabled`.<br>**Note:**<br>Clicking the current configuration status icon triggers a state toggle: *Enabled* -> *Disabled* respectively *Disabled* -> *Enabled* |
 
 From the title bar of the connection overview table a new connection can be added and existing connections can either be edited or deleted.  
