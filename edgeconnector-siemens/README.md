@@ -185,7 +185,7 @@ When visualizing one of each of the simulation types, it may look like this:
 
 ## OPC UA Server
 
-The OPC UA Server functionality and configuration is described at the [OPC UA Configuration page](common/opcua.md).
+The OPC UA Server functionality and configuration is described at the [OPC UA Configuration page](../common/opcua.md).
 
 ## Licenses
 
@@ -197,16 +197,16 @@ To remove the time limitation of the demo mode **dataFEED edgeConnector Siemens*
 **dataFEED edgeConnector Siemens** uses a floating license mechanism.
 A working floating license server is required to have **dataFEED edgeConnector Siemens** successfully licensed.  
 
-Please see the [License README page](Licenses/README.md) for further details.
+Please see the [License README page](../Licenses/README.md) for further details.
 
 ### Softing License
 
-The license activation for **dataFEED edgeConnector Siemens** is described at the [README page](Licenses/SoftingLicenseServer/README.md) of the Softing License Server.
+The license activation for **dataFEED edgeConnector Siemens** is described at the [README page](../Licenses/SoftingLicenseServer/README.md) of the Softing License Server.
 
 #### License Server Connection Configuration
 
-Please see the section [License Server Connection Configuration](Licenses/README.md#license-server-connection-configuration) of the License README file for further details.
+Please see the section [License Server Connection Configuration](../Licenses/README.md#license-server-connection-configuration) of the License README file for further details.
 
 ### Open Source Licenses
 
-For the license information of the open source components used by **dataFEED edgeConnector Siemens**, please see the [Open Source page](Licenses/OpenSourceLicenses.md).
+For the license information of the open source components used by **dataFEED edgeConnector Siemens**, please see the [Open Source page](../Licenses/OpenSourceLicenses.md).

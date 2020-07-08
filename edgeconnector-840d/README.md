@@ -213,12 +213,12 @@ Please see the [License README page](../Licenses/README.md) for further details.
 
 ### Softing License
 
-The license activation for **dataFEED edgeConnector 840D** is described at the [README page](Licenses/SoftingLicenseServer/README.md) of the Softing License Server.
+The license activation for **dataFEED edgeConnector 840D** is described at the [README page](../Licenses/SoftingLicenseServer/README.md) of the Softing License Server.
 
 #### License Server Connection Configuration
 
-Please see the section [License Server Connection Configuration](Licenses/README.md#license-server-connection-configuration) of the License README page for further details.
+Please see the section [License Server Connection Configuration](../Licenses/README.md#license-server-connection-configuration) of the License README page for further details.
 
 ### Open Source Licenses
 
-For the license information of the open source components used by **dataFEED edgeConnector 840D**, please see the [Open Source page](Licenses/OpenSourceLicenses.md).
+For the license information of the open source components used by **dataFEED edgeConnector 840D**, please see the [Open Source page](../Licenses/OpenSourceLicenses.md).
