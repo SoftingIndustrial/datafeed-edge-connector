@@ -178,11 +178,11 @@ The advanced configuration page of a SINUMERIK 840D connection allows to change 
 | PLC TSAP Destination | \<empty\>           | Input field for customized TSAP setting<br>Allowed input are hexadecimal digits, e.g. `02 01`, `2 1`, `0201`. |
 | Enable NCU Alarm     | *Disabled*          | Enables or disables the subscription of NCU and PLC alarms from SINUMERIK 840D<br>The alarms are provided in two growing string arrays within the OPC UA Namespace. |
 
-#### PLC Address Space Configuration By *.SDFI* File
+#### PLC Address Space Configuration by *.SDFI* File
 
 See [sdfi](../common/sdfi.md)
 
-#### NCK Address Space Definition By *.AWL* file
+#### NCK Address Space Definition by *.AWL* file
 
 The creation of *.AWL* files is described in the ![uaGate840D_AdditionalVariables_C_EN_190801_L_100.pdf](uaGate840D_AdditionalVariables_C_EN_190801_L_100.pdf) document.
 

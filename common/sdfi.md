@@ -1,4 +1,4 @@
-# PLC Address Space Configuration By *.SDFI* File
+# PLC Address Space Configuration by *.SDFI* File
 
 The symbolic names of the SIMATIC S7 data need to be provided via an *.SDFI* file.
 You can generate the *.SDFI* file using the Softing **dataFEED Exporter** tool.

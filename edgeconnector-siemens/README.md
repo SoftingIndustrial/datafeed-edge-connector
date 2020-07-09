@@ -205,9 +205,15 @@ Adding a new connection and editing an existing connection, both open an identic
 
 ![add-s7-315-connection.png](../documentation_pics/add-s7-315-connection.png)
 
-#### PLC Address Space Configuration By *.SDFI* File
+The configuration parameters are described below:
 
-See [sdfi](../common/sdfi.md)
+| Parameter Name        | Default Value                 | Description                                                  |
+| --------------------- | ----------------------------- | ------------------------------------------------------------ |
+| Connection Name       | \<empty\>                     | Connection name as it will show up in the connection overview page<br>The connection name has to be unique and can only be assigned when adding a new connection.<br>**Note:**<br>The following characters are not supported in the **Connection Name** field:  *# ^ < > / $* |
+| Enabled               | *Enabled*                     | Instructs **dataFEED edgeConnector Siemens** to either *Enable* (checked) or *Disable* (unchecked) the currently configured PLC connection. |
+| SDFI-File             | \<empty\>                     | The SDFI file with the address-space definition to upload, see [sdfi](../common/sdfi.md) |
+| PLC Address           | \<empty\>                     | Address of the target device (SINUMERIK 840D)<br>This is either an IP address or a hostname. |
+| Select Address Spaces | AllConnection<br>AddressSpace | Destination aggregation address space used to store the address space corresponding to this PLC connection<br>It is possible to create additional aggregation address spaces by filling in the desired address space name in the input field and clicking the **Add** button. All available address spaces are visible in a list and can be selected as destination address space for the OPC UA Client connection by checking the corresponding checkbox.<br>For more details about the OPC UA Server functionality and configuration please refer to the [OPC UA Configuration page](../common/opcua.md). |
 
 ## OPC UA Server
 
