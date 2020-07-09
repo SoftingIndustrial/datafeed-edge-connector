@@ -183,6 +183,32 @@ Other notes and restrictions:
 When visualizing one of each of the simulation types, it may look like this:
 <img src="../documentation_pics/sitewise_dashboard_with_edgeConnector_source.png" alt="SiteWise Dashboard with Simulated values" width="1200"/>
 
+### SIMATIC S7 300/400 Connection Configuration
+
+**dataFEED edgeConnnector Siemens** provides an interface to connect and fetch data from SIMATIC S7 300 or 400 series PLCs.
+
+To configure a connection to a SIMATICs S7 300 or S7 300 PLC, navigate to **Connectivity** -> **PLC** -> **Siemens S7 300/400** in the navigation tree as depicted below:
+
+![s7_navigation](../documentation_pics/s7_300_navigation.png)
+
+The page provides an overview of the currently configured connections including its **Name**, its **IP Address**, its connection **Status** and its **Enabled** status.
+
+![s7_overview](../documentation_pics/s7_300_overview.png)
+
+From the title bar of the connection overview table a new connection can be added and existing connections can either be edited or deleted.  
+
+- To add a new connection click the **Add Connection** ![Add Connection](../documentation_pics/add_connection.png) button.  
+- To edit an existing connection, first select it from the overview table and click the **Edit Connection** ![Edit Connection](../documentation_pics/edit_connection.png) button. 
+- To delete an existing connection, first select it from the overview table and click the **Delete Connection** ![Delete Connection](../documentation_pics/delete_connection.png) button.  
+
+Adding a new connection and editing an existing connection, both open an identical page. The only difference is, that for an existing connection the **Connection Name** property cannot be changed.  
+
+![add-s7-315-connection.png](../documentation_pics/add-s7-315-connection.png)
+
+#### PLC Address Space Configuration By *.SDFI* File
+
+See [sdfi](../common/sdfi.md)
+
 ## OPC UA Server
 
 The OPC UA Server functionality and configuration is described at the [OPC UA Configuration page](../common/opcua.md).
