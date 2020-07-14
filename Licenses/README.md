@@ -37,7 +37,7 @@ requires a license, for example if a connection is configured and enabled.
 ### Overview
 
 Navigate to ***General Settings*** -> ***Licenses*** -> ***Overview*** in the
-navigation tree to show the current license status.<br>
+navigation tree to show the current license status.  
 ![license_overview](../documentation_pics/license_overview.png)
 
 #### License Server Information
@@ -57,7 +57,7 @@ feature and the amount of total and available resources for each licensed featur
 
 | Type | Total | Available | Server Slots | Server Slots Used |
 | --- | --- | --- | -- | -- |
-| Licensed feature<br>If this is a demo license, the *DEMO* keyword is appended | Total number of licensed features (features which were checked out from the licensing server) | Number of available licensed features (features which can be created without checking out a new one from the licensing server) | Sum of licenses for the feature at the license server | Sum of used licenses for the feature at the license server |
+| Licensed feature; If this is a demo license, the *DEMO* keyword is appended | Total number of licensed features (features which were checked out from the licensing server) | Number of available licensed features (features which can be created without checking out a new one from the licensing server) | Sum of licenses for the feature at the license server | Sum of used licenses for the feature at the license server |
 
 ## Open Source Licenses
 

@@ -224,8 +224,8 @@ Notes:
 
 - Where it is not specified, the update rate is 1000 milliseconds
 - The minimum and maximum values for all numerical data types (except where
-specified otherwise) are their corresponding values (e.g. SByte: between -128 and
-127)
+  specified otherwise) are their corresponding values (e.g. SByte: between -128
+  and 127)
 - Floating point data types are restricted as specified above for more practical
   visualization purposes
 
@@ -301,7 +301,7 @@ and existing connections can either be edited or deleted.
 - To add a new connection click the **Add Connection**
   ![Add Connection](../documentation_pics/add_connection.png) button.  
 - To edit an existing connection, first select it from the overview table and
-  click the **Edit Connection** ![Edit Connection](../documentation_pics/edit_connection.png) button. 
+  click the **Edit Connection** ![Edit Connection](../documentation_pics/edit_connection.png) button.
 - To delete an existing connection, first select it from the overview table and
   click the **Delete Connection** ![Delete Connection](../documentation_pics/delete_connection.png) button.  
 
