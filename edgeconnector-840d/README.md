@@ -279,8 +279,6 @@ successfully licensed.
 
 Please see the [License README page](../Licenses/README.md) for further details.
 
-### Softing License
-
 The license activation for **dataFEED edgeConnector 840D** is described at the
 [README page](../Licenses/SoftingLicenseServer/README.md) of the Softing License
 Server.

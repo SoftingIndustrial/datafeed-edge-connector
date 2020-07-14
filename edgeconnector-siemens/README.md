@@ -82,6 +82,7 @@ Please refer to the
 of the official Docker command line documentation for more details.
 
 ### Starting the Docker Container
+
 If the module container was stopped and not removed, it can be started again
 from its last state:
 
@@ -163,7 +164,7 @@ From the title bar of the connection overview table a new connection can be adde
   ![Add Connection](../documentation_pics/add_connection.png) button.  
 - To edit an existing connection, first select it from the overview table
   and click the **Edit Connection**
-  ![Edit Connection](../documentation_pics/edit_connection.png) button. 
+  ![Edit Connection](../documentation_pics/edit_connection.png) button.
 - To delete an existing connection, first select it from the overview
   table and click the **Delete Connection**
   ![Delete Connection](../documentation_pics/delete_connection.png) button.  
@@ -220,6 +221,7 @@ anomalies)
 - DateTime: Random (between 1970 and 2100)
 
 Notes:
+
 - Where it is not specified, the update rate is 1000 milliseconds
 - The minimum and maximum values for all numerical data types (except where
 specified otherwise) are their corresponding values (e.g. SByte: between -128 and
@@ -228,6 +230,7 @@ specified otherwise) are their corresponding values (e.g. SByte: between -128 an
   visualization purposes
 
 Limitations:
+
 - Currently, there is no customization options regarding neither the type of
   simulation used for a data type or tag, nor the parameters of the simulation
   types
@@ -347,8 +350,6 @@ A working floating license server is required to have **dataFEED edgeConnector
 Siemens** successfully licensed.  
 
 Please see the [License README page](../Licenses/README.md) for further details.
-
-### Softing License
 
 The license activation for **dataFEED edgeConnector Siemens** is described at the
 [README page](../Licenses/SoftingLicenseServer/README.md) of the Softing License
