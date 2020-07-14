@@ -172,7 +172,7 @@ Several operations are accessible using the buttons placed top right:
 - ***Download Application Certificate*** ![OPC UA download certificate](../documentation_pics/opc_ua_download_certificate.png) button  
   Provides a way to download the current own certificate
 
-####  Trusted Application Certificates
+#### Trusted Application Certificates
 
 Allows manipulation and information retrieval on the current OPC UA Server
 endpoint's trusted certificates. All remote OPC UA Client application instances

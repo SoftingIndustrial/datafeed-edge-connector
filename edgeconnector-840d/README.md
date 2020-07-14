@@ -69,6 +69,7 @@ For Docker installation instructions please refer to the
 The Docker images are provided through a public registry.
 To get the latest Docker image you need to pull the image from
 [https://hub.docker.com/r/softingindustrial/](https://hub.docker.com/r/softingindustrial/):.
+
 ```bash
 docker image pull softingindustrial/edgeconnector-840d:latest
 ```
@@ -86,6 +87,7 @@ the host machine:
 ```bash
 docker container run -p 443:443 -p 8099:8099 -p 4897:4897 softingindustrial/edgeconnector-840d
 ```
+
 The above example can be adapted to match the needs of your environment.
 For example, if your host already runs a webserver and the https port is blocked,
 the command can be adjusted to expose the https port of **dataFEED edgeConnector 840D**
@@ -94,12 +96,14 @@ on a different port:
 ```bash
 docker container run -p 1443:443 -p 8099:8099 -p 4897:4897 softingindustrial/edgeconnector-840d
 ```
+
 The `-p` switch allows to map a complete port range `start-end:start-end`, the `-d` switch
 allows to daemonize the container and the `--name` switch allows to name the container:  
 
 ```bash
 docker container run -d -p 1443:443 -p 8099:8099 -p 4800-4900:4800-4900 --name edgeConnector softingindustrial/edgeconnector-840d
 ```
+
 For further information about supported command line options please refer to the
 [Run section](https://docs.docker.com/engine/reference/commandline/run/) of the official
 Docker command line documentation.
@@ -107,27 +111,33 @@ Docker command line documentation.
 ### Stopping the Docker Container
 
 The **dataFEED edgeConnector 840D** container can be stopped by the following command:
+
 ```bash
 docker container stop edgeConnector
 ```
+
 Please refer to the [Stop section](https://docs.docker.com/engine/reference/commandline/container_stop/)
 of the official Docker command line documentation for more details.
 
 ### Starting the Docker Container
+
 If the module container was stopped and not removed, it can be started again from its last state:
+
 ```bash
 docker container start edgeConnector
 ```
+
 Please refer to the [Start section](https://docs.docker.com/engine/reference/commandline/container_start/)
 of the official Docker command line documentation for more details.
-
 
 ### Removing the Docker Container
 
 The module container can be removed at any time:
+
 ```bash
 docker container rm -f edgeConnector
 ```
+
 After removing the container its last state is lost.
 Please refer to the [Remove section](https://docs.docker.com/engine/reference/commandline/container_rm/)
 of the official Docker command line documentation for more details.
@@ -135,6 +145,7 @@ of the official Docker command line documentation for more details.
 ### Configuration Volume
 
 Optionally a Docker volume can be created for storing the configuration permanently:
+
 ```bash
 docker volume create edge-connector-config
 ```
@@ -166,7 +177,6 @@ The page provides an overview of the currently configured connections including 
 and its **Enabled** status.  
 
 ![sinumerik 840d_overview](../documentation_pics/s840d_overview.png)  
-
 
 | Column Name | Information Details |
 | :-- | :-- |
@@ -204,7 +214,8 @@ The configuration parameters are described below:
 
 | Parameter Name        | Default Value                 | Description                                                  |
 | --------------------- | ----------------------------- | ------------------------------------------------------------ |
-| Connection Name       | \<empty\>                     | Connection name as it will show up in the connection overview page<br>The connection name has to be unique and can only be assigned when adding a new connection.|
+| Connection Name       | \<empty\>                     | Connection name as it will show up in the connection overview page |
+| | | The connection name has to be unique and can only be assigned when adding a new connection.|
 | | | **Note:**|
 | | | The following characters are not supported in the **Connection Name** field:  *# ^ < > / $* |
 | NCK Connection        |                               | Controls whether the NCK Connection for this SINUMERIK 840D connection is enabled or not. |
@@ -224,15 +235,18 @@ The configuration parameters are described below:
 The advanced configuration page of a SINUMERIK 840D connection allows to change
 the following settings:
 
-| Parameter Name       | Default Value       | Description                                                                                                    |
-| -------------------- | ------------------- | ------------------------------------------------------------                                                   |
-| TCP Port             | 102                 | Port used to connect to the target device (SINUMERIK 840D)<br>The TCP port should remain at the default value. |
-| NCK TSAP Selection   | Simatic 840D SL NCK | Allows to switch between the TSAP for SINUMERIK 840D SL, SINUMERIK 840D PL or a user defined TSAP.             |
-| NCK TSAP Destination | \<empty\>           | Input field for customized TSAP setting<br>Allowed input are hexadecimal digits, e.g. `02 01`, `2 1`, `0201`.  |
-| PLC TSAP Selection   | Simatic 840D SL PLC | Allows to switch between the TSAP for SINUMERIK 840D SL, SINUMERIK 840D PL or a user defined TSAP.             |
-| PLC TSAP Destination | \<empty\>           | Input field for customized TSAP setting<br>Allowed input are hexadecimal digits, e.g. `02 01`, `2 1`, `0201`.  |
-| Enable NCU Alarm     | *Disabled*          | Enables or disables the subscription of NCU and PLC alarms from SINUMERIK 840D                                 |
-|                      |                     | The alarms are provided in two growing string arrays within the OPC UA Namespace.                              |
+| Parameter Name       | Default Value       | Description                                                                                        |
+| -------------------- | ------------------- | ------------------------------------------------------------                                       |
+| TCP Port             | 102                 | Port used to connect to the target device (SINUMERIK 840D)                                         |
+|                      |                     | The TCP port should remain at the default value.                                                   |
+| NCK TSAP Selection   | Simatic 840D SL NCK | Allows to switch between the TSAP for SINUMERIK 840D SL, SINUMERIK 840D PL or a user defined TSAP. |
+| NCK TSAP Destination | \<empty\>           | Input field for customized TSAP setting                                                            |
+|                      |                     | Allowed input are hexadecimal digits, e.g. `02 01`, `2 1`, `0201`.                                 |
+| PLC TSAP Selection   | Simatic 840D SL PLC | Allows to switch between the TSAP for SINUMERIK 840D SL, SINUMERIK 840D PL or a user defined TSAP. |
+| PLC TSAP Destination | \<empty\>           | Input field for customized TSAP setting                                                            |
+|                      |                     | Allowed input are hexadecimal digits, e.g. `02 01`, `2 1`, `0201`.                                 |
+| Enable NCU Alarm     | *Disabled*          | Enables or disables the subscription of NCU and PLC alarms from SINUMERIK 840D                     |
+|                      |                     | The alarms are provided in two growing string arrays within the OPC UA Namespace.                  |
 
 #### PLC Address Space Configuration by *.SDFI* File
 
@@ -251,6 +265,7 @@ The OPC UA Server functionality and configuration is described at the
 ## Licenses
 
 ### Softing License
+
 **dataFEED edgeConnector 840D**'s scope of delivery includes a time-limited
 and functionaly unlimited demo mode.
 The demo mode is started immediately once the module has been started without

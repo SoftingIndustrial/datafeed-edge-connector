@@ -56,6 +56,7 @@ edgeConnector Siemens** on a different port:
 ```bash
 docker container run -p 1443:443 -p 8099:8099 -p 4897:4897 softingindustrial/edgeconnector-siemens
 ```
+
 The `-p` switch allows to map a complete port range `start-end:start-end`,
 the `-d` switch allows to daemonize the container and the `--name` switch
 allows to name the container:  
@@ -71,9 +72,11 @@ official Docker command line documentation.
 ### Stopping the Docker Container
 
 The module container can be stopped by the following command:
+
 ```bash
 docker container stop edgeConnector
 ```
+
 Please refer to the
 [Stop section](https://docs.docker.com/engine/reference/commandline/container_stop/)
 of the official Docker command line documentation for more details.
@@ -90,13 +93,14 @@ Please refer to the
 [Start section](https://docs.docker.com/engine/reference/commandline/container_start/)
 of the official Docker command line documentation for more details.
 
-
 ### Removing the Docker Container
 
 The module container can be removed at any time:
+
 ```bash
 docker container rm -f edgeConnector
 ```
+
 After removing the container its last state is lost.
 Please refer to the
 [Remove section](https://docs.docker.com/engine/reference/commandline/container_rm/)
@@ -148,7 +152,8 @@ status.
 |             | The connection status can be `Connected` if the connection to the PLC is established or `Disconnected` if there is no connection to the PLC |
 |             | The connection status is dynamically updated every 2 seconds.                                                                               |
 |             | Note: This field changes to "Simulation" when a simulated connection is added (See below for description of the Simulation mode).           |
-| Enabled     | Configuration status of the PLC connection<br>Possible values are `Enabled` or `Disabled`.                                                  |
+| Enabled     | Configuration status of the PLC connection                                                                                                  |
+|             | Possible values are `Enabled` or `Disabled`.                                                                                                |
 |             | **Note:**                                                                                                                                   |
 |             | Clicking the current configuration status icon triggers a state toggle: *Enabled* -> *Disabled* respectively *Disabled* -> *Enabled*        |
 
@@ -198,6 +203,7 @@ data, periodically adding a random anomaly). These simulation types are supporte
 only for the basic data types and arrays of these data types, currently.
 
 The mapping of these simulation types to the different basic data types is as follows:
+
 - Boolean: Random
 - SByte: Sawtooth
 - Byte: Sawtooth
@@ -253,6 +259,7 @@ the new simulated connection, which can be browsed and filtered from that
 moment on.
 
 Other notes and restrictions:
+
 - A simulated connection cannot be edited in any way after it has been added,
   none of its settings can be changed. All the fields are disabled after
   pressing the **Save** button
@@ -305,7 +312,10 @@ The configuration parameters are described below:
 
 | Parameter Name        | Default Value                 | Description                                                  |
 | --------------------- | ----------------------------- | ------------------------------------------------------------ |
-| Connection Name       | \<empty\>                     | Connection name as it will show up in the connection overview page<br>The connection name has to be unique and can only be assigned when adding a new connection.<br>**Note:**<br>The following characters are not supported in the **Connection Name** field:  *# ^ < > / $* |
+| Connection Name       | \<empty\>                     | Connection name as it will show up in the connection overview page|
+| | |The connection name has to be unique and can only be assigned when adding a new connection.|
+| | | **Note:**|
+| | |The following characters are not supported in the **Connection Name** field:  *# ^ < > / $* |
 | Enabled               | *Enabled*                     | Instructs **dataFEED edgeConnector Siemens** to either *Enable* (checked) or *Disable* (unchecked) the currently configured PLC connection. |
 | SDFI-File             | \<empty\>                     | The SDFI file with the address-space definition to upload, see [sdfi](../common/sdfi.md) |
 | PLC Address           | \<empty\>                     | Address of the target device |
