@@ -124,14 +124,14 @@ The configuration parameters are described in the table below:
 | Endpoint Description                 | \<empty\>                          | User defined endpoint description text |
 | | | Can be used to include additional information or remarks about the endpoint |
 
-##### Application Certificates
+#### Application Certificates
 
 The certificates page provides an interface for managing the SSL certificates
 stored in the endpoint's PKI store.
 
 ![OPC UA Server Endpoint Application certificates](../documentation_pics/opc_ua_endpoint_creation_application_certificates.png)
 
-###### Own Application Certificate
+#### Own Application Certificate
 
 Shows the certificate used to identify the **dataFEED edgeConnector** endpoint
 application instance. This certificate is uniquely created for each OPC UA
@@ -202,7 +202,7 @@ Several operations are accessible using the buttons placed on top right:
   folder. After deletion the trust relationship with the deleted certificate
   owner application will be invalidated.
 
-###### Rejected Application Certificates
+#### Rejected Application Certificates
 
 All remote OPC UA application instance certificates whose connection
 establishment to the current OPC UA endpoint has failed due to trust relationship
@@ -234,7 +234,7 @@ Several operations are accessible using the buttons placed on top right:
   Deletes the currently selected certificate from the *Rejected Certificates*
   folder.
 
-###### Application Certificate Properties
+#### Application Certificate Properties
 
 Information about the selected certificate is available in the certificates
 properties area.
@@ -300,4 +300,3 @@ filled in is described in the following table:
 | Max Number of Concurrent Connections | 10                         | Maximum allowed number of concurrent OPC UA Client connections to the selected endpoint being authenticated with the username defined in the ***Username*** filed |
 | Address Space                        | AllConnectionsAddressSpace | Address space exposed to the OPC UA Client connection to the selected endpoint and authenticated with the username defined in the ***Username*** field |
 | Access Rights                        | All                        | Services allowed for the username defined in the ***Username*** field |
-
