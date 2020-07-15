@@ -259,11 +259,11 @@ The creation of *.AWL* files is described in the
 
 #### Add GUD variables to *.AWL* file
 
-GUD variables of the SIMATIK 840D SL/PL are defined by Siemens, the manufacturer
+GUD variables of the SINUMERIK 840D SL/PL are defined by Siemens, the manufacturer
 or by the user in `*.def` files. An example definition file is
 provided as [GUD4.DEF](./GUD4.DEF).
 
-You need to copy your `*.def` files from your SIMATIK 840D
+You need to copy your `*.def` files from your SINUMERIK 840D
 to your PC with `perl` installed.
 
 With the `perl` script [gudVarsIntoAwl.pl](gudVarsIntoAwl.pl) the `*.def`
@@ -271,7 +271,7 @@ files could be converted into a partial `*.awl` file.
 For example with the following commands:
 
 ```bash
-./gudVarsIntoAwl.pl GUD4 < GUD4.DEF > gud.awl
+./gudVarsIntoAwl.pl GUD4 < GUD4.DEF >> gud.awl
 ./gudVarsIntoAwl.pl MGUD < MGUD.DEF >> gud.awl
 ./gudVarsIntoAwl.pl UGUD < UGUD.DEF >> gud.awl
 ```
