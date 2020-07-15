@@ -271,9 +271,9 @@ files could be converted into a partial `*.awl` file.
 For example with the following commands:
 
 ```bash
-# ./gudVarsIntoAwl.pl GUD4 < GUD4.DEF > gud.awl
-# ./gudVarsIntoAwl.pl MGUD < MGUD.DEF >> gud.awl
-# ./gudVarsIntoAwl.pl UGUD < UGUD.DEF >> gud.awl
+./gudVarsIntoAwl.pl GUD4 < GUD4.DEF > gud.awl
+./gudVarsIntoAwl.pl MGUD < MGUD.DEF >> gud.awl
+./gudVarsIntoAwl.pl UGUD < UGUD.DEF >> gud.awl
 ```
 
 **Note:** The datatype `Frame` is not supported, due to the not determined data size.
