@@ -37,7 +37,8 @@ To deploy the dataFEED edgeConnector Siemens to an existing IoT edge device foll
 1. Review the container settings by clicking its name
 
 1. In the module settings tab ensure that the **Restart Policy** is **always** and the **Desire State** is **running**
-![marketplace_search_filter](./images/module_settings.png)
+    
+    ![marketplace_search_filter](./images/module_settings.png)
 
 1. The are no environmental variables needed to run the modules nor module twin properties to be set up for the module to work properly, this options can be left blank.
 
@@ -87,14 +88,14 @@ To deploy the dataFEED edgeConnector Siemens to an existing IoT edge device foll
    ```
 
 1.	Click update when the information is complete and correct.
+    ![marketplace_search_filter](./images/module_update.png)
 
-   ![marketplace_search_filter](./images/module_update.png)
-   
-13. To finalize the configuration click on ```Review + create``` then ```Create``` buttons.
+1.	To finalize the configuration click on ```Review + create``` then ```Create``` buttons.
 
-14. The deployment was successful if the module's reported status is similar to the information above. The modules has to be specified in the deployment, has to be reported by the IoT edge device and the most important it has to be running.
+1.	The deployment was successful if the module's reported status is similar to the information above. The modules has to be specified in the deployment, has to be reported by the IoT edge device and the most important it has to be running.
 
-       ![marketplace_search_filter](./images/module_status.png)
+    ![marketplace_search_filter](./images/module_status.png)
+    
 ## Deployment via the Azure CLI
 
 To deploy dataFEED edgeConnector Siemens through the [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest) a deployment manifesto for the IoT edge device is required.
