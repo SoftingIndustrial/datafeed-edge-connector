@@ -17,6 +17,12 @@ For the different controller types, the following specialized connector types ar
 
 The common configuration of the **dataFEED edgeConnector** product family is described in the [Configuration](common/configuration.md) section.
 
+# Cloud
+
+**dataFEED edgeConnector** supported cloud based edge environments:
+
+- [Azure IoT Edge](./cloud/azure.md)
+
 # Licenses
 
 The **dataFEED edgeConnector** modules' scope of delivery includes a time-limited and functionaly unlimited demo mode.
