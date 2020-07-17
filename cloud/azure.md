@@ -37,7 +37,7 @@ To deploy the dataFEED edgeConnector Siemens to an existing IoT edge device foll
 1. Review the container settings by clicking its name
 
 1. In the module settings tab ensure that the **Restart Policy** is **always** and the **Desire State** is **running**
-![marketplace_search_filter](./images/module_Settings.png)
+![marketplace_search_filter](./images/module_settings.png)
 
 1. The are no environmental variables needed to run the modules nor module twin properties to be set up for the module to work properly, this options can be left blank.
 
