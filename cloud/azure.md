@@ -102,7 +102,7 @@ To deploy dataFEED edgeConnector Siemens through the [Azure CLI](https://docs.mi
 
 It is assumed that the user is able to connect to Azure user the cli and has the permissions requested to configure the iot hub.
 
-Command to [apply a deployment manifesto](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-deploy-modules-cli#deploy-to-your-device) to an IoT edge device:
+Command to [apply a deployment manifest](https://docs.microsoft.com/azure/iot-edge/how-to-deploy-modules-cli#deploy-to-your-device) to an IoT edge device:
 
 ```powershell
 az iot edge set-modules --device-id [device id] --hub-name [hub name] --content [file path]
