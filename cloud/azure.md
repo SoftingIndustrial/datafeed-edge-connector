@@ -13,7 +13,7 @@ IoT edge devices.
 
 A generic description for deploying the IoT edge modules from the Azure portal
 can be found
-[here](https://docs.microsoft.com/azure/iot-edge/how-to-deploy-modules-portal). 
+[here](https://docs.microsoft.com/azure/iot-edge/how-to-deploy-modules-portal).
 
 To deploy the dataFEED edgeConnector Siemens to an existing IoT edge device
 follow the steps below:
@@ -42,13 +42,13 @@ follow the steps below:
 1. The module should now be visible in the modules list.
 
    ![marketplace_search_filter](./images/modules_info.png)
-   
+
 1. Review the container settings by clicking its name
 
 1. In the module settings tab ensure that the **Restart Policy** is **always**
    and the **Desire State** is **running**
-    
-    ![marketplace_search_filter](./images/module_settings.png)
+
+   ![marketplace_search_filter](./images/module_settings.png)
 
 1. There are no environmental variables needed to run the modules nor module
    twin properties to be set up for the module to work properly, these options
@@ -58,9 +58,9 @@ follow the steps below:
    are as defined in the JSON below. The ports are used for configuration (8099)
    and for OPC UA Endpoints (4897 - default preconfigured OPC UA server
    endpoint - and 4810 to 4813 freely available to define new OPC UA server
-   endpoints) 
+   endpoints)
 
-   ```
+```json
     {
     "ExposedPorts": {
         "8099/tcp": {},
@@ -102,22 +102,22 @@ follow the steps below:
         }
     }
    }
-   ```
+```
 
-1.	Click update when the information is complete and correct.
+1.  Click update when the information is complete and correct.
 
     ![marketplace_search_filter](./images/module_update.png)
 
-1.	To finalize the configuration click on `Review + create` then `Create`
- 	buttons.
+1.  To finalize the configuration click on `Review + create` then `Create`
+    buttons.
 
-1.	The deployment was successful if the module's reported status is similar to
-	the information above. The modules has to be specified in the deployment,
+1.  The deployment was successful if the module's reported status is similar to
+    the information above. The modules has to be specified in the deployment,
     has to be reported by the IoT edge device and the most important it has to
     be running.
 
     ![marketplace_search_filter](./images/module_status.png)
-    
+
 ## Deployment via the Azure CLI
 
 To deploy dataFEED edgeConnector Siemens through the
@@ -127,7 +127,7 @@ a deployment manifest for the IoT edge device is required.
 It is assumed that the user is able to connect to Azure user the cli and has the
 permissions requested to configure the iot hub.
 
-Command to 
+Command to
 [apply a deployment manifest](https://docs.microsoft.com/azure/iot-edge/how-to-deploy-modules-cli#deploy-to-your-device)
 to an IoT edge device:
 
@@ -140,7 +140,7 @@ used to deploy a demonstrative IoT edge device containing the
 **dataFEED edgeConnector** module besides the required communication and
 management modules (edgeHub and edgeAgent).
 
-```
+```json
 {
     "modulesContent": {
         "$edgeAgent": {
