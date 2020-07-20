@@ -16,7 +16,7 @@ To deploy the dataFEED edgeConnector Siemens to an existing IoT edge device foll
 
 1. On the left pane, under **Automatic Device Management**, select **IoT Edge**.
 
-1. Select the IoT Edge device that is to receive the deployment.
+1. Select the IoT Edge device that shall receive the deployment.
 
 1. On the upper bar, select **Set Modules**.
 
