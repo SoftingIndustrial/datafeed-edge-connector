@@ -40,7 +40,7 @@ To deploy the dataFEED edgeConnector Siemens to an existing IoT edge device foll
     
     ![marketplace_search_filter](./images/module_settings.png)
 
-1. The are no environmental variables needed to run the modules nor module twin properties to be set up for the module to work properly, this options can be left blank.
+1. There are no environmental variables needed to run the modules nor module twin properties to be set up for the module to work properly, these options can be left blank.
 
 1. In the container create options tab make sure that the default Create options as defined in the JSON below. The ports are used for configuration (8099) and for OPC UA Endpoints (4897 - default preconfigured OPC UA server endpoint - and 4810 to 4813 freely available to define new OPC UA server endpoints) 
    ```
