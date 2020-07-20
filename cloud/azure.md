@@ -8,7 +8,7 @@ Available as an Azure IoT edge module in the [Azure Marketplace ](https://azurem
 
 ## Deployment via the Azure portal
 
-A generic description for deploying the IoT edge modules from the Azure portal can be found [here](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-deploy-modules-portal). 
+A generic description for deploying the IoT edge modules from the Azure portal can be found [here](https://docs.microsoft.com/azure/iot-edge/how-to-deploy-modules-portal). 
 
 To deploy the dataFEED edgeConnector Siemens to an existing IoT edge device follow the steps below:
 
