@@ -4,8 +4,6 @@ This section shall provide information which shall be used as a guidance to set 
 
 Available as an Azure IoT edge module in the [Azure Marketplace ](https://azuremarketplace.microsoft.com/marketplace/apps/softingindustrialautomationgmbh1583307147861.softing-datafeed-edgeconnector-siemens?tab=Overview), the dataFEED edgeConnector Siemens can be deployed, remotely, on existing Azure IoT edge devices.
 
-
-
 ## Deployment via the Azure portal
 
 A generic description for deploying the IoT edge modules from the Azure portal can be found [here](https://docs.microsoft.com/azure/iot-edge/how-to-deploy-modules-portal). 
