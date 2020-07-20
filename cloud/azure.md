@@ -108,7 +108,7 @@ Command to [apply a deployment manifest](https://docs.microsoft.com/azure/iot-ed
 az iot edge set-modules --device-id [device id] --hub-name [hub name] --content [file path]
 ```
 
-The following <a href="./deployment_demo.json">deployment manifesto</a> can be saved and used to deploy a demonstrative IoT edge device containing the **dataFEED edgeConnector** module besides the required  communication  and management modules (edgeHub and edgeAgent).
+The following [deployment manifest](./deployment_demo.json) can be saved and used to deploy a demonstrative IoT edge device containing the **dataFEED edgeConnector** module besides the required  communication  and management modules (edgeHub and edgeAgent).
 
 ```
 {
