@@ -98,7 +98,7 @@ To deploy the dataFEED edgeConnector Siemens to an existing IoT edge device foll
     
 ## Deployment via the Azure CLI
 
-To deploy dataFEED edgeConnector Siemens through the [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest) a deployment manifesto for the IoT edge device is required.
+To deploy dataFEED edgeConnector Siemens through the [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) a deployment manifest for the IoT edge device is required.
 
 It is assumed that the user is able to connect to Azure user the cli and has the permissions requested to configure the iot hub.
 
