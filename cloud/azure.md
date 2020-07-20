@@ -5,7 +5,7 @@ up and run Softing's connectivity gateway offerings in the Azure IoT edge
 environment.
 
 Available as an Azure IoT edge module in the
-[Azure Marketplace ](https://azuremarketplace.microsoft.com/marketplace/apps/softingindustrialautomationgmbh1583307147861.softing-datafeed-edgeconnector-siemens?tab=Overview),
+[Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/softingindustrialautomationgmbh1583307147861.softing-datafeed-edgeconnector-siemens?tab=Overview),
 the dataFEED edgeConnector Siemens can be deployed, remotely, on existing Azure
 IoT edge devices.
 
@@ -104,17 +104,17 @@ follow the steps below:
    }
 ```
 
-1.  Click update when the information is complete and correct.
+1. Click update when the information is complete and correct.
 
-    ![marketplace_search_filter](./images/module_update.png)
+   ![marketplace_search_filter](./images/module_update.png)
 
-1.  To finalize the configuration click on `Review + create` then `Create`
-    buttons.
+1. To finalize the configuration click on `Review + create` then `Create`
+   buttons.
 
-1.  The deployment was successful if the module's reported status is similar to
-    the information above. The modules has to be specified in the deployment,
-    has to be reported by the IoT edge device and the most important it has to
-    be running.
+1. The deployment was successful if the module's reported status is similar to
+   the information above. The modules has to be specified in the deployment,
+   has to be reported by the IoT edge device and the most important it has to
+   be running.
 
     ![marketplace_search_filter](./images/module_status.png)
 
