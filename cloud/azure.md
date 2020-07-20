@@ -88,6 +88,7 @@ To deploy the dataFEED edgeConnector Siemens to an existing IoT edge device foll
    ```
 
 1.	Click update when the information is complete and correct.
+
     ![marketplace_search_filter](./images/module_update.png)
 
 1.	To finalize the configuration click on ```Review + create``` then ```Create``` buttons.
