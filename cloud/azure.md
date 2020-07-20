@@ -22,7 +22,7 @@ To deploy the dataFEED edgeConnector Siemens to an existing IoT edge device foll
 
    ![iotedge_device_properties](./images/iotedge_device_properties.png)
 
-1. In the **IoT Edge Modules** section, click **Add**, and select **Marketplace Module** from the drop-down menu.
+1. In the **IoT Edge Modules** section, click **Add** and select **Marketplace Module** from the drop-down menu.
 
    ![add_marketplace](./images/add_marketplace.png)
 
