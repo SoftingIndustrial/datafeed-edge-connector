@@ -65,6 +65,14 @@ allows to name the container:
 docker container run -d -p 1443:443 -p 8099:8099 -p 4800-4900:4800-4900 --name edgeConnector softingindustrial/edgeconnector-siemens
 ```
 
+#### Running with specified timezone
+The `-e` or `--env` switch allows to set environment variables in the container.
+For setting a timezone the variable `TZ` must be passed with a valid `TZ database name`.
+
+```bash
+docker container run -d -p 1443:443 -p 8099:8099 -p 4800-4900:4800-4900 --name edgeConnector -e TZ=Europe/Berlin softingindustrial/edgeconnector-siemens
+```
+
 For further information about supported command line options please refer to the
 [Run section](https://docs.docker.com/engine/reference/commandline/run/) of the
 official Docker command line documentation.
