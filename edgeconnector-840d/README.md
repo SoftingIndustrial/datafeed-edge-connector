@@ -10,6 +10,18 @@ It is possible to connect up to 5 Siemens SINUMERIK 840D SL/PL controllers.
 **dataFEED edgeConnector 840D** can be used on any Docker host that can execute
 Linux Docker containers based on an x86_64 architecture.
 
+## Supported Controller types
+
+The contoller types **SINUMERIK 840D Solution Line** and **SINUMERIK 840D Power Line** are supported.
+Controllers of older types like **SINUMERIK 840** and **SINUMERIK 840C** are not compatible.
+
+## Supported Controller types
+
+**SINUMERIK 840D sl** must have software version V2.7 and higher,
+**SINUMERIK 840D pl** must have software version V5.3 and higher.
+Information regarding the support of other controller types and software versions can be provided
+upon request.
+
 ## Default Settings
 
 The default settings are described at the [Default Settings page](../common/defaults.md).
@@ -32,6 +44,18 @@ SINUMERIK 840D SL has 3 Ethernet interfaces:
 
 ![Network Configuration](../documentation_pics/OPCUA_activate_009.png)
 
+![Sinumerik 840D SL](../documentation_pics/sinumerik_840d_sl.png)
+
+| Ethernet interface   | Description                                                                                                   |
+| -------------------- | ------------------------------------------------------------------------------------------------------------- |
+| X120                 | This Ethernet interface is used for connecting the automation network (operator panel interface).             |
+|                      | The interface is not isolated by a firewall, thus, ideally, **dataFEED edgeConnector 840D** is operated using this interface. |
+|                      | This interface in **SINUMERIK 840D sl** uses the fixed IP address 192.168.214.1. For connecting to the machine network the gateway then should be configured using a fixed IP address as well(e.g. an IP address higher than 192.168.214.250). |
+| X127                 | This Ethernet interface serves exclusively as a service socket (service interface).                           |
+|                      | This interface can not be used for connection purposes.                                                       |
+| X130                 | This Ethernet interface connects the controller to the factory network (company Ethernet).                    |
+|                      | This interface can be used as an alternative interface for connecting **dataFEED edgeConnector 840D**. Here, however, the NCU firewall (port TCP/102) has to be enabled in SINUMERIK Operate to allow **SIMATIC S7** communication.  |
+
 **dataFEED edgeConnector 840D** uses the SIMATIC S7 communication protocol (TCP/102)
 of SINUMERIK 840D SL.
 By default, this protocol is available at the *X120* interface. Alternatively, it can
@@ -47,8 +71,12 @@ Thus, the host PC running **dataFEED edgeConnector 840D** needs either
 
 ## Physical Connection to SINUMERIK 840D PL
 
-SINUMERIK 840D PL only provides two MPI interfaces for communication.
-Therefore an Ethernet-to-MPI converter is needed here.
+**SINUMERIK 840D PL** does not provide an Ethernet interface. Thus, a D-Sub 9 connector plus an
+appropriate converter for transforming the **SINUMERIK 840D PL**-specific communication to Ethernet
+communication has to be used for connectivity purposes.
+
+The Softing product **echolink S7-compact** supports the PG/MPI to Ethernet conversion and thus is a
+suitable converter product.
 
 The Ethernet-to-MPI converter translates the RFC-1006 TSAP addresses into MPI
 addresses. As a result the default SINUMERIK 840D PL MPI addresses are
@@ -56,6 +84,50 @@ translated into the following TSAP settings:
 
 - TSAP NCK (powerline): `03 03`
 - TSAP PLC (powerline): `03 02`
+
+It must be ensured that the **SINUMERIK 840D PL** has been switched on and its communication settings
+are correct. Special attention has to be paid to a valid MPI address assignment, preventing double
+assignment of MPI addresses in the configuration at all costs. The individual configured addresses can
+be determined by checking the hardware configuration of the **SIMATIC STEP 7** project. Usually the MPI
+address `30` is not used and thus can be assigned to **echolink S7-compact**.
+
+![Sinumerik 840D PL](../documentation_pics/sinumerik_840d_pl.png)
+
+The **SINUMERIK 840D PL** provides several D-Sub 9 connectors:
+
+| Ethernet interface   | Description                                                                                                   |
+| -------------------- | ------------------------------------------------------------------------------------------------------------- |
+| X122                 | It is used for connecting the programming or a remote maintenance device (PG interface).                      |
+|                      | The interface is recommended for connecting **echolink S7-compact**. It requires its own 24 V power supply, since the connector X122 does not provide any voltage. |
+|                      | If a connector is already connected here, **echolink S7-compact** can be plugged on top or in between.        |
+| X101                 | It is used for connecting the control panel/operating panel (control panel interface) and is not recommended for the communication via **echolink S7-compact**.    |
+
+## Configure echolink S7-compact
+
+The **echolink S7-compact** configuration is performed in the appropriate configuration page (see the figure below).
+
+The important **echolink S7-compact** settings include:
+
+| Variable                  | Description                                                                                                   |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| IP Address                | Address for reaching **echolink S7-compact**.                                                                 |
+|                           | The IP address is freely selectable (e.g. 192.168.214.XXX), but has to be located in the same network as the MACHINE network of **dataFEED edgeConnector 840D**. |
+| Baudrate                  | The transmission speed has to be set to 187.5 kBit/s.                                                         |
+| Own Station Address       | MPI address of **echolink S7-compact**                                                                        |
+|                           | **Important:** This address must not be used by another station.                                              |
+| Set Default Bus Parameter | Click on `MPI` button and use the default parameters.                                                         |
+
+![Configuration echolink S7-compact](../documentation_pics/config_echolinkS7.png)
+
+## Configure **edgeConnector 840D** for using SINUMERIK 840D PL
+
+For connecting to a **SINUMERIK 840D PL** controller type the main difference in the **dataFEED edgeConnector 840D** configuration are the Transport Services Access Point (TSAP) settings.
+
+The **SINUMERIK 840D PL**-specific settings include (see the figure below):
+
+- **IPv4 Address** must correspond to the IP address of **echolink S7-compact** (here: 192.168.1.15).
+- **NCK TSAP Selection** `SINUMERIK 840D PL NCK` has to be selected in the dropdown menu..
+- **PLC TSAP Selection** `SINUMERIK 840D PL PLC` has to be selected in the dropdown menu..
 
 ## Running **dataFEED edgeConnector 840D**
 
@@ -264,6 +336,70 @@ See [sdfi](../common/sdfi.md)
 
 The creation of *.AWL* files is described in the
 ![uaGate840D_AdditionalVariables_C_EN_190801_L_100.pdf](uaGate840D_AdditionalVariables_C_EN_190801_L_100.pdf) document.
+
+#### GUD variables
+
+In the NCU numerical control unit of the SINUMERIK 840D CNC controller, users can define global variables for individual use in the machine tool according to their requirements. These GUD (Global User Data) variables can be accessed using **uaGate 840D** and **dataFEED edgeConnector 840D**. For this purpose, it is necessary to define a structure with the following components and their initial values according to the respective GUD variable in the associated `.AWL` file:
+
+```bash
+STRUCT
+	SYNTAX_ID : BYTE := B#16#82;
+	bereich_u_einheit : BYTE;
+	spalte : WORD;
+	zeile : WORD := W#16#1;
+	bausteintyp : BYTE;
+	ZEILENANZAHL : BYTE := B#16#1;
+	typ : BYTE; 
+	laenge : BYTE;
+END_STRUCT ;
+```
+
+The individual lines of the structure have the following structure:
+
+```bash
+<Component Name> : <Data Type BYTE | WORD> := <Initial Value>;
+```
+
+All components of the GUD variable have to be initialized with a value according to the description below.
+
+The following initial values are used for the individual components:
+
+| Component Name       | Initial Value                 | Description                                                                                        |
+| -------------------- | ----------------------------- | ------------------------------------------------------------                                       |
+| SYNTAX_ID            | B#16#82                       | The component SYNTAX_ID has always to be set to this initial value.                                |
+|                      |                               | This value must not be changed.                                                                    |
+| bereich_u_einheit    | NCK area: B#16#1              | The component bereich_u_einheit specifies the validity area of the GUD variable. The validity areas NCK (entire numerical control)|
+|                      | Channel area: B#16#41         | and Channel (one channel of the numerical control) are supported.                                  |
+| spalte               |                               | This component specifies the line in which the GUD variable is displayed in the SINUMERIK 840D human machine interface.|
+| zeile                | W#16#1                        | The component zeile has always to be set to this initial value.                                    |
+|                      |                               | This value must not be changed.                                                                    |
+| bausteintyp          | data block SGUD: B#16#17      | The component bausteintyp specifies the data block type.                                           |
+|                      | data block MGUD: B#16#2D      |                                                                                                    |
+|                      | data block UGUD: B#16#2E      |                                                                                                    |
+|                      | data block GUD4: B#16#2F      |                                                                                                    |
+|                      | data block GU5D: B#16#30      |                                                                                                    |
+|                      | data block GUD6: B#16#31      |                                                                                                    |
+|                      | data block GUD7: B#16#32      |                                                                                                    |
+|                      | data block GUD8: B#16#33      |                                                                                                    |
+|                      | data block GUD9: B#16#34      |                                                                                                    |
+|                      | data block SGUD GD1: B#16#34  |                                                                                                    |
+| ZEILENANZAHL         | B#16#1                        | The component ZEILENANZAHL has always to be set to this initial value.                             |
+|                      |                               | This value must not be changed.                                                                    |
+| typ                  | data type Real: B#16#f        | The component typ determines the data type of the GUD variable.                                    |
+|                      | data type Char: B#16#3        |                                                                                                    |
+|                      | data type String: B#16#13     |                                                                                                    |
+|                      | data type Bool: B#16#1        |                                                                                                    |
+|                      | data type Integer: B#16#7     |                                                                                                    |
+|                      | data type Axis: B#16#13       |                                                                                                    |
+| laenge               | data type Real: B#16#8        | The component laenge defines the length of the GUD variable.                                       |
+|                      | data type Char: B#16#1        |                                                                                                    |
+|                      | data type String:             | For the data type String the length of the string plus 1 has to be assigned as length.(E.g. the value B#16#26 has to be assigned as length for a string with the length 25.)|
+|                      | data type Bool: B#16#1        |                                                                                                    |
+|                      | data type Integer: B#16#4     |                                                                                                    |
+|                      | data type Axis: B#16#4        |                                                                                                    |
+
+
+
 
 #### Add GUD variables to *.AWL* file
 
