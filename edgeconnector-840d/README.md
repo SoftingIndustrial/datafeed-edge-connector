@@ -356,7 +356,7 @@ END_STRUCT ;
 
 The individual lines of the structure have the following structure:
 
-```bash
+```awl
 <Component Name> : <Data Type BYTE | WORD> := <Initial Value>;
 ```
 
