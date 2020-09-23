@@ -385,13 +385,13 @@ The following initial values are used for the individual components:
 |                      | data block SGUD GD1: `B#16#34`  |                                                                                                    |
 | `NumOfLine`         | `B#16#1`                        | The component `NumOfLine` has always to be set to this initial value.                             |
 |                      |                                 | This value must not be changed.                                                                    |
-| typ                  | data type Real: `B#16#f`        | The component typ determines the data type of the GUD variable.                                    |
+| `DataType`            | data type Real: `B#16#f`        | The component `DataType` determines the data type of the GUD variable.                                    |
 |                      | data type Char: `B#16#3`        |                                                                                                    |
 |                      | data type String: `B#16#13`     |                                                                                                    |
 |                      | data type Bool: `B#16#1`        |                                                                                                    |
 |                      | data type Integer: `B#16#7`     |                                                                                                    |
 |                      | data type Axis: `B#16#13`       |                                                                                                    |
-| laenge               | data type Real: `B#16#8`        | The component laenge defines the length of the GUD variable.                                       |
+| `Length`               | data type Real: `B#16#8`        | The component `Length` defines the length of the GUD variable.                                       |
 |                      | data type Char: `B#16#1`        |                                                                                                    |
 |                      | data type String:               | For the data type String the length of the string plus 1 has to be assigned as length.(E.g. the value B#16#26 has to be assigned as length for a string with the length 25.)|
 |                      | data type Bool: `B#16#1`        |                                                                                                    |
