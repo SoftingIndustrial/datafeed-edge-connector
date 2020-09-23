@@ -15,7 +15,7 @@ Linux Docker containers based on an x86_64 architecture.
 The contoller types **SINUMERIK 840D Solution Line** and **SINUMERIK 840D Power Line** are supported.
 Controllers of older types like **SINUMERIK 840** and **SINUMERIK 840C** are not compatible.
 
-## Supported Controller types
+## Supported Software versions
 
 **SINUMERIK 840D sl** must have software version V2.7 and higher,
 **SINUMERIK 840D pl** must have software version V5.3 and higher.
