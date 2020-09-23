@@ -113,7 +113,7 @@ The important **echolink S7-compact** settings include:
 | IP Address                | Address for reaching **echolink S7-compact**.                                                                 |
 |                           | The IP address is freely selectable (e.g. 192.168.214.XXX), but has to be located in the same network as the MACHINE network of **dataFEED edgeConnector 840D**. |
 | Baudrate                  | The transmission speed has to be set to 187.5 kBit/s.                                                         |
-| Own Station Address       | MPI address of **echolink S7-compact**                                                                        |
+| Own Station Address       | MPI address of **echolink S7-compact**.                                                                       |
 |                           | **Important:** This address must not be used by another station.                                              |
 | Set Default Bus Parameter | Click on `MPI` button and use the default parameters.                                                         |
 
@@ -126,8 +126,8 @@ For connecting to a **SINUMERIK 840D PL** controller type the main difference in
 The **SINUMERIK 840D PL**-specific settings include (see the figure below):
 
 - **IPv4 Address** must correspond to the IP address of **echolink S7-compact** (here: 192.168.1.15).
-- **NCK TSAP Selection** `SINUMERIK 840D PL NCK` has to be selected in the dropdown menu..
-- **PLC TSAP Selection** `SINUMERIK 840D PL PLC` has to be selected in the dropdown menu..
+- **NCK TSAP Selection** `SINUMERIK 840D PL NCK` has to be selected in the dropdown menu.
+- **PLC TSAP Selection** `SINUMERIK 840D PL PLC` has to be selected in the dropdown menu.
 
 ## Running **dataFEED edgeConnector 840D**
 
@@ -364,7 +364,7 @@ All components of the GUD variable have to be initialized with a value according
 
 The following initial values are used for the individual components:
 
-| Component Name       | Initial Value                 | Description                                                                                        |
+| Component Name       | Value                         | Description                                                                                        |
 | -------------------- | ----------------------------- | ------------------------------------------------------------                                       |
 | SYNTAX_ID            | B#16#82                       | The component SYNTAX_ID has always to be set to this initial value.                                |
 |                      |                               | This value must not be changed.                                                                    |
