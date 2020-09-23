@@ -344,13 +344,13 @@ In the NCU numerical control unit of the SINUMERIK 840D CNC controller, users ca
 ```awl
 STRUCT
 	SYNTAX_ID : BYTE := B#16#82;
-	bereich_u_einheit : BYTE;
-	spalte : WORD;
-	zeile : WORD := W#16#1;
-	bausteintyp : BYTE;
-	ZEILENANZAHL : BYTE := B#16#1;
-	typ : BYTE; 
-	laenge : BYTE;
+	Area_Unit : BYTE;
+	Column : WORD;
+	Line : WORD := W#16#1;
+	BlockType : BYTE;
+	NumOfLine : BYTE := B#16#1;
+	DataType : BYTE;
+	Length : BYTE;
 END_STRUCT ;
 ```
 
@@ -366,14 +366,14 @@ The following initial values are used for the individual components:
 
 | Component Name       | Value                           | Description                                                                                        |
 | -------------------- | -----------------------------   | ------------------------------------------------------------                                       |
-| SYNTAX_ID            | `B#16#82`                       | The component SYNTAX_ID has always to be set to this initial value.                                |
+| `SYNTAX_ID`          | `B#16#82`                       | The component SYNTAX_ID has always to be set to this initial value.                                |
 |                      |                                 | This value must not be changed.                                                                    |
-| bereich_u_einheit    | NCK area: `B#16#1`              | The component bereich_u_einheit specifies the validity area of the GUD variable. The validity areas NCK (entire numerical control)|
+| `Area_Unit`    | NCK area: `B#16#1`              | The component `Area_Unit` specifies the validity area of the GUD variable. The validity areas NCK (entire numerical control)|
 |                      | Channel area: `B#16#41`         | and Channel (one channel of the numerical control) are supported.                                  |
-| spalte               |                                 | This component specifies the line in which the GUD variable is displayed in the SINUMERIK 840D human machine interface.|
-| zeile                | `W#16#1`                        | The component zeile has always to be set to this initial value.                                    |
+| `Column`             |                                 | This component specifies the line in which the GUD variable is displayed in the SINUMERIK 840D human machine interface.|
+| `Line`               | `W#16#1`                        | The component `Line` has always to be set to this initial value.                                    |
 |                      |                                 | This value must not be changed.                                                                    |
-| bausteintyp          | data block SGUD: `B#16#17`      | The component bausteintyp specifies the data block type.                                           |
+| `BlockType`          | data block SGUD: `B#16#17`      | The component `BlockType` specifies the data block type.                                           |
 |                      | data block MGUD: `B#16#2D`      |                                                                                                    |
 |                      | data block UGUD: `B#16#2E`      |                                                                                                    |
 |                      | data block GUD4: `B#16#2F`      |                                                                                                    |
@@ -383,7 +383,7 @@ The following initial values are used for the individual components:
 |                      | data block GUD8: `B#16#33`      |                                                                                                    |
 |                      | data block GUD9: `B#16#34`      |                                                                                                    |
 |                      | data block SGUD GD1: `B#16#34`  |                                                                                                    |
-| ZEILENANZAHL         | `B#16#1`                        | The component ZEILENANZAHL has always to be set to this initial value.                             |
+| `NumOfLine`         | `B#16#1`                        | The component `NumOfLine` has always to be set to this initial value.                             |
 |                      |                                 | This value must not be changed.                                                                    |
 | typ                  | data type Real: `B#16#f`        | The component typ determines the data type of the GUD variable.                                    |
 |                      | data type Char: `B#16#3`        |                                                                                                    |
