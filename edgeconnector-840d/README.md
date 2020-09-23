@@ -341,7 +341,7 @@ The creation of *.AWL* files is described in the
 
 In the NCU numerical control unit of the SINUMERIK 840D CNC controller, users can define global variables for individual use in the machine tool according to their requirements. These GUD (Global User Data) variables can be accessed using **uaGate 840D** and **dataFEED edgeConnector 840D**. For this purpose, it is necessary to define a structure with the following components and their initial values according to the respective GUD variable in the associated `.AWL` file:
 
-```bash
+```awl
 STRUCT
 	SYNTAX_ID : BYTE := B#16#82;
 	bereich_u_einheit : BYTE;
@@ -356,7 +356,7 @@ END_STRUCT ;
 
 The individual lines of the structure have the following structure:
 
-```bash
+```awl
 <Component Name> : <Data Type BYTE | WORD> := <Initial Value>;
 ```
 
@@ -397,9 +397,6 @@ The following initial values are used for the individual components:
 |                      | data type Bool: `B#16#1`        |                                                                                                    |
 |                      | data type Integer: `B#16#4`     |                                                                                                    |
 |                      | data type Axis: `B#16#4`        |                                                                                                    |
-
-
-
 
 #### Add GUD variables to *.AWL* file
 
