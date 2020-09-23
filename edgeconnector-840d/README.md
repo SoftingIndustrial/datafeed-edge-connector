@@ -371,7 +371,7 @@ The following initial values are used for the individual components:
 | bereich_u_einheit    | NCK area: `B#16#1`              | The component bereich_u_einheit specifies the validity area of the GUD variable. The validity areas NCK (entire numerical control)|
 |                      | Channel area: `B#16#41`         | and Channel (one channel of the numerical control) are supported.                                  |
 | spalte               |                                 | This component specifies the line in which the GUD variable is displayed in the SINUMERIK 840D human machine interface.|
-| zeile                | W#16#1                          | The component zeile has always to be set to this initial value.                                    |
+| zeile                | `W#16#1`                        | The component zeile has always to be set to this initial value.                                    |
 |                      |                                 | This value must not be changed.                                                                    |
 | bausteintyp          | data block SGUD: `B#16#17`      | The component bausteintyp specifies the data block type.                                           |
 |                      | data block MGUD: `B#16#2D`      |                                                                                                    |
