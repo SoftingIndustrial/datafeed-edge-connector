@@ -398,9 +398,6 @@ The following initial values are used for the individual components:
 |                      | data type Integer: B#16#4     |                                                                                                    |
 |                      | data type Axis: B#16#4        |                                                                                                    |
 
-
-
-
 #### Add GUD variables to *.AWL* file
 
 GUD variables of the SINUMERIK 840D SL/PL are defined by Siemens, the manufacturer
