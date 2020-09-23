@@ -364,39 +364,39 @@ All components of the GUD variable have to be initialized with a value according
 
 The following initial values are used for the individual components:
 
-| Component Name       | Value                         | Description                                                                                        |
-| -------------------- | ----------------------------- | ------------------------------------------------------------                                       |
-| SYNTAX_ID            | B#16#82                       | The component SYNTAX_ID has always to be set to this initial value.                                |
-|                      |                               | This value must not be changed.                                                                    |
-| bereich_u_einheit    | NCK area: B#16#1              | The component bereich_u_einheit specifies the validity area of the GUD variable. The validity areas NCK (entire numerical control)|
-|                      | Channel area: B#16#41         | and Channel (one channel of the numerical control) are supported.                                  |
-| spalte               |                               | This component specifies the line in which the GUD variable is displayed in the SINUMERIK 840D human machine interface.|
-| zeile                | W#16#1                        | The component zeile has always to be set to this initial value.                                    |
-|                      |                               | This value must not be changed.                                                                    |
-| bausteintyp          | data block SGUD: B#16#17      | The component bausteintyp specifies the data block type.                                           |
-|                      | data block MGUD: B#16#2D      |                                                                                                    |
-|                      | data block UGUD: B#16#2E      |                                                                                                    |
-|                      | data block GUD4: B#16#2F      |                                                                                                    |
-|                      | data block GU5D: B#16#30      |                                                                                                    |
-|                      | data block GUD6: B#16#31      |                                                                                                    |
-|                      | data block GUD7: B#16#32      |                                                                                                    |
-|                      | data block GUD8: B#16#33      |                                                                                                    |
-|                      | data block GUD9: B#16#34      |                                                                                                    |
-|                      | data block SGUD GD1: B#16#34  |                                                                                                    |
-| ZEILENANZAHL         | B#16#1                        | The component ZEILENANZAHL has always to be set to this initial value.                             |
-|                      |                               | This value must not be changed.                                                                    |
-| typ                  | data type Real: B#16#f        | The component typ determines the data type of the GUD variable.                                    |
-|                      | data type Char: B#16#3        |                                                                                                    |
-|                      | data type String: B#16#13     |                                                                                                    |
-|                      | data type Bool: B#16#1        |                                                                                                    |
-|                      | data type Integer: B#16#7     |                                                                                                    |
-|                      | data type Axis: B#16#13       |                                                                                                    |
-| laenge               | data type Real: B#16#8        | The component laenge defines the length of the GUD variable.                                       |
-|                      | data type Char: B#16#1        |                                                                                                    |
-|                      | data type String:             | For the data type String the length of the string plus 1 has to be assigned as length.(E.g. the value B#16#26 has to be assigned as length for a string with the length 25.)|
-|                      | data type Bool: B#16#1        |                                                                                                    |
-|                      | data type Integer: B#16#4     |                                                                                                    |
-|                      | data type Axis: B#16#4        |                                                                                                    |
+| Component Name       | Value                           | Description                                                                                        |
+| -------------------- | -----------------------------   | ------------------------------------------------------------                                       |
+| SYNTAX_ID            | `B#16#82`                       | The component SYNTAX_ID has always to be set to this initial value.                                |
+|                      |                                 | This value must not be changed.                                                                    |
+| bereich_u_einheit    | NCK area: `B#16#1`              | The component bereich_u_einheit specifies the validity area of the GUD variable. The validity areas NCK (entire numerical control)|
+|                      | Channel area: `B#16#41`         | and Channel (one channel of the numerical control) are supported.                                  |
+| spalte               |                                 | This component specifies the line in which the GUD variable is displayed in the SINUMERIK 840D human machine interface.|
+| zeile                | W#16#1                          | The component zeile has always to be set to this initial value.                                    |
+|                      |                                 | This value must not be changed.                                                                    |
+| bausteintyp          | data block SGUD: `B#16#17`      | The component bausteintyp specifies the data block type.                                           |
+|                      | data block MGUD: `B#16#2D`      |                                                                                                    |
+|                      | data block UGUD: `B#16#2E`      |                                                                                                    |
+|                      | data block GUD4: `B#16#2F`      |                                                                                                    |
+|                      | data block GU5D: `B#16#30`      |                                                                                                    |
+|                      | data block GUD6: `B#16#31`      |                                                                                                    |
+|                      | data block GUD7: `B#16#32`      |                                                                                                    |
+|                      | data block GUD8: `B#16#33`      |                                                                                                    |
+|                      | data block GUD9: `B#16#34`      |                                                                                                    |
+|                      | data block SGUD GD1: `B#16#34`  |                                                                                                    |
+| ZEILENANZAHL         | `B#16#1`                        | The component ZEILENANZAHL has always to be set to this initial value.                             |
+|                      |                                 | This value must not be changed.                                                                    |
+| typ                  | data type Real: `B#16#f`        | The component typ determines the data type of the GUD variable.                                    |
+|                      | data type Char: `B#16#3`        |                                                                                                    |
+|                      | data type String: `B#16#13`     |                                                                                                    |
+|                      | data type Bool: `B#16#1`        |                                                                                                    |
+|                      | data type Integer: `B#16#7`     |                                                                                                    |
+|                      | data type Axis: `B#16#13`       |                                                                                                    |
+| laenge               | data type Real: `B#16#8`        | The component laenge defines the length of the GUD variable.                                       |
+|                      | data type Char: `B#16#1`        |                                                                                                    |
+|                      | data type String:               | For the data type String the length of the string plus 1 has to be assigned as length.(E.g. the value B#16#26 has to be assigned as length for a string with the length 25.)|
+|                      | data type Bool: `B#16#1`        |                                                                                                    |
+|                      | data type Integer: `B#16#4`     |                                                                                                    |
+|                      | data type Axis: `B#16#4`        |                                                                                                    |
 
 
 
