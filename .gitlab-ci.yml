@@ -1,4 +1,4 @@
-image: ${CI_REGISTRY}/${CI_PROJECT_NAMESPACE}/raven/raven-build-amd64:18.04_raven2
+image: ${CI_REGISTRY}/utilities/build-images/ubuntu-18-04-build:master
 stages:
   - deploy
 
@@ -14,8 +14,6 @@ deploy:toGithub:
     url: https://github.com/SoftingIndustrial/datafeed-edge-connector
   script:
     - git lfs fetch --all
-    - git config http.proxy ${http_proxy}
-    - git config https.proxy ${https_proxy}
     - git remote add public https://oauth2:${OAUTH2TOKEN}@github.com/SoftingIndustrial/datafeed-edge-connector.git
     - git push public HEAD:refs/heads/${CI_COMMIT_REF_NAME}
   after_script:
