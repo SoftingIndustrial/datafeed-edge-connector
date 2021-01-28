@@ -11,12 +11,12 @@ package of 100 datapoints from the license server.
 The application can reserve at startup a number of datapoint licenses from the
 license server. These are held by the application while it's running. If more
 datapoint licenses are needed than the reserved datapoints the application will
-check out more datapoint license packages from the license server.
+check out more datapoint license packages from the license server.  
 The **dataFEED edgeConnector** modules' scope of delivery includes a
-time-limited and functionally limited demo mode.  
-The demo mode is started immediately once the module has been started without a
-valid license. It comes with 100 datapoints which can be used for up to
-72 hours. After 72 hours the the **dataFEED edgeConnector** module stops
+time-limited and functionally limited demo mode. The demo mode is started 
+immediately once the module has been started without a valid license. 
+It comes with 100 datapoints which can be used for up to72 hours. 
+After 72 hours the the **dataFEED edgeConnector** module stops
 working.  
 To remove the time and datapoints limitation of the demo mode the **dataFEED
 edgeConnector** module must be licensed.
