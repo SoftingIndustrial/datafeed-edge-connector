@@ -1,13 +1,23 @@
 # Licenses
 
 The **dataFEED edgeConnector** modules' scope of delivery includes a time-limited
-and functionaly unlimited demo mode.
+and functionally limited demo mode.
+The **dataFEED edgeConnector** uses a datapoints based licensing. 
+Every read, write and subscribe operation on a node uses up a datapoint license. 
+When the operation is finished the application frees up the datapoint license. 
+The application checks out packages of 100 datapoint licenses from the license server. 
+When it uses up a package it tries to check out another package of 100 datapoints 
+from the license server.
+The application can reserve a number of datapoint licenses from the license server. 
+These are held by the application while it's running. If more 
+datapoint licenses are needed than the reserved datapoints the application will 
+check out more datapoint license batches from the license server.   
 The demo mode is started immediately once the module has been started without a
 valid license.
-It will expire after 72 hours and the **dataFEED edgeConnector** module stops
-working.  
-To remove the time limitation of the demo mode the **dataFEED edgeConnector**
-module must be licensed.
+It comes with 100 datapoints which can be used for up to 72 hours. 
+After 72 hours the the **dataFEED edgeConnector** module stops working.  
+To remove the time and datapoints limitation of the demo mode the **dataFEED
+edgeConnector** module must be licensed.
 The **dataFEED edgeConnector** modules use a floating license mechanism.
 A working floating license server is required to have the
 **dataFEED edgeConnector** module successfully licensed.  
@@ -15,7 +25,7 @@ A working floating license server is required to have the
 ## Softing License
 
 The license activation for Softing's **dataFEED edgeConnector** product family is
-described at the [README page](Licenses/SoftingLicenseServer/README.md) of the
+described at the [README page](./SoftingLicenseServer/README.md) of the
 Softing License Server.
 
 ### License Server Connection Configuration
@@ -24,15 +34,13 @@ To specify the floating license server, navigate to
 ***General Settings*** -> ***Licenses*** -> ***License Server Configuration***
 in the navigation tree as depicted below:  
 ![license_serverconfig](../documentation_pics/license_serverconfig.png)  
-If the ***Enable Server*** checkbox is activated, the address and port of a
-floating
-license server can be specified. The address can either be a hostname or IP
+The License Server Configuration page allow the configuration of a Floating License 
+Server and the number of datapoint licenses to be reserved by application. 
+If the ***Enable Server*** checkbox is activated, the address and port of a floating
+license server can be specified. The address can either be a hostname or an IP
 address. Use the ***Save*** button to save the configuration.  
 A restart of the module is required to activate a license for the module.  
-![Restart module](../documentation_pics/restart-application.png)
-
-The module will only consume a license from the floating license server, if it
-requires a license, for example if a connection is configured and enabled.  
+![Restart module](../documentation_pics/restart-application.png)  
 
 ### Overview
 
@@ -45,9 +53,9 @@ navigation tree to show the current license status.
 The ***License Server Information*** table provides an overview of the individual
 Softing licenses provided by the connected floating license servers.
 
-| Product | Server | Version | Expires | Order ID | Total | Used |
-| :------ | :----- | :------ | :------ | :------- | :---- | :--- |
-| Product name of the license | Floating license server address | Licensed product version | Date when the license will become invalid | Order-ID of the product | Number of connections which can be used with this license | Number of connections currently using this license |
+| Product | Server | Version | Expires | Order ID | Options | Total | Used |
+| :------ | :----- | :------ | :------ | :------- | :---- | :--- | :--- |
+| Product name of the license | Floating license server address | Licensed product version | Date when the license will become invalid | Order-ID of the product | Description of the license type with the number of datapoint licenses | Total number of licenses of this type | Number of license of this type currently in use |
 
 #### Application License Details
 
