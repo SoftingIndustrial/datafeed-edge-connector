@@ -1,57 +1,57 @@
 # Licenses
 
-The **dataFEED edgeConnector** modules' scope of delivery includes a time-limited
-and functionally limited demo mode.
-The **dataFEED edgeConnector** uses a datapoints based licensing. 
-Every read, write and subscribe operation on a node uses up a datapoint license. 
-When the operation is finished the application frees up the datapoint license. 
-The application checks out packages of 100 datapoint licenses from the license server. 
-When it uses up a package it tries to check out another package of 100 datapoints 
-from the license server.
-The application can reserve a number of datapoint licenses from the license server. 
-These are held by the application while it's running. If more 
-datapoint licenses are needed than the reserved datapoints the application will 
-check out more datapoint license batches from the license server.   
+The **dataFEED edgeConnector** modules use a floating license mechanism with
+datapoints based licensing. A working floating license server is required to
+have the **dataFEED edgeConnector** module successfully licensed.  
+Every read, write and subscribe operation on a node uses up a datapoint
+license. When the operation is finished the application frees up the datapoint
+license. The application checks out packages of 100 datapoint licenses from the
+license server. When it uses up a package it tries to check out another
+package of 100 datapoints from the license server.  
+The application can reserve at startup a number of datapoint licenses from the
+license server. These are held by the application while it's running. If more
+datapoint licenses are needed than the reserved datapoints the application will
+check out more datapoint license packages from the license server.
+The **dataFEED edgeConnector** modules' scope of delivery includes a
+time-limited and functionally limited demo mode.  
 The demo mode is started immediately once the module has been started without a
-valid license.
-It comes with 100 datapoints which can be used for up to 72 hours. 
-After 72 hours the the **dataFEED edgeConnector** module stops working.  
+valid license. It comes with 100 datapoints which can be used for up to
+72 hours. After 72 hours the the **dataFEED edgeConnector** module stops
+working.  
 To remove the time and datapoints limitation of the demo mode the **dataFEED
 edgeConnector** module must be licensed.
-The **dataFEED edgeConnector** modules use a floating license mechanism.
-A working floating license server is required to have the
-**dataFEED edgeConnector** module successfully licensed.  
 
 ## Softing License
 
-The license activation for Softing's **dataFEED edgeConnector** product family is
-described at the [README page](./SoftingLicenseServer/README.md) of the
-Softing License Server.
+The license activation for Softing's **dataFEED edgeConnector** product
+family is described at the [README page](./SoftingLicenseServer/README.md)
+of the Softing License Server.
 
 ### License Server Connection Configuration
 
 To specify the floating license server, navigate to
 ***General Settings*** -> ***Licenses*** -> ***License Server Configuration***
-in the navigation tree as depicted below:  
-![license_serverconfig](../documentation_pics/license_serverconfig.png)  
-The License Server Configuration page allow the configuration of a Floating License 
-Server and the number of datapoint licenses to be reserved by application. 
-If the ***Enable Server*** checkbox is activated, the address and port of a floating
-license server can be specified. The address can either be a hostname or an IP
-address. Use the ***Save*** button to save the configuration.  
-A restart of the module is required to activate a license for the module.  
-![Restart module](../documentation_pics/restart-application.png)  
+in the navigation tree as depicted below:
+![license_serverconfig](../documentation_pics/license_serverconfig.png)
+The License Server Configuration page allow the configuration of a Floating
+License Server and the number of datapoint licenses to be reserved
+by application.
+If the ***Enable Server*** checkbox is activated, the address and port of a
+floating license server can be specified. The address can either be a hostname
+or an IP address. Use the ***Save*** button to save the configuration.
+A restart of the module is required to activate a license for the module.
+![Restart module](../documentation_pics/restart-application.png)
 
 ### Overview
 
 Navigate to ***General Settings*** -> ***Licenses*** -> ***Overview*** in the
-navigation tree to show the current license status.  
+navigation tree to show the current license status.
 ![license_overview](../documentation_pics/license_overview.png)
 
 #### License Server Information
 
-The ***License Server Information*** table provides an overview of the individual
-Softing licenses provided by the connected floating license servers.
+The ***License Server Information*** table provides an overview of the
+individual Softing licenses provided by the connected floating license servers.
 
 | Product | Server | Version | Expires | Order ID | Options | Total | Used |
 | :------ | :----- | :------ | :------ | :------- | :---- | :--- | :--- |
@@ -59,9 +59,10 @@ Softing licenses provided by the connected floating license servers.
 
 #### Application License Details
 
-In addition to the general license status presented in the [status bar](#status) the
-***Application License Details*** table provides a detailed overview of the licensed
-feature and the amount of total and available resources for each licensed feature.  
+In addition to the general license status presented in the [status bar](#status)
+the ***Application License Details*** table provides a detailed overview of the
+licensed feature and the amount of total and available resources for each
+licensed feature.
 
 | Type | Total | Available | Server Slots | Server Slots Used |
 | --- | --- | --- | -- | -- |
@@ -70,5 +71,6 @@ feature and the amount of total and available resources for each licensed featur
 ## Open Source Licenses
 
 For the license information of the open source components used by the
-**dataFEED edgeConnector** product family, please see the [Open Source page](Licenses/OpenSourceLicenses.md).
+**dataFEED edgeConnector** product family, please see the
+[Open Source page](Licenses/OpenSourceLicenses.md).
 
