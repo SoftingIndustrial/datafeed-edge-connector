@@ -1,25 +1,32 @@
 # Licenses
 
-The **dataFEED edgeConnector** modules use a floating license mechanism with
-datapoints based licensing. A working floating license server is required to
-have the **dataFEED edgeConnector** module successfully licensed.  
-Every read, write and subscribe operation on a node uses up a datapoint
-license. When the operation is finished the application frees up the datapoint
-license. The application checks out packages of 100 datapoint licenses from the
-license server. When it uses up a package it tries to check out another
-package of 100 datapoints from the license server.  
-The application can reserve at startup a number of datapoint licenses from the
-license server. These are held by the application while it's running. If more
-datapoint licenses are needed than the reserved datapoints the application will
-check out more datapoint license packages from the license server.  
+The **dataFEED edgeConnector** application uses a floating license mechanism
+communicating with a stand alone licensing server application used to serve
+licenses to one or more application instances.  
+Licenses checked out (borrowed) from the licensing server are transformed by
+the application into licensing slot counts. The default behavior uses one slot
+count for accessing a node in the information model, referred from hereon
+as a datapoint.  
+A working floating license server is required to have the 
+**dataFEED edgeConnector**  module successfully licensed.  
+Every read, write and subscribe service operations on a single node uses up
+a datapoint license. When all service operations are finished the application 
+frees up the datapoint license in up to 25 seconds. The application checks 
+out packages of 100 datapoint licenses from the license server. The application 
+uses a dynamic licensing approach, therefore when it uses up a package it tries 
+to check out another package of 100 datapoints from the license server.  
+Preallocation of datapoint licenses from the licensing server is possible at 
+startup. The availability of the preallocated licenses is guaranteed while the 
+application state is in running mode, this means that the preallocated licenses
+will not be checked in to the licensing server. The dynamic behavior will still
+work.  
 The **dataFEED edgeConnector** modules' scope of delivery includes a
-time-limited and functionally limited demo mode. The demo mode is started 
-immediately once the module has been started without a valid license. 
-It comes with 100 datapoints which can be used for up to72 hours. 
-After 72 hours the the **dataFEED edgeConnector** module stops
-working.  
-To remove the time and datapoints limitation of the demo mode the **dataFEED
-edgeConnector** module must be licensed.
+time-limited and functionally limited demo mode. The demo mode comes 
+with 100 datapoints which can be used for up to 72 hours. After 72 hours the 
+**dataFEED edgeConnector** runtime will be stopped.  
+To remove the time and datapoints limitation of the demo mode for the 
+**dataFEED edgeConnector**, a valid license needs to be acquired, activated 
+and installed in a licensing server.
 
 ## Softing License
 
