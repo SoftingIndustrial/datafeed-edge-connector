@@ -9,6 +9,8 @@ deploy:toGithub:
   when: manual
   only:
     - branches
+  tags:
+    - docker
   environment:
     name: github
     url: https://github.com/SoftingIndustrial/datafeed-edge-connector
