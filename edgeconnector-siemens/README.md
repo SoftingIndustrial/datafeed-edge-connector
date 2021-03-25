@@ -195,7 +195,7 @@ The configuration parameters are described below:
 | PLC Address           | \<empty\>                     | Address of the target device (SIMATIC S7 1200/1500 PLC). This is either an IP address or a hostname. |
 | Select Address Spaces | AllConnection | Destination aggregation address space used to store the address space corresponding to this PLC connection |
 | | AddressSpace | It is possible to create additional aggregation address spaces by filling in the desired address space name in the input field and clicking the **Add** button. All available address spaces are visible in a list and can be selected as destination address space for the OPC UA Client connection by checking the corresponding checkbox. |
-| | | For more details about the OPC UA Server functionality and configuration please refer to the [OPC UA Configuration page](common/opcua.md). |
+| | | For more details about the OPC UA Server functionality and configuration please refer to the [OPC UA Configuration page](../common/opcua.md). |
 
 ## Simulation Mode
 
