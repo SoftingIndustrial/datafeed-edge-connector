@@ -29,7 +29,7 @@ Example:
 ## `<Area>`
 
 |                    | Syntax abbreviation | Object type | Access rights |
-| --                 |                     | --          | ---           |
+| --                 | --                  | --          | ---           |
 | Discrete Inputs    | I                   | BIT         | read          |
 |                    | E                   |             |               |
 |                    | DI                  |             |               |
@@ -55,7 +55,7 @@ Example:
 ## `<DataType>`
 
 |        | Syntax | Example Register | Example I/O |
-| --     |        |                  |             |
+| --     | --     | --               | --          |
 | BIT    | X      | RX5.2            | I255        |
 | Int16  |        | R50              |             |
 |        | I      | RI50             |             |
