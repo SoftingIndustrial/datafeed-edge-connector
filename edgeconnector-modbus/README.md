@@ -1,7 +1,7 @@
 # **dataFEED edgeConnector Modbus**
 
 Softing´s **dataFEED edgeConnector Modbus** is a containerized Modbus TCP
-connectivity module adding OPC UA Server functionality.
+connectivity module adding OPC UA Server and MQTT Publisher functionality.
 
 It is possible to connect up to 20 Modbus TCP compatible devices.
 
@@ -23,7 +23,7 @@ For Docker installation instructions please refer to the
 
 ### Pulling the Image
 
-The Docker images are provided through a public registry.
+The Docker images are provided through a public registry. (edgeConnector Modbus will be available later that year)
 To get the latest Docker image you need to pull the image from
 [https://hub.docker.com/r/softingindustrial/edgeconnector-modbus](https://hub.docker.com/r/softingindustrial/edgeconnector-modbus):
 
