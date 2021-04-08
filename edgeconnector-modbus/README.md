@@ -3,7 +3,7 @@
 Softing´s **dataFEED edgeConnector Modbus** is a containerized Modbus TCP
 connectivity module adding OPC UA Server functionality.
 
-It is possible to connect up to 20 Modbus TCP compatible PLCs.
+It is possible to connect up to 20 Modbus TCP compatible devices.
 
 ## Supported Operating Systems
 
@@ -134,7 +134,7 @@ The configuration part, which is common for all kinds of
 
 ### Modbus TCP Connection Configuration
 
-To configure a connection to a Modbus PLC, navigate to
+To configure a connection to a Modbus device, navigate to
 **Connectivity** -> **PLC** -> **Modbus** in the navigation tree
 as depicted below:
 
@@ -148,11 +148,11 @@ status.
 | Column Name | Information Details                                                                                                                         |
 | :--         | :--                                                                                                                                         |
 | Name        | Connection name as defined at creation time                                                                                                 |
-| IP Address  | IP address or host name of PLC                                                                                                              |
-| Status      | Status of PLC connection                                                                                                                    |
-|             | The connection status can be `Connected` if the connection to the PLC is established or `Disconnected` if there is no connection to the PLC |
+| IP Address  | IP address or host name of device                                                                                                              |
+| Status      | Status of connection                                                                                                                    |
+|             | The connection status can be `Connected` if the connection to the device is established or `Disconnected` if there is no connection to the device |
 |             | The connection status is dynamically updated every 2 seconds.                                                                               |
-| Enabled     | Configuration status of the PLC connection                                                                                                  |
+| Enabled     | Configuration status of the connection                                                                                                  |
 |             | Possible values are `Enabled` or `Disabled`.                                                                                                |
 |             | **Note:**                                                                                                                                   |
 |             | Clicking the current configuration status icon triggers a state toggle: *Enabled* -> *Disabled* respectively *Disabled* -> *Enabled*        |
@@ -182,10 +182,10 @@ The configuration parameters are described below:
 | | |The connection name has to be unique and can only be assigned when adding a new connection.|
 | | |**Note:** |
 | | |The following characters are not supported in the **Connection Name** field:  *# ^ < > / $* |
-| Enabled               | *Enabled*                     | Instructs **dataFEED edgeConnector Modbus** to either *Enable* (checked) or *Disable* (unchecked) the currently configured PLC connection. |
+| Enabled               | *Enabled*                     | Instructs **dataFEED edgeConnector Modbus** to either *Enable* (checked) or *Disable* (unchecked) the currently configured connection. |
 | Txt-File              |                               | An ASCII text file with the address-space definition to upload, see [Modbus Item Syntax](./Modbus-Item-Syntax.md) |
-| PLC Address           | \<empty\>                     | Address of the target device. This is either an IP address or a hostname. |
-| Select Address Spaces | AllConnection | Destination aggregation address space used to store the address space corresponding to this PLC connection |
+| Address           | \<empty\>                     | Address of the target device. This is either an IP address or a hostname. |
+| Select Address Spaces | AllConnection | Destination aggregation address space used to store the address space corresponding to this connection |
 | | AddressSpace | It is possible to create additional aggregation address spaces by filling in the desired address space name in the input field and clicking the **Add** button. All available address spaces are visible in a list and can be selected as destination address space for the OPC UA Client connection by checking the corresponding checkbox. |
 | | | For more details about the OPC UA Server functionality and configuration please refer to the [OPC UA Configuration page](../common/opcua.md). |
 
