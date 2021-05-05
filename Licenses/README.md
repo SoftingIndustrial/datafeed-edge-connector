@@ -6,7 +6,8 @@ licenses to one or more application instances.
 Licenses checked out (borrowed) from the licensing server are transformed by
 the application into licensing slot counts. The default behavior uses one slot
 count for accessing a node in the information model, referred from hereon
-as a datapoint.  
+as a datapoint. 
+
 A working floating license server is required to have the 
 **dataFEED edgeConnector**  module successfully licensed.  
 Every read, write and subscribe service operations on a single node uses up
@@ -20,10 +21,12 @@ startup. The availability of the preallocated licenses is guaranteed while the
 application state is in running mode, this means that the preallocated licenses
 will not be checked in to the licensing server. The dynamic behavior will still
 work.  
+
 The **dataFEED edgeConnector** modules' scope of delivery includes a
 time-limited and functionally limited demo mode. The demo mode comes 
 with 100 datapoints which can be used for up to 72 hours. After 72 hours the 
 **dataFEED edgeConnector** runtime will be stopped.  
+
 To remove the time and datapoints limitation of the demo mode for the 
 **dataFEED edgeConnector**, a valid license needs to be acquired, activated 
 and installed in a licensing server.
@@ -45,8 +48,9 @@ License Server and the number of datapoint licenses to be reserved
 by application.
 If the ***Enable Server*** checkbox is activated, the address and port of a
 floating license server can be specified. The address can either be a hostname
-or an IP address. Use the ***Save*** button to save the configuration.
-A restart of the module is required to activate a license for the module.
+or an IP address. The used default port is **6200**. Use the ***Save*** button to save the configuration.
+
+A restart of the application is required to activate a license for the module.
 ![Restart module](../documentation_pics/restart-application.png)
 
 ### Overview
