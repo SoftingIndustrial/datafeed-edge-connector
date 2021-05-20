@@ -83,5 +83,5 @@ licensed feature.
 
 For the license information of the open source components used by the
 **dataFEED edgeConnector** product family, please see the
-[Open Source page](OpenSourceLicenses.md).
+[Open Source page](./OpenSourceLicenses.md).
 
