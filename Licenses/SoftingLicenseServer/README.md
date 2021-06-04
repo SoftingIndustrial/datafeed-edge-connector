@@ -1,5 +1,9 @@
 # **Softing License Server**
 
+[[_TOC_]]
+
+## License Server on Windows
+
 ![](LM_available_licenses.png)
 
 **Softing License Server** is a machine used to host network software licenses (also called floating licenses or shared licenses) that are installed locally on an individual users' machines. The network licenses can be shared among many users and/or applications.
@@ -8,7 +12,7 @@
 
 Install **Softing License Manager** V4 on a PC with Internet connection from [https://data-intelligence.softing.com/products/edge-connector-docker/datafeed-edgeconnector-siemens/#tx-dftabs-tabContent2](https://data-intelligence.softing.com/products/edge-connector-docker/datafeed-edgeconnector-siemens/#tx-dftabs-tabContent2).
 
-## Activate License with Internet Connection
+### Activate License with Internet Connection
 
 License activation requires a computer with Internet access. If the connection to the Internet requires a proxy server, please make sure the connection settings are properly configured using the ***Proxy settings...*** button at the ***Settings*** page of the ***Configuration*** section.
 
@@ -24,7 +28,7 @@ License activation requires a computer with Internet access. If the connection t
   * The [LM-X License Server](https://docs.x-formation.com/display/LMX/LM-X+License+Server) is listening to both, the TCP and UDP ports 6200. Please create a Windows Defender Firewall - Inbound Rule for port 6200 for both TCP and UDP protocol types in order to allow other PCs to connect to this floating license server.<br>![](LM_inbound_rule.png)
 
 
-## Activate License Without Internet Connection
+### Activate License Without Internet Connection
 
   * Export the PC Id of the PC on which the Softing License Server runs onby clicking the ***Export PC-Ids ...*** button. The license will then be activated using the exported HostID.<br>
     ![](LM_export_pc_ids.png)
@@ -39,7 +43,7 @@ License activation requires a computer with Internet access. If the connection t
     ![](LM_restart_license_server.png)
   * After a successful activation **Softing License Manager** displays the recently imported license.
 
-## End-user Tools
+### End-user Tools
 
 LM-X end-user tools provide the functionality for the floating (network) licensing mechanism. These tools are deployed by the **Softing License Manager** installer (`C:\Program Files (x86)\Softing\LicenseManager\LicenseServer\`)
 
@@ -53,3 +57,182 @@ LM-X end-user tools provide the functionality for the floating (network) licensi
     - The user can stop the Softing License Server Windows Service and instead run it from the command line.
 	- LM-X License Server is listening on both, the TCP and UDP ports 6200. Please create a Windows Defender Firewall - Inbound Rule for port 6200 for both TCP and UDP protocol types in order to allow other PCs to connect to this floating license server.
   * The additional LM-X End-user Utility can be used to display the HostIDs and the statistics, and lists what licenses are currently being used by which users on a specific license server. It also allows the restart and shutdown of the license server.
+
+## License Server in Linux Docker container
+
+The Docker container on Docker Hub can be found at [this link](https://hub.docker.com/r/softingindustrial/floating-license-server).
+
+To start the container, run the following command. The image will be pulled and the container started.
+
+```
+docker run\
+    --name licsrv\
+    -p 6200:6200\
+    --volume $(pwd)/license_files:/licsrv/licenses\
+    softingindustrial/floating-license-server
+```
+
+**NOTE**: Replace `licsrv` with the name of the container used in a real-world scenario.
+
+### Retrieve the license server Host information
+
+To activate licenses, the Host Id provided by the license server must be used. The Host Id is specific to the host on which the server is run.
+
+Steps to get the Host Id from the containerized licensing server:
+
+1. From container logs:
+
+    ```
+    docker logs licsrv
+    ```
+    Output:
+
+    ```
+    ...
+    [2021-05-26 13:38:30] HostId: a476a2de-ca10-11e9-80d8e98fa9baf9c85
+    ...
+    ```
+
+    The line above shows the Host Id information.
+
+1. From log file: the command `docker exec -it licsrv cat /licsrv/lmx-serv.log` will show the same output.
+
+### Steps to activate a license using Softing's web interface
+
+1. Log in to [Softing web portal](https://industrial.softing.com/login)
+
+1. Navigate to **Licenses->Register License** 
+
+1. Fill in the purchased license activation key in the `License key` field
+
+1. Fill in the Host Id information retrieved as indicated in the previous sub-chapter
+
+1. Click `Register License`
+
+1. Download and store the generate `*.lic` file
+
+### Activating newly copied licenses
+
+Once the new license files are copied to the volume of the container, it needs to be restarted in order for the new files to be activated.
+
+```
+docker restart licsrv
+```
+### Technical Data
+
+| Name            | Value                     |
+| :-------------  | :-----------------------  |
+| Environment     | Ubuntu 18.04 LTS          |
+| Port            | 6200                      |
+| Licenses Volume | /licsrv/licenses          |
+| Config File     | /licsrv/lmx-serv.cfg      |
+| Log File        | /licsrv/lmx-serv.log      |
+| Address         | http://<ip_of_host>:port  |
+
+### Logs
+
+To view the logs of the Docker container run the following commands:
+
+1. If the container is run with the `-it` (interactive) option, it will display all standard output and error messages in the terminal. If it is run with the `-d` option (daemon), the output logs can be retrieved via a docker command:
+
+    ```
+    docker logs licsrv
+    ```
+
+    The output should look similar to the following, in both cases (interactive and daemon):
+    ```
+    [2021-05-26 13:38:30] LM-X License Server v4.9.23 build 74220bf8 on softing_licsrv (Linux_x64)
+    [2021-05-26 13:38:30] Copyright (C) 2002-2020 X-Formation. All rights reserved.
+    [2021-05-26 13:38:30] Website: https://www.lm-x.com https://www.x-formation.com
+    [2021-05-26 13:38:30] License server has pid 1.
+    [2021-05-26 13:38:30] Serving licenses for vendor SOFTING.
+    [2021-05-26 13:38:30] WARNING: It is not recommended to run license server as root.
+    [2021-05-26 13:38:30]
+    [2021-05-26 13:38:30] License server using TCP IPv4 port 6200.
+    [2021-05-26 13:38:30] License server using TCP IPv6 port 6200.
+    [2021-05-26 13:38:30] License server using UDP IPv4 port 6200.
+    [2021-05-26 13:38:30] Reading licenses...
+    [2021-05-26 13:38:30] License file(s):
+    [2021-05-26 13:38:30] /licsrv/licenses/<license_file>.lic
+    [2021-05-26 13:38:30] Log file path: /licsrv/lmx-serv.log
+    [2021-05-26 13:38:30] Log to stdout: Yes
+    [2021-05-26 13:38:30] Log format: Normal
+    [2021-05-26 13:38:30] Configuration file path: /licsrv/lmx-serv.cfg
+    [2021-05-26 13:38:30] Serving following features:
+    [2021-05-26 13:38:30] edgeConnector (v1.0) (5 license(s)) shared on: HOST USER VIRTUAL license type: additive
+    [2021-05-26 13:38:30]
+    [2021-05-26 13:38:30] HostId: a476a2de-ca10-11e9-80d8e98fa9baf9c85
+    [2021-05-26 13:38:30] To administrate the license server go to your enduser directory and run the License Server Client.
+    [2021-05-26 13:38:30] Ready to serve...
+    ```
+
+1. In the output above the path to the licensing server log file. The command `docker exec -it licsrv cat /licsrv/lmx-serv.log` will show the same output, extracting the content of the log file from the container.
+
+### Volumes
+
+**License files**
+
+The Docker image from which the container is created is configured with a default internal Docker volume of `/licsrv/licenses`, into which the license files can be copied for the server to activate. 
+
+This internal volume can be mapped to the host machine in two ways:
+
+- **Docker [Volumes](https://docs.docker.com/storage/volumes/)**:
+
+    ```
+    docker run\
+        --name licsrv\
+        -p 6200:6200\
+        --volume licenses:/licsrv/licenses\
+        softingindustrial/floating-license-server
+    ```
+
+    In the second line from the bottom a Docker volume is mapped to the internal container volume. If the volume does not exist, it will be created.
+
+    A Docker volume can be created by `docker volume create --name licenses` beforehand, if needed.
+
+    To copy files to the volume execute the following (files will be stored in an internal Docker directory on the host):
+
+    ```
+    docker cp ./*.lic licsrv:/licsrv/licenses
+    ```
+
+- **Docker [Bind Mounts](https://docs.docker.com/storage/bind-mounts/)**:
+
+    ```
+    docker run\
+        --name licsrv\
+        -p 6200:6200\
+        --volume $(pwd)/softing/licenses:/licsrv/licenses\
+        softingindustrial/floating-license-server
+    ```
+
+    To copy files to the volume the license files need to be copied normally to the specified directory (i.e.: `$(pwd)/softing/licenses` in the example).
+
+    In the second line from the bottom a Docker bind mount is mapped to the internal container volume. The full path must be given to the directory on the host, which will be mounted as a bind mount.
+
+**Server configuration file**
+
+Similarly to the license files volumes, the container provides a way to expose the configuration file as well.
+
+The default volume path for this is `/licsrv/config` and the file name is `lmx-serv.cfg`.
+
+A number of parameters can be configured, based on the official X-Formation [documentation](https://docs.x-formation.com/display/LMX/License+server+configuration+file).
+
+The container must be restarted in order for the changes to take effect.
+
+Mounting the volume should be done by using Docker Volumes:
+ - create volume: `docker volume create config_volume`
+ - start the container with the created volume:
+     ```
+     docker run\
+        --name licsrv\
+        -p 6200:6200\
+        --volume licenses:/licsrv/licenses\
+        --volume config_volume:/licsrv/config\
+        softingindustrial/floating-license-server
+     ```
+
+**NOTE**: Use only volumes for the configuration file, not bind mounts. The latter will overwrite the internal container volume, making the configuration file inaccessible.
+
+To edit the configuration file after the volume has been mapped, it can be found in the following path: `/var/lib/docker/volumes/config_volume/_data/lmx-serv.cfg`, where `config_volume` is the name of the Docker volume created.
+This path may change depending on host environment.
