@@ -1,7 +1,5 @@
 # **Softing License Server**
 
-[[_TOC_]]
-
 ## License Server on Windows
 
 ![](LM_available_licenses.png)
