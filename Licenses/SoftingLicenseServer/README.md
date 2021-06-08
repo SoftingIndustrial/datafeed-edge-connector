@@ -72,8 +72,8 @@ The Docker container on Docker Hub can be found at [this link](https://hub.docke
 
 To start the container, run the following command. The image will be pulled and the container started.
 
-```
-docker run\
+```bash
+docker container run\
     --name licsrv\
     -p 6200:6200\
     --volume $(pwd)/license_files:/licsrv/licenses\
@@ -90,8 +90,8 @@ Steps to get the Host Id from the containerized licensing server:
 
 1. From container logs:
 
-    ```
-    docker logs licsrv
+    ```bash
+    docker container logs licsrv
     ```
     Output:
 
@@ -145,8 +145,8 @@ To view the logs of the Docker container run the following commands:
 
 1. If the container is run with the `-it` (interactive) option, it will display all standard output and error messages in the terminal. If it is run with the `-d` option (daemon), the output logs can be retrieved via a docker command:
 
-    ```
-    docker logs licsrv
+    ```bash
+    docker container logs licsrv
     ```
 
     The output should look similar to the following, in both cases (interactive and daemon):
@@ -188,8 +188,8 @@ This internal volume can be mapped to the host machine in two ways:
 
 - **Docker [Volumes](https://docs.docker.com/storage/volumes/)**:
 
-    ```
-    docker run\
+    ```bash
+    docker container run\
         --name licsrv\
         -p 6200:6200\
         --volume licenses:/licsrv/licenses\
@@ -233,8 +233,8 @@ The container must be restarted in order for the changes to take effect.
 Mounting the volume should be done by using Docker Volumes:
  - create volume: `docker volume create config_volume`
  - start the container with the created volume:
-     ```
-     docker run\
+     ```bash
+     docker container run\
         --name licsrv\
         -p 6200:6200\
         --volume licenses:/licsrv/licenses\
