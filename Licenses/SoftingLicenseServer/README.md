@@ -1,6 +1,16 @@
 # **Softing License Server**
 
-## License Server on Windows
+## Introduction
+
+The License Server is a Softing software package used for activating software licenses for other Softing products.
+
+**Table of Contents**
+
+  1. [**License Server for native Windows**](#license-server-for-native-windows)
+  2. [**License Server Enduser Tools**](#license-server-enduser-tools)
+  3. [**License Server in Containerized Linux**](#license-server-in-containerized-linux)
+
+## License Server for native Windows
 
 ![](LM_available_licenses.png)
 
@@ -41,7 +51,7 @@ License activation requires a computer with Internet access. If the connection t
     ![](LM_restart_license_server.png)
   * After a successful activation **Softing License Manager** displays the recently imported license.
 
-### End-user Tools
+## License Server Enduser Tools
 
 LM-X end-user tools provide the functionality for the floating (network) licensing mechanism. These tools are deployed by the **Softing License Manager** installer (`C:\Program Files (x86)\Softing\LicenseManager\LicenseServer\`)
 
@@ -56,7 +66,7 @@ LM-X end-user tools provide the functionality for the floating (network) licensi
 	- LM-X License Server is listening on both, the TCP and UDP ports 6200. Please create a Windows Defender Firewall - Inbound Rule for port 6200 for both TCP and UDP protocol types in order to allow other PCs to connect to this floating license server.
   * The additional LM-X End-user Utility can be used to display the HostIDs and the statistics, and lists what licenses are currently being used by which users on a specific license server. It also allows the restart and shutdown of the license server.
 
-## License Server in Linux Docker container
+## License Server in Containerized Linux
 
 The Docker container on Docker Hub can be found at [this link](https://hub.docker.com/r/softingindustrial/floating-license-server).
 
@@ -111,7 +121,9 @@ Steps to get the Host Id from the containerized licensing server:
 
 ### Activating newly copied licenses
 
-Once the new license files are copied to the volume of the container, it needs to be restarted in order for the new files to be activated.
+The downloaded `*.lic` files need to be copied to the mounted volume of the Docker container. This is how the license server will use them, stored in the persistent volume.
+
+Once the new license files are copied to the shared volume, the container needs to be restarted in order for the new files to be activated.
 
 ```
 docker restart licsrv
