@@ -167,7 +167,7 @@ To view the logs of the Docker container run the following commands:
     [2021-05-26 13:38:30] Log file path: /licsrv/lmx-serv.log
     [2021-05-26 13:38:30] Log to stdout: Yes
     [2021-05-26 13:38:30] Log format: Normal
-    [2021-05-26 13:38:30] Configuration file path: /licsrv/lmx-serv.cfg
+    [2021-05-26 13:38:30] Configuration file path: /licsrv/config/lmx-serv.cfg
     [2021-05-26 13:38:30] Serving following features:
     [2021-05-26 13:38:30] edgeConnector (v1.0) (5 license(s)) shared on: HOST USER VIRTUAL license type: additive
     [2021-05-26 13:38:30]
@@ -209,7 +209,7 @@ This internal volume can be mapped to the host machine in two ways:
 - **Docker [Bind Mounts](https://docs.docker.com/storage/bind-mounts/)**:
 
     ```
-    docker run\
+    docker container run\
         --name licsrv\
         -p 6200:6200\
         --volume $(pwd)/softing/licenses:/licsrv/licenses\
