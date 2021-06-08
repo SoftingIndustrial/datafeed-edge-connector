@@ -74,6 +74,7 @@ To start the container, run the following command. The image will be pulled and 
 
 ```
 docker run\
+    -it\
     --name licsrv\
     -p 6200:6200\
     --volume $(pwd)/license_files:/licsrv/licenses\
