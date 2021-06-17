@@ -12,7 +12,7 @@ For the different controller types, the following specialized connector types ar
 
   1. [**dataFEED edgeConnector Siemens**](edgeconnector-siemens/README.md) for Siemens S7-1200/1500 PLCs
   2. [**dataFEED edgeConnector 840D**](edgeconnector-840d/README.md) for SINUMERIK 840D PL/SL controllers
-  3. [**dataFEED edgeConnector Modbus**](edgeconnector-modbus/README.md) for Modbus TCP (**comming soon**)
+  3. [**dataFEED edgeConnector Modbus**](edgeconnector-modbus/README.md) for Modbus TCP
 
 # Configuration
 
