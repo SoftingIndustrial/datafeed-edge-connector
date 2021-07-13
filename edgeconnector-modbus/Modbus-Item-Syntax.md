@@ -63,6 +63,8 @@ Example:
 | Int32  | D      | RD50             |             |
 |        | DI     | RDI50            |             |
 | UInt32 | DW     | RDW50            |             |
+| Int64  | QI     | RQI50            |             |
+| UInt64 | QW     | RQW50            |             |
 | Real   | R      | RR50             |             |
 | Double | RD     | RRD50            |             |
 | String | S      | RS5.4            |             |
