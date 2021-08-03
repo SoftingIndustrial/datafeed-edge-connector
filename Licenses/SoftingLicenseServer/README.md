@@ -139,7 +139,7 @@ docker restart licsrv
 | Licenses Volume | /licsrv/licenses          |
 | Config File     | /licsrv/lmx-serv.cfg      |
 | Log File        | /licsrv/lmx-serv.log      |
-| Address         | http://<ip_of_host>:port  |
+| Address         | IP-Address from Host      |
 
 ### Logs
 
