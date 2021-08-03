@@ -9,6 +9,8 @@ The License Server is a Softing software package used for activating software li
   1. [**License Server for native Windows**](#license-server-for-native-windows)
   2. [**License Server Enduser Tools**](#license-server-enduser-tools)
   3. [**License Server in Containerized Linux**](#license-server-in-containerized-linux)
+  4. [**License Server in Containerized Linux with Windows Host**](#bind-mounts-for-windows)
+
 
 ## License Server for native Windows
 
@@ -246,3 +248,50 @@ Mounting the volume should be done by using Docker Volumes:
 
 To edit the configuration file after the volume has been mapped, it can be found in the following path: `/var/lib/docker/volumes/config_volume/_data/lmx-serv.cfg`, where `config_volume` is the name of the Docker volume created.
 This path may change depending on host environment.
+
+
+## Bind Mounts for Windows
+
+**Bind mount license file diretory on Windows host**
+
+The above described scenarios are described for docker environments on linux hosts. If you are running a windows host, the steps are slightly different.
+Follow the description above to run the container (as linux container on windows host system).
+
+Then use the following command to retrieve the HostID:
+
+```bash  
+docker container logs licsrv
+```
+
+![](LM_HostID.png)
+
+Then log in at [mySofting](https://industrial.softing.com/my-softing.html?) and go to *register license*.
+
+![](LM_license_registration.png) 
+
+Enter the *HostID* and the *License Key* you received from Softing and download the *.lic*-File to your host.
+
+Go to the host and create a new folder you want to use as license store. In this example, the folder *docker_volume* was created in the following path: *C:\Users\fch\docker_volume*
+
+After the folder was created, it can be shared/bind mounted to the docker environment:
+
+![](LM_BindMount.png)
+
+Now the downloaded *.lic*-File can be copied to the created folder.
+
+With the following command, the license server is started together with the created folder/volume and the included license file:
+
+```bash  
+docker container run -d -p 6200:6200 --name licsrv --volume c:\users\fch\docker_volume:/licsrv/licenses softingindustrial/floating-license-server
+```
+
+The last step is to activate the license server in the edgeConnector product:
+
+![](LM_activate_licsrv.png) 
+
+Use the IP-Address from the host system and the port 6200. Click on save, navigate to operation and toggle a restart of the application to apply the changes.
+If the license was generated/detected correctly it will be shown on the license overview page:
+
+![](LM_license.png) 
+
+**Hint:** The licsrv needs a restart, everytime new licenses are copied to the bind mounted volume to apply the new licenses!
