@@ -3,7 +3,7 @@
 Softing´s **dataFEED edgeConnector Siemens** is a containerized SIMATIC S7
 connectivity module adding OPC UA Server functionality.
 
-It is possible to connect up to 20 SIMATIC S7-1200 or S7-1500 PLCs including
+It is possible to connect up to 20 SIMATIC S7-300/400 or S7-1200/1500 PLCs including
 optimized data blocks.
 The namespace configuration is done by browsing SIMATIC STEP 7 and TIA Portal
 variables.  
