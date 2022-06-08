@@ -1,6 +1,10 @@
 image: ${CI_REGISTRY}/utilities/build-images/ubuntu-18-04-build:master
 stages:
+  - test
   - deploy
+
+include:
+  - template: Security/Secret-Detection.gitlab-ci.yml
 
 # jobs:
 
