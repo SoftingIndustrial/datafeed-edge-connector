@@ -70,7 +70,7 @@ print STDOUT "STRUCT\n";
 while(my $line = <STDIN> ) {
     # The regular expression needs to match the description in page 142 of
     # https://cache.industry.siemens.com/dl/files/410/54714410/att_851303/v1/PGA_de.pdf
-    if ( $line =~ /^DEF\s+(NCK|CHAN)\s+(SYNR|SYNW|SYNRW|)\s*(BOOL|CHAR|INT|REAL|STRING\[(\d)+\]|AXIS|FRAME)\s+([_\w\d]+)/ ) {
+    if ( $line =~ /^DEF\s+(NCK|CHAN)\s+(SYNR|SYNW|SYNRW|)\s*(BOOL|CHAR|INT|REAL|STRING\[(\d+)\]|AXIS|FRAME)\s+([_\w\d]+)/ ) {
         my $area = $1;
         my $vlStop = $2;
         my $type = $3;
