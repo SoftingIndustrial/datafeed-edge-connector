@@ -222,18 +222,19 @@ After removing the container its last state is lost.
 Please refer to the [Remove section](https://docs.docker.com/engine/reference/commandline/container_rm/)
 of the official Docker command line documentation for more details.
 
-### Configuration Volume
+### Configuration and MQTT-data Volumes
 
 Optionally a Docker volume can be created for storing the configuration permanently:
 
 ```bash
 docker volume create edge-connector-config
+docker volume create edge-connector-mqtt
 ```
 
 In this case the container should be started like this, using the volume:
 
 ```bash
-docker container run -d -v edge-connector-config:/config -p 1443:443 -p 8099:8099 -p 4800-4900:4800-4900 --name edgeConnector softingindustrial/edgeconnector-840d
+docker container run -d -v edge-connector-config:/config -v edge-connector-mqtt:/mqtt -p 1443:443 -p 8099:8099 -p 4800-4900:4800-4900 --name edgeConnector softingindustrial/edgeconnector-840d
 ```
 
 ## Configuration
