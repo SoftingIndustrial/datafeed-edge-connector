@@ -185,7 +185,7 @@ The configuration parameters are described below:
 | | |**Note:** |
 | | |The following characters are not supported in the **Connection Name** field:  *# ^ < > / $* |
 | Enabled               | *Enabled*                     | Instructs **dataFEED edgeConnector Fanuc** to either *Enable* (checked) or *Disable* (unchecked) the currently configured connection. |
-| Txt-File              |                               | An ASCII text file with the address-space definition to upload, see [Fanuc Item Syntax](./Fanuc-Item-Syntax.md) |
+| Txt-File              |                               | ASCII text file defining the symbols for the individual [PMC variables](./Fanuc-PMC-Syntax.md) |
 | Address           | \<empty\>                     | Address of the target device. This is either an IP address or a hostname. |
 | Select Address Spaces | AllConnection | Destination aggregation address space used to store the address space corresponding to this connection |
 | | AddressSpace | It is possible to create additional aggregation address spaces by filling in the desired address space name in the input field and clicking the **Add** button. All available address spaces are visible in a list and can be selected as destination address space for the OPC UA Client connection by checking the corresponding checkbox. |
