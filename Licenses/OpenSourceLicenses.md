@@ -162,6 +162,11 @@ For the versions starting from 3.20, the following components are used:
 | libfcgi   | <https://github.com/toshic/libfcgi> | [LICENSE.TERMS](https://github.com/toshic/libfcgi/blob/master/LICENSE.TERMS) | |
 | libzip | <https://github.com/nih-at/libzip> | BSD | |
 | parson | <https://github.com/kgabis/parson> | MIT | |
+| sol2 | <https://github.com/ThePhD/sol2> | MIT | |
+| openLDAP (ldapc++) | <https://git.openldap.org/nivanova/openldap/-/tree/master/contrib/ldapc%2B%2B> | [TheOpenLDAP Public License](https://git.openldap.org/nivanova/openldap/-/blob/master/LICENSE) | |
+| curl | https://curl.haxx.se/docs/copyright.html | MIT like | |
+| paho | https://www.eclipse.org/org/documents/epl-v10.php | Eclipse Public License - v 1.0| |
+| prometheus-cpp | https://github.com/jupp0r/prometheus-cpp/blob/master/LICENSE | MIT | |
 | adduser | [Debian](https://packages.debian.org/bullseye/adduser) | Within image: /usr/share/doc/adduser/copyright | unmodified, packet installed as provided by Debian |
 | apt | [Debian](https://packages.debian.org/bullseye/apt) | Within image: /usr/share/doc/apt/copyright | unmodified, packet installed as provided by Debian |
 | base-files | [Debian](https://packages.debian.org/bullseye/base-files) | Within image: /usr/share/doc/base-files/copyright | unmodified, packet installed as provided by Debian |
