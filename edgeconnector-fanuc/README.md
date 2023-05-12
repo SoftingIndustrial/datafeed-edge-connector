@@ -1,29 +1,29 @@
-# **dataFEED edgeConnector Fanuc CNC**
+# **dataFEED edgeConnector FANUC CNC**
 
-Softing´s **dataFEED edgeConnector Fanuc CNC** is a containerized Fanuc CNC
+Softing´s **dataFEED edgeConnector FANUC CNC** is a containerized FANUC CNC
 connectivity module adding OPC UA Server and MQTT Publisher functionality.
 
-It is possible to connect up to 20 Fanuc CNC devices.
+It is possible to connect up to 20 FANUC CNC devices.
 
 ## Supported Operating Systems
 
-**dataFEED edgeConnector Fanuc CNC** can be used on any Docker host that can
+**dataFEED edgeConnector FANUC CNC** can be used on any Docker host that can
 execute Linux Docker containers based on an x86_64 architecture.
 
 ## Default Settings
 
 The default settings are described at the [Default Settings page](../common/defaults.md).
 
-## Running **dataFEED edgeConnector Fanuc CNC**
+## Running **dataFEED edgeConnector FANUC CNC**
 
-In order to run **dataFEED edgeConnector Fanuc CNC** a working Docker environment
+In order to run **dataFEED edgeConnector FANUC CNC** a working Docker environment
 is required.
 For Docker installation instructions please refer to the
 [official Docker installation documentation](https://docs.docker.com/install/)
 
 ### Pulling the Image
 
-The Docker images are provided through a public registry. (edgeConnector Fanuc CNC will be available later that year)
+The Docker images are provided through a public registry. (edgeConnector FANUC CNC will be available later that year)
 To get the latest Docker image you need to pull the image from
 [https://hub.docker.com/r/softingindustrial/edgeconnector-fanuc-cnc](https://hub.docker.com/r/softingindustrial/edgeconnector-fanuc-cnc):
 
@@ -35,10 +35,10 @@ docker image pull softingindustrial/edgeconnector-fanuc-cnc:latest
 
 After the Docker image has been pulled, a Docker container can be started.
 The webserver and OPC UA Server of the module have to be exposed on the host
-machine if **dataFEED edgeConnector Fanuc CNC** shall be accessed from outside
+machine if **dataFEED edgeConnector FANUC CNC** shall be accessed from outside
 the dockerized environment.
 
-To start **dataFEED edgeConnector Fanuc CNC** with the default ports mapped 1:1
+To start **dataFEED edgeConnector FANUC CNC** with the default ports mapped 1:1
 to the host machine:
 
 ```bash
@@ -48,7 +48,7 @@ docker container run -p 443:443 -p 8099:8099 -p 4897:4897 softingindustrial/edge
 The above example can be adapted to match the needs of your environment.
 For example, if your host already runs a webserver and the https port is
 blocked, the command can be adjusted to expose the https port of **dataFEED
-edgeConnector Fanuc** on a different port:
+edgeConnector FANUC CNC** on a different port:
 
 ```bash
 docker container run -p 1443:443 -p 8099:8099 -p 4897:4897 softingindustrial/edgeconnector-fanuc-cnc
@@ -134,10 +134,10 @@ The configuration part, which is common for all kinds of
 **dataFEED edgeConnector** modules is described at the
 [Configuration page](../common/configuration.md).
 
-### Fanuc CNC Connection Configuration
+### FANUC CNC Connection Configuration
 
-To configure a connection to a Fanuc device, navigate to
-**Connectivity** -> **PLC** -> **Fanuc** in the navigation tree
+To configure a connection to a FANUC device, navigate to
+**Connectivity** -> **PLC** -> **FANUC CNC** in the navigation tree
 as depicted below:
 
 ![fanuc_navigation](../documentation_pics/fanuc_navigation.png)
@@ -184,7 +184,7 @@ The configuration parameters are described below:
 | | |The connection name has to be unique and can only be assigned when adding a new connection.|
 | | |**Note:** |
 | | |The following characters are not supported in the **Connection Name** field:  *# ^ < > / $* |
-| Enabled               | *Enabled*                     | Instructs **dataFEED edgeConnector Fanuc** to either *Enable* (checked) or *Disable* (unchecked) the currently configured connection. |
+| Enabled               | *Enabled*                     | Instructs **dataFEED edgeConnector FANUC CNC** to either *Enable* (checked) or *Disable* (unchecked) the currently configured connection. |
 | Txt-File              |                               | ASCII text file defining the symbols for the individual [PMC variables](./Fanuc-PMC-Syntax.md) |
 | Address           | \<empty\>                     | Address of the target device. This is either an IP address or a hostname. |
 | Select Address Spaces | AllConnection | Destination aggregation address space used to store the address space corresponding to this connection |
@@ -200,21 +200,21 @@ The OPC UA Server functionality and configuration is described at the
 
 ### Softing License
 
-**dataFEED edgeConnector Fanuc**'s scope of delivery includes a time-limited
+**dataFEED edgeConnector FANUC CNC**'s scope of delivery includes a time-limited
 and functionaly unlimited demo mode.
 The demo mode is started immediately once the module has been started without a
 valid license.
-It will expire after 72 hours and **dataFEED edgeConnector Fanuc** stops
+It will expire after 72 hours and **dataFEED edgeConnector FANUC CNC** stops
 working.  
-To remove the time limitation of the demo mode **dataFEED edgeConnector Fanuc**
+To remove the time limitation of the demo mode **dataFEED edgeConnector FANUC CNC**
 must be licensed.
-**dataFEED edgeConnector Fanuc** uses a floating license mechanism.
+**dataFEED edgeConnector FANUC CNC** uses a floating license mechanism.
 A working floating license server is required to have **dataFEED edgeConnector
-Fanuc** successfully licensed.  
+FANUC CNC** successfully licensed.  
 
 Please see the [License README page](../Licenses/README.md) for further details.
 
-The license activation for **dataFEED edgeConnector Fanuc** is described at the
+The license activation for **dataFEED edgeConnector FANUC CNC** is described at the
 [README page](../Licenses/SoftingLicenseServer/README.md) of the Softing License
 Server.
 
@@ -227,5 +227,5 @@ of the License README file for further details.
 ### Open Source Licenses
 
 For the license information of the open source components used by
-**dataFEED edgeConnector Fanuc**, please see the
+**dataFEED edgeConnector FANUC CNC**, please see the
 [Open Source page](../Licenses/OpenSourceLicenses.md).
