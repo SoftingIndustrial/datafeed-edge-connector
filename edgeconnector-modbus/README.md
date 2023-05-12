@@ -63,6 +63,7 @@ docker container run -d -p 1443:443 -p 8099:8099 -p 4800-4900:4800-4900 --name e
 ```
 
 #### Running with specified timezone
+
 The `-e` or `--env` switch allows to set environment variables in the container.
 For setting a timezone the variable `TZ` must be passed with a valid `TZ database name`.
 
