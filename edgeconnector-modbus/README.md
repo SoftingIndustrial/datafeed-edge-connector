@@ -23,7 +23,7 @@ For Docker installation instructions please refer to the
 
 ### Pulling the Image
 
-The Docker images are provided through a public registry. (edgeConnector Modbus will be available later that year)
+The Docker images are provided through a public registry.
 To get the latest Docker image you need to pull the image from
 [https://hub.docker.com/r/softingindustrial/edgeconnector-modbus](https://hub.docker.com/r/softingindustrial/edgeconnector-modbus):
 
