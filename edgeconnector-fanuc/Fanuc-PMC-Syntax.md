@@ -17,6 +17,56 @@ Where
     - `<unit>`: An optional digit defining the unit. If omitted the unit is 1.
     - `<area>`: A letter from the set [GFXYARTKCDMNEZ], defining the PMC area
     - `<start address>`: The address within the PMC area
-    - `.<bit number>`: An optional bit number, seperated by a dot (only for Boolean values)
+    - `.<bit number>`: An optional bit number, separated by a dot (only for Boolean values)
 - `<comment1>` and `<comment2>`: are optionally comments
 - `<cr><lf>`: Are the carriage-return and line-feed characters, ending the line.
+
+
+
+## Example PMC variable definition
+
+For example, a PMC variable definition file may have the following content:
+
+ 
+
+%@2-E(SYM=1 ADR=2 CM1=3 CM2=4)
+
+RWD,F0000.0,PROGRAM REWINDING SIGNAL,
+
+SPL,F0000.4,FEEDHOL LAMP SIGNAL,
+
+STL,F0000.5,CYCLESTART LAMP SIGNAL,
+
+SA,F0000.6,SERVO READ COMPLETE SIGNAL,
+
+OP1,F0000.7,CH1 AUTOMATIC OPERATION SIGNAL,
+
+AL,F0001.0,CNC ALARM SIGNAL,
+
+RST,F0001.1,CNC RESET SIGNAL,
+
+BAL,F0001.2,BATTERY ALARM SIGNAL,
+
+DEN,F0001.3,DISTRIBUTION END SIGNAL,
+
+ENB,F0001.4,SPINDLE ENABLE SIGNAL,
+
+TAP,F0001.5,TAPPING SIGNAL,
+
+DEN2,F0001.6,,
+
+MA,F0001.7,CNC READY SIGNAL,
+
+INCH,F0002.0,INCH INPUT SIGNAL,
+
+RPDO,F0002.1,RAPID TRAVERSING SIGNAL,
+
+CSS,F0002.2,CONSTANT SURFACE SPEED SIGNAL,
+
+THRD,F0002.3,THREAD CUTTING SIGNAL,
+
+SRNMV,F0002.4,PROGRAM RESTART OPERATION,
+
+CUT,F0002.6,CUTTING FEED SIGNAL,
+
+MDRN,F0002.7,DRY RUN CONFIRMATION SIGNAL,
