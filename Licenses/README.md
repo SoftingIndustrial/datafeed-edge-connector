@@ -11,7 +11,7 @@ The **dataFEED edgeConnector** modules' scope of delivery includes a time-limite
 
 To remove the time limitation of the demo mode for the **dataFEED edgeConnector**, a valid license needs to be acquired, activated, and installed in a licensing server.
 
-![license_serverconfig](../documentation_pics/license_model.png){width=200 height=150}
+![license_serverconfig](../documentation_pics/license_model.png){width=300 height=250}
 
 ## Softing License
 
