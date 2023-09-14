@@ -23,16 +23,16 @@ of the Softing License Server.
 
 To specify the floating license server, navigate to ***General Settings -> Licenses -> License Server Configuration*** in the navigation tree as depicted below:
 
-![license_serverconfig](../documentation_pics/license_serverconfig.png)
+![license_serverconfig](../documentation_pics/ConfigImage1.png)
 The License Server Configuration page allows the configuration of a Floating License Server. If the **Enable Server** checkbox is activated, the address and port of a floating license server can be specified. The address can either be a hostname or an IP address. The used default port is **6200**. Use the **Save** button to save the configuration.
 
 A restart of the application is required to activate a license for the module.
-![Restart module](../documentation_pics/restart-application.png)
+![Restart module](../documentation_pics/ConfigImage2.png)
 
 ### Overview
 
 Navigate to ***General Settings -> Licenses -> Overview*** in the navigation tree to show the current license status.
-![license_overview](../documentation_pics/license_overview.png)
+![license_overview](../documentation_pics/Overview_Image.png)
 
 #### License Server Information
 
