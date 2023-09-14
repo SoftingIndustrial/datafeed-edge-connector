@@ -27,6 +27,7 @@ To specify the floating license server, navigate to ***General Settings -> Licen
 The License Server Configuration page allows the configuration of a Floating License Server. If the **Enable Server** checkbox is activated, the address and port of a floating license server can be specified. The address can either be a hostname or an IP address. The used default port is **6200**. Use the **Save** button to save the configuration.
 
 A restart of the application is required to activate a license for the module.
+
 ![Restart module](../documentation_pics/ConfigImage2.png)
 
 ### Overview
