@@ -21,24 +21,17 @@ of the Softing License Server.
 
 ### License Server Connection Configuration
 
-To specify the floating license server, navigate to
-***General Settings*** -> ***Licenses*** -> ***License Server Configuration***
-in the navigation tree as depicted below:
+To specify the floating license server, navigate to ***General Settings -> Licenses -> License Server Configuration*** in the navigation tree as depicted below:
+
 ![license_serverconfig](../documentation_pics/license_serverconfig.png)
-The License Server Configuration page allow the configuration of a Floating
-License Server and the number of datapoint licenses to be reserved
-by application.
-If the ***Enable Server*** checkbox is activated, the address and port of a
-floating license server can be specified. The address can either be a hostname
-or an IP address. The used default port is **6200**. Use the ***Save*** button to save the configuration.
+The License Server Configuration page allows the configuration of a Floating License Server. If the **Enable Server** checkbox is activated, the address and port of a floating license server can be specified. The address can either be a hostname or an IP address. The used default port is **6200**. Use the **Save** button to save the configuration.
 
 A restart of the application is required to activate a license for the module.
 ![Restart module](../documentation_pics/restart-application.png)
 
 ### Overview
 
-Navigate to ***General Settings*** -> ***Licenses*** -> ***Overview*** in the
-navigation tree to show the current license status.
+Navigate to ***General Settings -> Licenses -> Overview*** in the navigation tree to show the current license status.
 ![license_overview](../documentation_pics/license_overview.png)
 
 #### License Server Information
@@ -48,18 +41,18 @@ individual Softing licenses provided by the connected floating license servers.
 
 | Product | Server | Version | Expires | Order ID | Options | Total | Used |
 | :------ | :----- | :------ | :------ | :------- | :---- | :--- | :--- |
-| Product name of the license | Floating license server address | Licensed product version | Date when the license will become invalid | Order-ID of the product | Description of the license type with the number of datapoint licenses | Total number of licenses of this type | Number of license of this type currently in use |
+| Product name of the license | Floating license server address | Licensed product version | Date when the license will become invalid | Order-ID of the product | Description of the license type | Total number of licenses of this type | Number of license of this type currently in use |
 
 #### Application License Details
 
 In addition to the general license status presented in the [status bar](#status)
 the ***Application License Details*** table provides a detailed overview of the
-licensed feature and the amount of total and available resources for each
+licensed feature and the amount of total and available connections for each
 licensed feature.
 
-| Type | Total | Available | Server Slots | Server Slots Used |
-| --- | --- | --- | -- | -- |
-| Licensed feature; If this is a demo license, the *DEMO* keyword is appended | Total number of licensed features (features which were checked out from the licensing server) | Number of available licensed features (features which can be created without checking out a new one from the licensing server) | Sum of licenses for the feature at the license server | Sum of used licenses for the feature at the license server |
+| Type | Total | Available |
+| --- | --- | --- | 
+| Type of License, Basic/Advanced/Premium | Total number of licensed Connections| Number of available licensed connections| 
 
 ## Open Source Licenses
 
