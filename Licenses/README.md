@@ -1,36 +1,17 @@
 # Licenses
+The **dataFEED edgeConnector** application uses a floating license mechanism communicating with a standalone licensing server application used to serve licenses to one or more application instances.
 
-The **dataFEED edgeConnector** application uses a floating license mechanism
-communicating with a stand alone licensing server application used to serve
-licenses to one or more application instances.  
-Licenses checked out (borrowed) from the licensing server are transformed by
-the application into licensing slot counts. The default behavior uses one slot
-count for accessing a node in the information model, referred from hereon
-as a datapoint. 
+Licenses checked out (borrowed) from the licensing server are transformed by the application into connection counts. The default behavior uses one connection for accessing a PLC and from there it can make 5 connections from the PLC. 
 
-A working floating license server is required to have the 
-**dataFEED edgeConnector**  module successfully licensed.  
-Every read, write and subscribe service operations on a single node uses up
-a datapoint license. When all service operations are finished the application 
-frees up the datapoint license in up to 25 seconds. The application checks 
-out packages of 100 datapoint licenses from the license server. The application 
-uses a dynamic licensing approach, therefore when it uses up a package it tries 
-to check out another package of 100 datapoints from the license server.  
-Preallocation of datapoint licenses from the licensing server is possible at 
-startup. The availability of the preallocated licenses is guaranteed while the 
-application state is in running mode, this means that the preallocated licenses
-will not be checked in to the licensing server. The dynamic behavior will still
-work.  
+There are 3 general license types, the first is the basic type which enables the user to make connections to multiple Modbus TCP Devices. The second is the advanced type which allows connections to Siemens PLC devices and the third type is the premium type which allows connections to CNC devices as well as the Modbus TCPs & Siemens PLCs.
 
-The **dataFEED edgeConnector** modules' scope of delivery includes a
-time-limited and functionally limited demo mode. The demo mode comes 
-with 100 datapoints which can be used for up to 72 hours. After 72 hours the 
-**dataFEED edgeConnector** runtime will be stopped.  
+The licenses can be bought with 1, 5, 10 or 20 connections where depending on the type you can make connections to devices. 
 
-To remove the time and datapoints limitation of the demo mode for the 
-**dataFEED edgeConnector**, a valid license needs to be acquired, activated 
-and installed in a licensing server.
-![license_serverconfig](../documentation_pics/license_model.png)
+The **dataFEED edgeConnector** modules' scope of delivery includes a time-limited demo mode. The demo mode comes with 20 connections which can be used for up to 72 hours. After 72 hours the **dataFEED edgeConnector** runtime will be stopped.
+
+To remove the time limitation of the demo mode for the **dataFEED edgeConnector**, a valid license needs to be acquired, activated, and installed in a licensing server.
+
+![license_serverconfig](../documentation_pics/license_model.png){width=200 height=150}
 
 ## Softing License
 
