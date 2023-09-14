@@ -30,6 +30,7 @@ with 100 datapoints which can be used for up to 72 hours. After 72 hours the
 To remove the time and datapoints limitation of the demo mode for the 
 **dataFEED edgeConnector**, a valid license needs to be acquired, activated 
 and installed in a licensing server.
+![license_serverconfig](../documentation_pics/license_model.png)
 
 ## Softing License
 
