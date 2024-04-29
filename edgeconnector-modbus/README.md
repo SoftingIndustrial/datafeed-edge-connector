@@ -12,11 +12,11 @@ execute Linux Docker containers based on an x86_64 architecture.
 
 ## Default Settings
 
-The default settings are described at the [Default Settings page](../common/defaults.md).
+The default settings are described on the [Default Settings page](../common/defaults.md).
 
 ## Running **dataFEED edgeConnector Modbus**
 
-In order to run **dataFEED edgeConnector Modbus** a working Docker environment
+To run **dataFEED edgeConnector Modbus** a working Docker environment
 is required.
 For Docker installation instructions please refer to the
 [official Docker installation documentation](https://docs.docker.com/install/)
@@ -34,32 +34,38 @@ docker image pull softingindustrial/edgeconnector-modbus:latest
 ### Running the Docker Container
 
 After the Docker image has been pulled, a Docker container can be started.
-The webserver and OPC UA Server of the module have to be exposed on the host
+The web server and OPC UA Server of the module have to be exposed on the host
 machine if **dataFEED edgeConnector Modbus** shall be accessed from outside
 the dockerized environment.
+
+By default **dataFEED edgeConnector Siemens** is configured to allow only HTTPS access to its web-based configuration interface. If in certain situations, and after a thorough security assessment and acknowledging all security risks, it is decided that HTTP communication is necessary, then this can be achieved by defining the environment variable ENABLE_HTTP_CONFIG.
+
+```bash
+docker container run -d -p 443:443 -p 8099:8099 -p 4897:4897 --name edgeConnector -e ENABLE_HTTP_CONFIG="ON" softingindustrial/edgeconnector-modbus
+```
 
 To start **dataFEED edgeConnector Modbus** with the default ports mapped 1:1
 to the host machine:
 
 ```bash
-docker container run -p 443:443 -p 8099:8099 -p 4897:4897 softingindustrial/edgeconnector-modbus
+docker container run -p 443:443 -p 4897:4897 softingindustrial/edgeconnector-modbus
 ```
 
 The above example can be adapted to match the needs of your environment.
-For example, if your host already runs a webserver and the https port is
-blocked, the command can be adjusted to expose the https port of **dataFEED
+For example, if your host already runs a webserver and the HTTPS port is
+blocked, the command can be adjusted to expose the HTTPS port of **dataFEED
 edgeConnector Modbus** on a different port:
 
 ```bash
-docker container run -p 1443:443 -p 8099:8099 -p 4897:4897 softingindustrial/edgeconnector-modbus
+docker container run -p 1443:443 -p 4897:4897 softingindustrial/edgeconnector-modbus
 ```
 
-The `-p` switch allows to map a complete port range `start-end:start-end`,
+The `-p` switch allows mapping a complete port range `start-end:start-end`,
 the `-d` switch allows to daemonize the container and the `--name` switch
 allows to name the container:  
 
 ```bash
-docker container run -d -p 1443:443 -p 8099:8099 -p 4800-4900:4800-4900 --name edgeConnector softingindustrial/edgeconnector-modbus
+docker container run -d -p 1443:443 -p 4800-4900:4800-4900 --name edgeConnector softingindustrial/edgeconnector-modbus
 ```
 
 #### Running with specified timezone
@@ -68,7 +74,7 @@ The `-e` or `--env` switch allows to set environment variables in the container.
 For setting a timezone the variable `TZ` must be passed with a valid `TZ database name`.
 
 ```bash
-docker container run -d -p 1443:443 -p 8099:8099 -p 4800-4900:4800-4900 --name edgeConnector -e TZ=Europe/Berlin softingindustrial/edgeconnector-modbus
+docker container run -d -p 1443:443 -p 4800-4900:4800-4900 --name edgeConnector -e TZ=Europe/Berlin softingindustrial/edgeconnector-modbus
 ```
 
 For further information about supported command line options please refer to the
@@ -122,16 +128,16 @@ docker volume create edge-connector-config
 docker volume create edge-connector-mqtt
 ```
 
-In this case the container should be started like this, using the volume:
+In this case, the container should be started like this, using the volume:
 
 ```bash
-docker container run -d -v edge-connector-config:/config -v edge-connector-mqtt:/mqtt -p 1443:443 -p 8099:8099 -p 4800-4900:4800-4900 --name edgeConnector softingindustrial/edgeconnector-modbus
+docker container run -d -v edge-connector-config:/config -v edge-connector-mqtt:/mqtt -p 1443:443 -p 4800-4900:4800-4900 --name edgeConnector softingindustrial/edgeconnector-modbus
 ```
 
 ## Configuration
 
 The configuration part, which is common for all kinds of
-**dataFEED edgeConnector** modules is described at the
+**dataFEED edgeConnector** modules are described at the
 [Configuration page](../common/configuration.md).
 
 ### Modbus TCP Connection Configuration
@@ -150,7 +156,7 @@ status.
 | Column Name | Information Details                                                                                                                         |
 | :--         | :--                                                                                                                                         |
 | Name        | Connection name as defined at creation time                                                                                                 |
-| IP Address  | IP address or host name of device                                                                                                              |
+| IP Address  | IP address or hostname of device                                                                                                              |
 | Status      | Status of connection                                                                                                                    |
 |             | The connection status can be `Connected` if the connection to the device is established or `Disconnected` if there is no connection to the device |
 |             | The connection status is dynamically updated every 2 seconds.                                                                               |
@@ -159,7 +165,7 @@ status.
 |             | **Note:**                                                                                                                                   |
 |             | Clicking the current configuration status icon triggers a state toggle: *Enabled* -> *Disabled* respectively *Disabled* -> *Enabled*        |
 
-From the title bar of the connection overview table a new connection can be added and existing connections can either be edited or deleted.  
+From the title bar of the connection overview table, a new connection can be added, and existing connections can either be edited or deleted.  
 
 - To add a new connection click the **Add Connection**
   ![Add Connection](../documentation_pics/add_connection.png) button.  
@@ -193,7 +199,7 @@ The configuration parameters are described below:
 
 ## OPC UA Server
 
-The OPC UA Server functionality and configuration is described at the
+The OPC UA Server functionality and configuration are described in the
 [OPC UA Configuration page](../common/opcua.md).
 
 ## Licenses
@@ -201,7 +207,7 @@ The OPC UA Server functionality and configuration is described at the
 ### Softing License
 
 **dataFEED edgeConnector Modbus**'s scope of delivery includes a time-limited
-and functionaly unlimited demo mode.
+and functionally unlimited demo mode.
 The demo mode is started immediately once the module has been started without a
 valid license.
 It will expire after 72 hours and **dataFEED edgeConnector Modbus** stops
@@ -214,7 +220,7 @@ Modbus** successfully licensed.
 
 Please see the [License README page](../Licenses/README.md) for further details.
 
-The license activation for **dataFEED edgeConnector Modbus** is described at the
+The license activation for **dataFEED edgeConnector Modbus** is described in the
 [README page](../Licenses/SoftingLicenseServer/README.md) of the Softing License
 Server.
 
@@ -226,6 +232,6 @@ of the License README file for further details.
 
 ### Open Source Licenses
 
-For the license information of the open source components used by
+For the license information of the open-source components used by
 **dataFEED edgeConnector Modbus**, please see the
 [Open Source page](../Licenses/OpenSourceLicenses.md).
