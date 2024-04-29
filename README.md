@@ -14,6 +14,7 @@ For the different controller types, the following specialized connector types ar
   2. [**dataFEED edgeConnector 840D**](edgeconnector-840d/README.md) for SINUMERIK 840D PL/SL tooling machines
   3. [**dataFEED edgeConnector Modbus**](edgeconnector-modbus/README.md) for Modbus TCP controllers/sensors
   4. [**dataFEED edgeConnector FANUC CNC**](edgeconnector-fanuc/README.md) for FANUC CNC tooling machines
+  5. [**dataFEED edgeConnector Allen-Bradley PLC**](edgeconnector-allen-bradley/README.md) for Allen-Bradley ControlLogix and CompactLogix PLCs
 
 # Configuration
 

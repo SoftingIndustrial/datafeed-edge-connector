@@ -1,22 +1,23 @@
-# **dataFEED edgeConnector Modbus**
+# **dataFEED edgeConnector Allen-Bradley PLC**
 
-Softing´s **dataFEED edgeConnector Modbus** is a containerized Modbus TCP
-connectivity module adding OPC UA Server and MQTT Publisher functionality.
+Softing´s **dataFEED edgeConnector Allen-Bradley PLC** is a containerized EtherNET/IP CIP
+connectivity module adding OPC UA Server and MQTT Publisher/Subscriber functionality.
+It is possible to connect up to 20 ControlLogix and/or CompactLogix (CLX) PLCs.
+The Namespace configuration is created simply browsing the variables of the PLC.
 
-It is possible to connect up to 20 Modbus TCP compatible devices.
 
 ## Supported Operating Systems
 
-**dataFEED edgeConnector Modbus** can be used on any Docker host that can
-execute Linux Docker containers based on an x86_64 architecture.
+**dataFEED edgeConnector Allen-Bradley PLC** can be used on any Docker host that can
+execute Linux Docker containers based on an x86_64, ARM64, as well as ARM32 architecture.
 
 ## Default Settings
 
 The default settings are described at the [Default Settings page](../common/defaults.md).
 
-## Running **dataFEED edgeConnector Modbus**
+## Running **dataFEED edgeConnector Allen-Bradley PLC**
 
-In order to run **dataFEED edgeConnector Modbus** a working Docker environment
+In order to run **dataFEED edgeConnector Allen-Bradley PLC** a working Docker environment
 is required.
 For Docker installation instructions please refer to the
 [official Docker installation documentation](https://docs.docker.com/install/)
@@ -25,39 +26,39 @@ For Docker installation instructions please refer to the
 
 The Docker images are provided through a public registry.
 To get the latest Docker image you need to pull the image from
-[https://hub.docker.com/r/softingindustrial/edgeconnector-modbus](https://hub.docker.com/r/softingindustrial/edgeconnector-modbus):
+[https://hub.docker.com/r/softingindustrial/edgeconnector-allen-bradley-plc](https://hub.docker.com/r/softingindustrial/edgeconnector-allen-bradley-plc):
 
 ```bash
-docker image pull softingindustrial/edgeconnector-modbus:latest
+docker image pull softingindustrial/edgeconnector-allen-bradley-plc:latest
 ```
 
 ### Running the Docker Container
 
 After the Docker image has been pulled, a Docker container can be started.
 The webserver and OPC UA Server of the module have to be exposed on the host
-machine if **dataFEED edgeConnector Modbus** shall be accessed from outside
+machine if **dataFEED edgeConnector Allen-Bradley PLC** shall be accessed from outside
 the dockerized environment.
 
-By default **dataFEED edgeConnector Modbus** is configured to allow only HTTPS access to its web-based configuration interface. If in certain situations, and after a thorough security assessment and acknowledging all security risks, it is decided that HTTP communication is necessary, then this can be achieved by defining the environment variable ENABLE_HTTP_CONFIG.
+By default **dataFEED edgeConnector Allen-Bradley PLC** is configured to allow only HTTPS access to its web-based configuration interface. If in certain situations, and after a thorough security assessment and acknowledging all security risks, it is decided that HTTP communication is necessary, then this can be achieved by defining the environment variable ENABLE_HTTP_CONFIG.
 
 ```bash
-docker container run -d -p 443:443 -p 8099:8099 -p 4897:4897 --name edgeConnector -e ENABLE_HTTP_CONFIG="ON" softingindustrial/edgeconnector-modbus
+docker container run -d -p 443:443 -p 8099:8099 -p 4897:4897 --name edgeConnector -e ENABLE_HTTP_CONFIG="ON" softingindustrial/edgeconnector-allen-bradley-plc
 ```
 
-To start **dataFEED edgeConnector Modbus** with the default ports mapped 1:1
+To start **dataFEED edgeConnector Allen-Bradley PLC** with the default ports mapped 1:1
 to the host machine:
 
 ```bash
-docker container run -p 443:443 -p 4897:4897 softingindustrial/edgeconnector-modbus
+docker container run -p 443:443 -p 4897:4897 softingindustrial/edgeconnector-allen-bradley-plc
 ```
 
 The above example can be adapted to match the needs of your environment.
 For example, if your host already runs a webserver and the https port is
 blocked, the command can be adjusted to expose the https port of **dataFEED
-edgeConnector Modbus** on a different port:
+edgeConnector Allen-Bradley PLC** on a different port:
 
 ```bash
-docker container run -p 1443:443 -p 4897:4897 softingindustrial/edgeconnector-modbus
+docker container run -p 1443:443 -p 4897:4897 softingindustrial/edgeconnector-allen-bradley-plc
 ```
 
 The `-p` switch allows to map a complete port range `start-end:start-end`,
@@ -65,7 +66,7 @@ the `-d` switch allows to daemonize the container and the `--name` switch
 allows to name the container:  
 
 ```bash
-docker container run -d -p 1443:443 -p 4800-4900:4800-4900 --name edgeConnector softingindustrial/edgeconnector-modbus
+docker container run -d -p 1443:443 -p 4800-4900:4800-4900 --name edgeConnector softingindustrial/edgeconnector-allen-bradley-plc
 ```
 
 #### Running with specified timezone
@@ -74,7 +75,7 @@ The `-e` or `--env` switch allows to set environment variables in the container.
 For setting a timezone the variable `TZ` must be passed with a valid `TZ database name`.
 
 ```bash
-docker container run -d -p 1443:443 -p 4800-4900:4800-4900 --name edgeConnector -e TZ=Europe/Berlin softingindustrial/edgeconnector-modbus
+docker container run -d -p 1443:443 -p 4800-4900:4800-4900 --name edgeConnector -e TZ=Europe/Berlin softingindustrial/edgeconnector-allen-bradley-plc
 ```
 
 For further information about supported command line options please refer to the
@@ -131,7 +132,7 @@ docker volume create edge-connector-mqtt
 In this case the container should be started like this, using the volume:
 
 ```bash
-docker container run -d -v edge-connector-config:/config -v edge-connector-mqtt:/mqtt -p 1443:443 -p 4800-4900:4800-4900 --name edgeConnector softingindustrial/edgeconnector-modbus
+docker container run -d -v edge-connector-config:/config -v edge-connector-mqtt:/mqtt -p 1443:443 -p 4800-4900:4800-4900 --name edgeConnector softingindustrial/edgeconnector-allen-bradley-plc
 ```
 
 ## Configuration
@@ -140,27 +141,32 @@ The configuration part, which is common for all kinds of
 **dataFEED edgeConnector** modules is described at the
 [Configuration page](../common/configuration.md).
 
-### Modbus TCP Connection Configuration
+### SIMATIC S7 1200/1500 Connection Configuration
 
-To configure a connection to a Modbus device, navigate to
-**Connectivity** -> **PLC** -> **Modbus** in the navigation tree
+**dataFEED edgeConnnector Allen-Bradley PLC** provides an interface to connect and fetch
+data from ControlLogix and CompactLogix PLCs.
+
+To configure a connection to a ControlLogix or CompactLogix PLC, navigate to
+**Connectivity** -> **PLC** -> **Allen-Bradley** in the navigation tree
 as depicted below:
 
-![modbus_navigation](../documentation_pics/modbus_navigation.png)
+![ab_navigation](../documentation_pics/ab_navigation.png)
 
 The page provides an overview of the currently configured connections including
 its
 **Name**, its **IP Address**, its connection **Status** and its **Enabled**
 status.
 
+![ab_overview](../documentation_pics/ab_overview.png)
+
 | Column Name | Information Details                                                                                                                         |
 | :--         | :--                                                                                                                                         |
 | Name        | Connection name as defined at creation time                                                                                                 |
-| IP Address  | IP address or host name of device                                                                                                              |
-| Status      | Status of connection                                                                                                                    |
-|             | The connection status can be `Connected` if the connection to the device is established or `Disconnected` if there is no connection to the device |
+| IP Address  | IP address or host name of PLC                                                                                                              |
+| Status      | Status of PLC connection                                                                                                                    |
+|             | The connection status can be `Connected` if the connection to the PLC is established or `Disconnected` if there is no connection to the PLC |
 |             | The connection status is dynamically updated every 2 seconds.                                                                               |
-| Enabled     | Configuration status of the connection                                                                                                  |
+| Enabled     | Configuration status of the PLC connection                                                                                                  |
 |             | Possible values are `Enabled` or `Disabled`.                                                                                                |
 |             | **Note:**                                                                                                                                   |
 |             | Clicking the current configuration status icon triggers a state toggle: *Enabled* -> *Disabled* respectively *Disabled* -> *Enabled*        |
@@ -180,7 +186,7 @@ Adding a new connection and editing an existing connection, both open an
 identical page. The only difference is, that for an existing connection the
 **Connection Name** property cannot be changed.  
 
-![modbus_connection_settings_basic](../documentation_pics/modbus_connection_settings_basic.png)
+![Allen-Bradley_connection_settings_basic](../documentation_pics/ab_connection_settings_basic.png)
 
 The configuration parameters are described below:
 
@@ -190,12 +196,12 @@ The configuration parameters are described below:
 | | |The connection name has to be unique and can only be assigned when adding a new connection.|
 | | |**Note:** |
 | | |The following characters are not supported in the **Connection Name** field:  *# ^ < > / $* |
-| Enabled               | *Enabled*                     | Instructs **dataFEED edgeConnector Modbus** to either *Enable* (checked) or *Disable* (unchecked) the currently configured connection. |
-| Txt-File              |                               | An ASCII text file with the address-space definition to upload, see [Modbus Item Syntax](./Modbus-Item-Syntax.md) |
-| Address           | \<empty\>                     | Address of the target device. This is either an IP address or a hostname. |
-| Select Address Spaces | AllConnection | Destination aggregation address space used to store the address space corresponding to this connection |
+| Enabled               | *Enabled*                     | Instructs **dataFEED edgeConnector Allen-Bradley PLC** to either *Enable* (checked) or *Disable* (unchecked) the currently configured PLC connection. |
+| PLC Address           | \<empty\>                     | Address of the target device (SIMATIC S7 1200/1500 PLC). This is either an IP address or a hostname. |
+| Select Address Spaces | AllConnection | Destination aggregation address space used to store the address space corresponding to this PLC connection |
 | | AddressSpace | It is possible to create additional aggregation address spaces by filling in the desired address space name in the input field and clicking the **Add** button. All available address spaces are visible in a list and can be selected as destination address space for the OPC UA Client connection by checking the corresponding checkbox. |
 | | | For more details about the OPC UA Server functionality and configuration please refer to the [OPC UA Configuration page](../common/opcua.md). |
+
 
 ## OPC UA Server
 
@@ -206,21 +212,21 @@ The OPC UA Server functionality and configuration is described at the
 
 ### Softing License
 
-**dataFEED edgeConnector Modbus**'s scope of delivery includes a time-limited
+**dataFEED edgeConnector Allen-Bradley PLC**'s scope of delivery includes a time-limited
 and functionaly unlimited demo mode.
 The demo mode is started immediately once the module has been started without a
 valid license.
-It will expire after 72 hours and **dataFEED edgeConnector Modbus** stops
+It will expire after 72 hours and **dataFEED edgeConnector Allen-Bradley PLC** stops
 working.  
-To remove the time limitation of the demo mode **dataFEED edgeConnector Modbus**
+To remove the time limitation of the demo mode **dataFEED edgeConnector Allen-Bradley PLC**
 must be licensed.
-**dataFEED edgeConnector Modbus** uses a floating license mechanism.
+**dataFEED edgeConnector Allen-Bradley PLC** uses a floating license mechanism.
 A working floating license server is required to have **dataFEED edgeConnector
-Modbus** successfully licensed.  
+Allen-Bradley PLC** successfully licensed.  
 
 Please see the [License README page](../Licenses/README.md) for further details.
 
-The license activation for **dataFEED edgeConnector Modbus** is described at the
+The license activation for **dataFEED edgeConnector Allen-Bradley PLC** is described at the
 [README page](../Licenses/SoftingLicenseServer/README.md) of the Softing License
 Server.
 
@@ -233,5 +239,5 @@ of the License README file for further details.
 ### Open Source Licenses
 
 For the license information of the open source components used by
-**dataFEED edgeConnector Modbus**, please see the
+**dataFEED edgeConnector Allen-Bradley PLC**, please see the
 [Open Source page](../Licenses/OpenSourceLicenses.md).

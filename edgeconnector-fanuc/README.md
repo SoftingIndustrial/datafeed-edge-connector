@@ -38,11 +38,17 @@ The webserver and OPC UA Server of the module have to be exposed on the host
 machine if **dataFEED edgeConnector FANUC CNC** shall be accessed from outside
 the dockerized environment.
 
+By default **dataFEED edgeConnector FANUC CNC** is configured to allow only HTTPS access to its web-based configuration interface. If in certain situations, and after a thorough security assessment and acknowledging all security risks, it is decided that HTTP communication is necessary, then this can be achieved by defining the environment variable ENABLE_HTTP_CONFIG.
+
+```bash
+docker container run -d -p 443:443 -p 8099:8099 -p 4897:4897 --name edgeConnector -e ENABLE_HTTP_CONFIG="ON" softingindustrial/edgeconnector-fanuc-cnc
+```
+
 To start **dataFEED edgeConnector FANUC CNC** with the default ports mapped 1:1
 to the host machine:
 
 ```bash
-docker container run -p 443:443 -p 8099:8099 -p 4897:4897 softingindustrial/edgeconnector-fanuc-cnc
+docker container run -p 443:443 -p 4897:4897 softingindustrial/edgeconnector-fanuc-cnc
 ```
 
 The above example can be adapted to match the needs of your environment.
@@ -51,7 +57,7 @@ blocked, the command can be adjusted to expose the https port of **dataFEED
 edgeConnector FANUC CNC** on a different port:
 
 ```bash
-docker container run -p 1443:443 -p 8099:8099 -p 4897:4897 softingindustrial/edgeconnector-fanuc-cnc
+docker container run -p 1443:443 -p 4897:4897 softingindustrial/edgeconnector-fanuc-cnc
 ```
 
 The `-p` switch allows to map a complete port range `start-end:start-end`,
@@ -59,7 +65,7 @@ the `-d` switch allows to daemonize the container and the `--name` switch
 allows to name the container:  
 
 ```bash
-docker container run -d -p 1443:443 -p 8099:8099 -p 4800-4900:4800-4900 --name edgeConnector softingindustrial/edgeconnector-fanuc-cnc
+docker container run -d -p 1443:443 -p 4800-4900:4800-4900 --name edgeConnector softingindustrial/edgeconnector-fanuc-cnc
 ```
 
 #### Running with specified timezone
@@ -68,7 +74,7 @@ The `-e` or `--env` switch allows to set environment variables in the container.
 For setting a timezone the variable `TZ` must be passed with a valid `TZ database name`.
 
 ```bash
-docker container run -d -p 1443:443 -p 8099:8099 -p 4800-4900:4800-4900 --name edgeConnector -e TZ=Europe/Berlin softingindustrial/edgeconnector-fanuc
+docker container run -d -p 1443:443 -p 4800-4900:4800-4900 --name edgeConnector -e TZ=Europe/Berlin softingindustrial/edgeconnector-fanuc
 ```
 
 For further information about supported command line options please refer to the
@@ -125,7 +131,7 @@ docker volume create edge-connector-mqtt
 In this case the container should be started like this, using the volume:
 
 ```bash
-docker container run -d -v edge-connector-config:/config -v edge-connector-mqtt:/mqtt -p 1443:443 -p 8099:8099 -p 4800-4900:4800-4900 --name edgeConnector softingindustrial/edgeconnector-fanuc-cnc
+docker container run -d -v edge-connector-config:/config -v edge-connector-mqtt:/mqtt -p 1443:443 -p 4800-4900:4800-4900 --name edgeConnector softingindustrial/edgeconnector-fanuc-cnc
 ```
 
 ## Configuration
