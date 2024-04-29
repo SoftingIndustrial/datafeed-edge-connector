@@ -19,7 +19,7 @@ The default settings are described at the [Default Settings page](../common/defa
 
 ## Running **dataFEED edgeConnector Siemens**
 
-In order to run **dataFEED edgeConnector Siemens** a working Docker environment
+To run **dataFEED edgeConnector Siemens** a working Docker environment
 is required.
 For Docker installation instructions please refer to the
 [official Docker installation documentation](https://docs.docker.com/install/)
@@ -37,32 +37,37 @@ docker image pull softingindustrial/edgeconnector-siemens:latest
 ### Running the Docker Container
 
 After the Docker image has been pulled, a Docker container can be started.
-The webserver and OPC UA Server of the module have to be exposed on the host
+The web server and OPC UA Server of the module have to be exposed on the host
 machine if **dataFEED edgeConnector Siemens** shall be accessed from outside
 the dockerized environment.
 
-To start **dataFEED edgeConnector Siemens** with the default ports mapped 1:1
-to the host machine:
+By default **dataFEED edgeConnector Siemens** is configured to allow only HTTPS access to its web-based configuration interface. If in certain situations, and after a thorough security assessment and acknowledging all security risks, it is decided that HTTP communication is necessary, then this can be achieved by defining the environment variable ENABLE_HTTP_CONFIG.
 
 ```bash
-docker container run -p 443:443 -p 8099:8099 -p 4897:4897 softingindustrial/edgeconnector-siemens
+docker container run -d -p 443:443 -p 8099:8099 -p 4897:4897 --name edgeConnector -e ENABLE_HTTP_CONFIG="ON" softingindustrial/edgeconnector-siemens
+```
+
+To start **dataFEED edgeConnector Siemens** with the default ports mapped 1:1 to the host machine:
+
+```bash
+docker container run -p 443:443 -p 4897:4897 softingindustrial/edgeconnector-siemens
 ```
 
 The above example can be adapted to match the needs of your environment.
-For example, if your host already runs a webserver and the https port is
-blocked, the command can be adjusted to expose the https port of **dataFEED
+For instance, if your host already runs a webserver and the HTTPS port is
+blocked, the command can be adjusted to expose the HTTPS port of **dataFEED
 edgeConnector Siemens** on a different port:
 
 ```bash
-docker container run -p 1443:443 -p 8099:8099 -p 4897:4897 softingindustrial/edgeconnector-siemens
+docker container run -p 1443:443 -p 4897:4897 softingindustrial/edgeconnector-siemens
 ```
 
-The `-p` switch allows to map a complete port range `start-end:start-end`,
+The `-p` switch allows mapping a complete port range `start-end:start-end`,
 the `-d` switch allows to daemonize the container and the `--name` switch
 allows to name the container:  
 
 ```bash
-docker container run -d -p 1443:443 -p 8099:8099 -p 4800-4900:4800-4900 --name edgeConnector softingindustrial/edgeconnector-siemens
+docker container run -d -p 1443:443 -p 4800-4900:4800-4900 --name edgeConnector softingindustrial/edgeconnector-siemens
 ```
 
 #### Running with specified timezone
@@ -71,7 +76,7 @@ The `-e` or `--env` switch allows to set environment variables in the container.
 For setting a timezone the variable `TZ` must be passed with a valid `TZ database name`.
 
 ```bash
-docker container run -d -p 1443:443 -p 8099:8099 -p 4800-4900:4800-4900 --name edgeConnector -e TZ=Europe/Berlin softingindustrial/edgeconnector-siemens
+docker container run -d -p 1443:443 -p 4800-4900:4800-4900 --name edgeConnector -e TZ=Europe/Berlin softingindustrial/edgeconnector-siemens
 ```
 
 For further information about supported command line options please refer to the
@@ -128,13 +133,13 @@ docker volume create edge-connector-mqtt
 In this case the container should be started like this, using the volume:
 
 ```bash
-docker container run -d -v edge-connector-config:/config -v edge-connector-mqtt:/mqtt -p 1443:443 -p 8099:8099 -p 4800-4900:4800-4900 --name edgeConnector softingindustrial/edgeconnector-siemens
+docker container run -d -v edge-connector-config:/config -v edge-connector-mqtt:/mqtt -p 1443:443 -p 4800-4900:4800-4900 --name edgeConnector softingindustrial/edgeconnector-siemens
 ```
 
 ## Configuration
 
 The configuration part, which is common for all kinds of
-**dataFEED edgeConnector** modules is described at the
+**dataFEED edgeConnector** modules are described at the
 [Configuration page](../common/configuration.md).
 
 ### SIMATIC S7 1200/1500 Connection Configuration
@@ -158,17 +163,17 @@ status.
 | Column Name | Information Details                                                                                                                         |
 | :--         | :--                                                                                                                                         |
 | Name        | Connection name as defined at creation time                                                                                                 |
-| IP Address  | IP address or host name of PLC                                                                                                              |
+| IP Address  | IP address or hostname of PLC                                                                                                              |
 | Status      | Status of PLC connection                                                                                                                    |
 |             | The connection status can be `Connected` if the connection to the PLC is established or `Disconnected` if there is no connection to the PLC |
 |             | The connection status is dynamically updated every 2 seconds.                                                                               |
-|             | Note: This field changes to "Simulation" when a simulated connection is added (See below for description of the Simulation mode).           |
+|             | Note: This field changes to "Simulation" when a simulated connection is added (See below for a description of the Simulation mode).           |
 | Enabled     | Configuration status of the PLC connection                                                                                                  |
 |             | Possible values are `Enabled` or `Disabled`.                                                                                                |
 |             | **Note:**                                                                                                                                   |
 |             | Clicking the current configuration status icon triggers a state toggle: *Enabled* -> *Disabled* respectively *Disabled* -> *Enabled*        |
 
-From the title bar of the connection overview table a new connection can be added and existing connections can either be edited or deleted.  
+From the title bar of the connection overview table, a new connection can be added, and existing connections can either be edited or deleted.  
 
 - To add a new connection click the **Add Connection**
   ![Add Connection](../documentation_pics/add_connection.png) button.  
@@ -179,7 +184,7 @@ From the title bar of the connection overview table a new connection can be adde
   table and click the **Delete Connection**
   ![Delete Connection](../documentation_pics/delete_connection.png) button.  
 
-Adding a new connection and editing an existing connection, both open an
+Adding a new connection and editing an existing one, both options open an
 identical page. The only difference is, that for an existing connection the
 **Connection Name** property cannot be changed.  
 
@@ -204,14 +209,14 @@ The configuration parameters are described below:
 The edgeConnector Siemens supports simulation mode for the S7 1200/1500
 controller, which means that it provides a few ways of automatically generating
 tag values in a similarly structured standard address space as a real PLC. All
-UA services are supported as for a real PLC, Browse, Subscribe, Read and Write.
+UA services are supported as for a real PLC, Browse, Subscribe, Read, and Write.
 
 The available value simulation types are Random, Incremental (increasing to the
 data type's maximum, then starting from its minimum again), Sawtooth (increasing
 to the maximum and after reaching it decreasing to its minimum, then increasing
-again, and so on) and Waveform with anomalies (a Sine wave form of generating
+again, and so on) and Waveform with anomalies (a Sine waveform of generating
 data, periodically adding a random anomaly). These simulation types are supported
-only for the basic data types and arrays of these data types, currently.
+only for the basic data types and arrays of these ones.
 
 The mapping of these simulation types to the different basic data types is as follows:
 
@@ -241,19 +246,18 @@ Notes:
 
 Limitations:
 
-- Currently, there is no customization options regarding neither the type of
+- Currently, there are no customization options regarding neither the type of
   simulation used for a data type or tag, nor the parameters of the simulation
   types
 - The value generation process cannot be stopped when a simulated connection
   is enabled; this means that when writing to a tag the written value will be
-  lost at the next data change, because the simulation will generate a new data
-  value. In case of Incremental and Sawtooth simulation types the next value
+  lost at the next data change, because the simulation will generate new data
+  value. In the case of Incremental and Sawtooth simulation types the next value
   will depend on the written value
 
 ### Configuration of a simulated connection
 
-For adding a connection which starts in Simulation mode the following steps
-are necessary:
+For adding a connection that starts in Simulation mode, the following steps are necessary:
 
 - To add a new simulated connection click the
   ![add_connection](../documentation_pics/add_connection.png) button.  
@@ -263,7 +267,7 @@ are necessary:
 - Switch back to the **Connection Settings** page
 - Press the **Save** button
 
-After a short time the simulator will start generating values for that
+After a short time, the simulator will start generating values for that
 connection, which can be browsed and monitored with a client application
 by subscribing to some tags with the above mentioned data types.
 
@@ -305,7 +309,7 @@ status.
 
 ![s7_overview](../documentation_pics/s7_300_overview.png)
 
-From the title bar of the connection overview table a new connection can be added
+From the title bar of the connection overview table, a new connection can be added
 and existing connections can either be edited or deleted.  
 
 - To add a new connection click the **Add Connection**
@@ -340,7 +344,7 @@ The configuration parameters are described below:
 
 ## OPC UA Server
 
-The OPC UA Server functionality and configuration is described at the
+The OPC UA Server functionality and configuration are described in the
 [OPC UA Configuration page](../common/opcua.md).
 
 ## Licenses
@@ -348,7 +352,7 @@ The OPC UA Server functionality and configuration is described at the
 ### Softing License
 
 **dataFEED edgeConnector Siemens**'s scope of delivery includes a time-limited
-and functionaly unlimited demo mode.
+and functionally unlimited demo mode.
 The demo mode is started immediately once the module has been started without a
 valid license.
 It will expire after 72 hours and **dataFEED edgeConnector Siemens** stops
@@ -361,7 +365,7 @@ Siemens** successfully licensed.
 
 Please see the [License README page](../Licenses/README.md) for further details.
 
-The license activation for **dataFEED edgeConnector Siemens** is described at the
+The license activation for **dataFEED edgeConnector Siemens** is described in the
 [README page](../Licenses/SoftingLicenseServer/README.md) of the Softing License
 Server.
 
@@ -373,6 +377,6 @@ of the License README file for further details.
 
 ### Open Source Licenses
 
-For the license information of the open source components used by
+For the license information of the open-source components used by
 **dataFEED edgeConnector Siemens**, please see the
 [Open Source page](../Licenses/OpenSourceLicenses.md).
