@@ -1,11 +1,7 @@
 # Licenses
-The **dataFEED edgeConnector** application uses a floating license mechanism communicating with a standalone licensing server application used to serve licenses to one or more application instances.
+The **dataFEED edgeConnector** application uses a floating license mechanism communicating with a standalone licensing server application used to serve licenses to one or more application instances.  The licenses used by the License Server are called **edgeConnection**.
 
-Licenses checked out (borrowed) from the licensing server are transformed by the application into connection counts. The default behavior uses one connection for accessing a PLC and from there it can make 5 connections from the PLC. 
-
-There are 3 general license types, the first is the basic type which enables the user to make connections to multiple Modbus TCP Devices. The second is the advanced type which allows connections to Siemens PLC devices and the third type is the premium type which allows connections to CNC devices as well as the Modbus TCPs & Siemens PLCs.
-
-The licenses can be bought with 1, 5, 10 or 20 connections where depending on the type you can make connections to devices. 
+Each license that has been checked out (borrowed) from the licensing server, is used by the edgeConnector or edgeAggregator applications as connection counts and allows the application to connect to one PLC or CNC controller, regardless of the number of variables that the controller has. 
 
 The **dataFEED edgeConnector** modules' scope of delivery includes a time-limited demo mode. The demo mode comes with 20 connections which can be used for up to 72 hours. After 72 hours the **dataFEED edgeConnector** runtime will be stopped.
 
