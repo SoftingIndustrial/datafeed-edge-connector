@@ -141,7 +141,7 @@ The configuration part, which is common for all kinds of
 **dataFEED edgeConnector** modules is described at the
 [Configuration page](../common/configuration.md).
 
-### SIMATIC S7 1200/1500 Connection Configuration
+### ControlLogix/CompactLogix Connection Configuration
 
 **dataFEED edgeConnnector Allen-Bradley PLC** provides an interface to connect and fetch
 data from ControlLogix and CompactLogix PLCs.
@@ -197,7 +197,7 @@ The configuration parameters are described below:
 | | |**Note:** |
 | | |The following characters are not supported in the **Connection Name** field:  *# ^ < > / $* |
 | Enabled               | *Enabled*                     | Instructs **dataFEED edgeConnector Allen-Bradley PLC** to either *Enable* (checked) or *Disable* (unchecked) the currently configured PLC connection. |
-| PLC Address           | \<empty\>                     | Address of the target device (SIMATIC S7 1200/1500 PLC). This is either an IP address or a hostname. |
+| PLC Address           | \<empty\>                     | Address of the target device (ControlLogix/CompactLogix PLC). This is either an IP address or a hostname. |
 | Select Address Spaces | AllConnection | Destination aggregation address space used to store the address space corresponding to this PLC connection |
 | | AddressSpace | It is possible to create additional aggregation address spaces by filling in the desired address space name in the input field and clicking the **Add** button. All available address spaces are visible in a list and can be selected as destination address space for the OPC UA Client connection by checking the corresponding checkbox. |
 | | | For more details about the OPC UA Server functionality and configuration please refer to the [OPC UA Configuration page](../common/opcua.md). |
