@@ -153,7 +153,8 @@ For the versions from 1.00 up to 3.10, the following components are used:
 | util-linux | [UBUNTU](https://ubuntu.com) | Within image: /usr/share/doc/util-linux/copyright | unmodified, packet installed as provided by Ubuntu |
 | zlib1g | [UBUNTU](https://ubuntu.com) | Within image: /usr/share/doc/zlib1g/copyright | unmodified, packet installed as provided by Ubuntu |
 
-For the versions starting from 3.20, the following components are used:
+For the versions starting from 3.20 to 3.80 and the new version number schema starting with 2024.01,
+the following components are used:
 
 | Name | Source | License | Change Info |
 | ---- | ------ | ------- | ----------- |
@@ -165,7 +166,7 @@ For the versions starting from 3.20, the following components are used:
 | sol2 | <https://github.com/ThePhD/sol2> | MIT | |
 | openLDAP (ldapc++) | <https://git.openldap.org/nivanova/openldap/-/tree/master/contrib/ldapc%2B%2B> | [TheOpenLDAP Public License](https://git.openldap.org/nivanova/openldap/-/blob/master/LICENSE) | |
 | curl | https://curl.haxx.se/docs/copyright.html | MIT like | |
-| paho | https://www.eclipse.org/org/documents/epl-v10.php | Eclipse Public License - v 1.0| |
+| paho.mqtt.c | https://www.eclipse.org/org/documents/epl-v10.php | Eclipse Public License - v 1.0| |
 | prometheus-cpp | https://github.com/jupp0r/prometheus-cpp/blob/master/LICENSE | MIT | |
 | adduser | [Debian](https://packages.debian.org/bullseye/adduser) | Within image: /usr/share/doc/adduser/copyright | unmodified, packet installed as provided by Debian |
 | apt | [Debian](https://packages.debian.org/bullseye/apt) | Within image: /usr/share/doc/apt/copyright | unmodified, packet installed as provided by Debian |
