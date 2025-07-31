@@ -7,13 +7,13 @@ To configure a Siemens SINUMERIK 840D connection, navigate to
 **Connectivity** -> **PLC** -> **Siemens SINUMERIK 840D** in the navigation tree as
 depicted below:
 
-![sinumerik 840d_navigation](.../documentation_pics/s840d_navigation.png)
+![sinumerik 840d_navigation](../../documentation_pics/s840d_navigation.png)
 
 The page provides an overview of the currently configured connections including its
 **Name**, its **IP address**, its connection **Status NCK**, its **Status PLC**
 and its **Enabled** status.  
 
-![sinumerik 840d_overview](.../documentation_pics/s840d_overview.png)  
+![sinumerik 840d_overview](../../documentation_pics/s840d_overview.png)  
 
 | Column Name | Information Details |
 | :-- | :-- |
@@ -35,17 +35,17 @@ From the title bar of the connection overview table a new connection can be
 added and existing connections can either be edited or deleted.  
 
 - To add a new connection click the **Add Connection**
-![Add Connection](.../documentation_pics/add_connection.png) button.  
+![Add Connection](../../documentation_pics/add_connection.png) button.  
 - To edit an existing connection, first select it from the overview table and
-click the **Edit Connection** ![Edit Connection](.../documentation_pics/edit_connection.png) button.  
+click the **Edit Connection** ![Edit Connection](../../documentation_pics/edit_connection.png) button.  
 - To delete an existing connection, first select it from the overview table
-and click the **Delete Connection** ![Delete Connection](.../documentation_pics/delete_connection.png) button.  
+and click the **Delete Connection** ![Delete Connection](../../documentation_pics/delete_connection.png) button.  
 
 Adding a new connection and editing an existing connection, both open an
 identical page. The only difference is, that for an existing connection the
 **Connection Name** property can not be changed.
 
-![SINUMERIK 840D connection settings](.../documentation_pics/s840d_connection_settings_basic.png)
+![SINUMERIK 840D connection settings](../../documentation_pics/s840d_connection_settings_basic.png)
 
 The configuration parameters are described below:
 
@@ -63,4 +63,4 @@ The configuration parameters are described below:
 | Select Address Spaces | AllConnection |
 | | AddressSpace | Destination aggregation address space used to store the address space corresponding to this PLC connection|
 | | | It is possible to create additional aggregation address spaces by filling in the desired address space name in the input field and clicking the **Add** button. All available address spaces are visible in a list and can be selected as destination address space for the OPC UA Client connection by checking the corresponding checkbox.|
-| | | For more details about the OPC UA Server functionality and configuration please refer to the [OPC UA Configuration page](.../common/opcua.md). |
+| | | For more details about the OPC UA Server functionality and configuration please refer to the [OPC UA Configuration page](../../common/opcua.md). |

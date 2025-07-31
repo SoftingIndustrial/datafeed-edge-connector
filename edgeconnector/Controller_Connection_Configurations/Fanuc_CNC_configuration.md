@@ -4,7 +4,7 @@ To configure a connection to a FANUC device, navigate to
 **Connectivity** -> **PLC** -> **FANUC CNC** in the navigation tree
 as depicted below:
 
-![fanuc_navigation](.../documentation_pics/fanuc_navigation.png)
+![fanuc_navigation](../../documentation_pics/fanuc_navigation.png)
 
 The page provides an overview of the currently configured connections including
 its
@@ -26,19 +26,19 @@ status.
 From the title bar of the connection overview table a new connection can be added and existing connections can either be edited or deleted.  
 
 - To add a new connection click the **Add Connection**
-  ![Add Connection](.../documentation_pics/add_connection.png) button.  
+  ![Add Connection](../../documentation_pics/add_connection.png) button.  
 - To edit an existing connection, first select it from the overview table
   and click the **Edit Connection**
-  ![Edit Connection](.../documentation_pics/edit_connection.png) button.
+  ![Edit Connection](../../documentation_pics/edit_connection.png) button.
 - To delete an existing connection, first select it from the overview
   table and click the **Delete Connection**
-  ![Delete Connection](.../documentation_pics/delete_connection.png) button.  
+  ![Delete Connection](../../documentation_pics/delete_connection.png) button.  
 
 Adding a new connection and editing an existing connection, both open an
 identical page. The only difference is, that for an existing connection the
 **Connection Name** property cannot be changed.  
 
-![fanuc_connection_settings_basic](.../documentation_pics/fanuc_connection_settings_basic.png)
+![fanuc_connection_settings_basic](../../documentation_pics/fanuc_connection_settings_basic.png)
 
 The configuration parameters are described below:
 
@@ -53,4 +53,4 @@ The configuration parameters are described below:
 | Address           | \<empty\>                     | Address of the target device. This is either an IP address or a hostname. |
 | Select Address Spaces | AllConnection | Destination aggregation address space used to store the address space corresponding to this connection |
 | | AddressSpace | It is possible to create additional aggregation address spaces by filling in the desired address space name in the input field and clicking the **Add** button. All available address spaces are visible in a list and can be selected as destination address space for the OPC UA Client connection by checking the corresponding checkbox. |
-| | | For more details about the OPC UA Server functionality and configuration please refer to the [OPC UA Configuration page](.../common/opcua.md). |
+| | | For more details about the OPC UA Server functionality and configuration please refer to the [OPC UA Configuration page](../../common/opcua.md). |

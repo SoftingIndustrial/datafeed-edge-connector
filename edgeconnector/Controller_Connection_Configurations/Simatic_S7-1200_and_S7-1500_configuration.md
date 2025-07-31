@@ -7,14 +7,14 @@ To configure a connection to a SIMATICs S7 1200 or S7 1500 PLC, navigate to
 **Connectivity** -> **PLC** -> **Siemens S7 1200/1500** in the navigation tree
 as depicted below:
 
-![s7_navigation](.../documentation_pics/s7_navigation.png)
+![s7_navigation](../../documentation_pics/s7_navigation.png)
 
 The page provides an overview of the currently configured connections including
 its
 **Name**, its **IP Address**, its connection **Status** and its **Enabled**
 status.
 
-![s7_overview](.../documentation_pics/s7_overview.png)
+![s7_overview](../../documentation_pics/s7_overview.png)
 
 | Column Name | Information Details                                                                                                                         |
 | :--         | :--                                                                                                                                         |
@@ -31,19 +31,19 @@ status.
 From the title bar of the connection overview table a new connection can be added and existing connections can either be edited or deleted.  
 
 - To add a new connection click the **Add Connection**
-  ![Add Connection](.../documentation_pics/add_connection.png) button.  
+  ![Add Connection](../../documentation_pics/add_connection.png) button.  
 - To edit an existing connection, first select it from the overview table
   and click the **Edit Connection**
-  ![Edit Connection](.../documentation_pics/edit_connection.png) button.
+  ![Edit Connection](../../documentation_pics/edit_connection.png) button.
 - To delete an existing connection, first select it from the overview
   table and click the **Delete Connection**
-  ![Delete Connection](.../documentation_pics/delete_connection.png) button.  
+  ![Delete Connection](../../documentation_pics/delete_connection.png) button.  
 
 Adding a new connection and editing an existing connection, both open an
 identical page. The only difference is, that for an existing connection the
 **Connection Name** property cannot be changed.  
 
-![s71200-1500_connection_settings_basic](.../documentation_pics/s7_connection_settings_basic.png)
+![s71200-1500_connection_settings_basic](../../documentation_pics/s7_connection_settings_basic.png)
 
 The configuration parameters are described below:
 
@@ -57,4 +57,4 @@ The configuration parameters are described below:
 | PLC Address           | \<empty\>                     | Address of the target device (SIMATIC S7 1200/1500 PLC). This is either an IP address or a hostname. |
 | Select Address Spaces | AllConnection | Destination aggregation address space used to store the address space corresponding to this PLC connection |
 | | AddressSpace | It is possible to create additional aggregation address spaces by filling in the desired address space name in the input field and clicking the **Add** button. All available address spaces are visible in a list and can be selected as destination address space for the OPC UA Client connection by checking the corresponding checkbox. |
-| | | For more details about the OPC UA Server functionality and configuration please refer to the [OPC UA Configuration page](.../common/opcua.md). |
+| | | For more details about the OPC UA Server functionality and configuration please refer to the [OPC UA Configuration page](../../common/opcua.md). |
