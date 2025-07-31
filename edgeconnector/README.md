@@ -161,7 +161,7 @@ The configuration part, which is common for all kinds of
   * [ControlLogix/CompactLogix](./Controller_Connection_Configurations/Allen-Bradley-PLC_configuration.md)
   * [FANUC CNC](./Controller_Connection_Configurations/Fanuc_CNC_configuration.md)
   * [Modbus TCP](./Controller_Connection_Configurations/Modbus_TCP_configuration.md)
-  * [Siemens SINUMERIK 840D](./Controller_Connection_Configurations/Sinumerik_840D_configuration)
+  * [Siemens SINUMERIK 840D](./Controller_Connection_Configurations/Sinumerik_840D_configuration.md)
 
 
 
