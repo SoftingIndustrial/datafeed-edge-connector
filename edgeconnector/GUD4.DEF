@@ -1,0 +1,11 @@
+DEF NCK INT __gud_dint32=32
+DEF NCK REAL __gud_float64=64.64
+DEF NCK BOOL __gud_bool=FALSE
+DEF NCK CHAR __gud_uint8=8
+DEF NCK STRING[20] __gud_string20="STARTWERT"
+DEF CHAN INT __gud_chan_dint32=-32
+DEF CHAN REAL __gud_chan_float64=-64.64
+DEF CHAN BOOL __gud_chan_bool=TRUE
+DEF CHAN CHAR __gud_chan_uint8=16
+DEF CHAN STRING[20] __gud_chan_string20="lowercase"
+M30

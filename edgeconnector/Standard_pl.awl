@@ -1,0 +1,533 @@
+// ------------------------------------------------------------------
+// File           : E:\Softing_Standard_pl.awl
+//
+// Source File    : E:\Softing_Standard_pl.var
+// Generation Date: 20.02.2020  Time: 11:20:42
+// ------------------------------------------------------------------
+
+DATA_BLOCK DB  120
+VERSION : 0.0
+
+
+STRUCT
+
+ Ch1_ProgPfadName:
+   STRUCT
+   SYNTAX_ID : BYTE := B#16#82;
+   bereich_u_einheit : BYTE := B#16#41;
+   spalte : WORD := W#16#10;
+   zeile : WORD := W#16#1;
+   bausteintyp : BYTE := B#16#7D;
+   ZEILENANZAHL : BYTE := B#16#1;
+   typ : BYTE := B#16#13;
+   laenge : BYTE := B#16#A0;
+   END_STRUCT ;
+
+ Ch1_LineNumber:
+   STRUCT
+   SYNTAX_ID : BYTE := B#16#82;
+   bereich_u_einheit : BYTE := B#16#41;
+   spalte : WORD := W#16#9;
+   zeile : WORD := W#16#1;
+   bausteintyp : BYTE := B#16#7D;
+   ZEILENANZAHL : BYTE := B#16#1;
+   typ : BYTE := B#16#7;
+   laenge : BYTE := B#16#4;
+   END_STRUCT ;
+
+ Ch1_LineContent:
+   STRUCT
+   SYNTAX_ID : BYTE := B#16#82;
+   bereich_u_einheit : BYTE := B#16#41;
+   spalte : WORD := W#16#4;
+   zeile : WORD := W#16#2;
+   bausteintyp : BYTE := B#16#7D;
+   ZEILENANZAHL : BYTE := B#16#1;
+   typ : BYTE := B#16#13;
+   laenge : BYTE := B#16#42;
+   END_STRUCT ;
+
+ Ch1_ToolIdent:
+   STRUCT
+   SYNTAX_ID : BYTE := B#16#82;
+   bereich_u_einheit : BYTE := B#16#41;
+   spalte : WORD := W#16#21;
+   zeile : WORD := W#16#1;
+   bausteintyp : BYTE := B#16#7F;
+   ZEILENANZAHL : BYTE := B#16#1;
+   typ : BYTE := B#16#13;
+   laenge : BYTE := B#16#20;
+   END_STRUCT ;
+
+ Ch1_actSpeed_S1:
+   STRUCT
+   SYNTAX_ID : BYTE := B#16#82;
+   bereich_u_einheit : BYTE := B#16#41;
+   spalte : WORD := W#16#2;
+   zeile : WORD := W#16#1;
+   bausteintyp : BYTE := B#16#72;
+   ZEILENANZAHL : BYTE := B#16#1;
+   typ : BYTE := B#16#F;
+   laenge : BYTE := B#16#8;
+   END_STRUCT ;
+
+ BAG1_opMode:
+   STRUCT
+   SYNTAX_ID : BYTE := B#16#82;
+   bereich_u_einheit : BYTE := B#16#21;
+   spalte : WORD := W#16#3;
+   zeile : WORD := W#16#1;
+   bausteintyp : BYTE := B#16#7F;
+   ZEILENANZAHL : BYTE := B#16#1;
+   typ : BYTE := B#16#4;
+   laenge : BYTE := B#16#2;
+   END_STRUCT ;
+
+ Ch1_actOverride:
+   STRUCT
+   SYNTAX_ID : BYTE := B#16#82;
+   bereich_u_einheit : BYTE := B#16#41;
+   spalte : WORD := W#16#3;
+   zeile : WORD := W#16#1;
+   bausteintyp : BYTE := B#16#7F;
+   ZEILENANZAHL : BYTE := B#16#1;
+   typ : BYTE := B#16#F;
+   laenge : BYTE := B#16#8;
+   END_STRUCT ;
+
+ Ch1_actFeedRate_AX1:
+   STRUCT
+   SYNTAX_ID : BYTE := B#16#82;
+   bereich_u_einheit : BYTE := B#16#41;
+   spalte : WORD := W#16#3;
+   zeile : WORD := W#16#1;
+   bausteintyp : BYTE := B#16#70;
+   ZEILENANZAHL : BYTE := B#16#1;
+   typ : BYTE := B#16#F;
+   laenge : BYTE := B#16#8;
+   END_STRUCT ;
+
+ Ch1_actPos_MCS_AX1:
+   STRUCT
+   SYNTAX_ID : BYTE := B#16#82;
+   bereich_u_einheit : BYTE := B#16#41;
+   spalte : WORD := W#16#2;
+   zeile : WORD := W#16#1;
+   bausteintyp : BYTE := B#16#74;
+   ZEILENANZAHL : BYTE := B#16#1;
+   typ : BYTE := B#16#F;
+   laenge : BYTE := B#16#8;
+   END_STRUCT ;
+
+ Ch1_actPos_WCS_AX1:
+   STRUCT
+   SYNTAX_ID : BYTE := B#16#82;
+   bereich_u_einheit : BYTE := B#16#41;
+   spalte : WORD := W#16#2;
+   zeile : WORD := W#16#1;
+   bausteintyp : BYTE := B#16#73;
+   ZEILENANZAHL : BYTE := B#16#1;
+   typ : BYTE := B#16#F;
+   laenge : BYTE := B#16#8;
+   END_STRUCT ;
+
+ Ch1_lag_AX1:
+   STRUCT
+   SYNTAX_ID : BYTE := B#16#82;
+   bereich_u_einheit : BYTE := B#16#41;
+   spalte : WORD := W#16#A;
+   zeile : WORD := W#16#1;
+   bausteintyp : BYTE := B#16#71;
+   ZEILENANZAHL : BYTE := B#16#1;
+   typ : BYTE := B#16#F;
+   laenge : BYTE := B#16#8;
+   END_STRUCT ;
+
+ Ch1_actFeedRate_AX2:
+   STRUCT
+   SYNTAX_ID : BYTE := B#16#82;
+   bereich_u_einheit : BYTE := B#16#41;
+   spalte : WORD := W#16#3;
+   zeile : WORD := W#16#2;
+   bausteintyp : BYTE := B#16#70;
+   ZEILENANZAHL : BYTE := B#16#1;
+   typ : BYTE := B#16#F;
+   laenge : BYTE := B#16#8;
+   END_STRUCT ;
+
+ Ch1_actPos_MCS_AX2:
+   STRUCT
+   SYNTAX_ID : BYTE := B#16#82;
+   bereich_u_einheit : BYTE := B#16#41;
+   spalte : WORD := W#16#2;
+   zeile : WORD := W#16#2;
+   bausteintyp : BYTE := B#16#74;
+   ZEILENANZAHL : BYTE := B#16#1;
+   typ : BYTE := B#16#F;
+   laenge : BYTE := B#16#8;
+   END_STRUCT ;
+
+ Ch1_actPos_WCS_AX2:
+   STRUCT
+   SYNTAX_ID : BYTE := B#16#82;
+   bereich_u_einheit : BYTE := B#16#41;
+   spalte : WORD := W#16#2;
+   zeile : WORD := W#16#2;
+   bausteintyp : BYTE := B#16#73;
+   ZEILENANZAHL : BYTE := B#16#1;
+   typ : BYTE := B#16#F;
+   laenge : BYTE := B#16#8;
+   END_STRUCT ;
+
+ Ch1_lag_AX2:
+   STRUCT
+   SYNTAX_ID : BYTE := B#16#82;
+   bereich_u_einheit : BYTE := B#16#41;
+   spalte : WORD := W#16#A;
+   zeile : WORD := W#16#2;
+   bausteintyp : BYTE := B#16#71;
+   ZEILENANZAHL : BYTE := B#16#1;
+   typ : BYTE := B#16#F;
+   laenge : BYTE := B#16#8;
+   END_STRUCT ;
+
+ Ch1_actFeedRate_AX3:
+   STRUCT
+   SYNTAX_ID : BYTE := B#16#82;
+   bereich_u_einheit : BYTE := B#16#41;
+   spalte : WORD := W#16#3;
+   zeile : WORD := W#16#3;
+   bausteintyp : BYTE := B#16#70;
+   ZEILENANZAHL : BYTE := B#16#1;
+   typ : BYTE := B#16#F;
+   laenge : BYTE := B#16#8;
+   END_STRUCT ;
+
+ Ch1_actPos_MCS_AX3:
+   STRUCT
+   SYNTAX_ID : BYTE := B#16#82;
+   bereich_u_einheit : BYTE := B#16#41;
+   spalte : WORD := W#16#2;
+   zeile : WORD := W#16#3;
+   bausteintyp : BYTE := B#16#74;
+   ZEILENANZAHL : BYTE := B#16#1;
+   typ : BYTE := B#16#F;
+   laenge : BYTE := B#16#8;
+   END_STRUCT ;
+
+ Ch1_actPos_WCS_AX3:
+   STRUCT
+   SYNTAX_ID : BYTE := B#16#82;
+   bereich_u_einheit : BYTE := B#16#41;
+   spalte : WORD := W#16#2;
+   zeile : WORD := W#16#3;
+   bausteintyp : BYTE := B#16#73;
+   ZEILENANZAHL : BYTE := B#16#1;
+   typ : BYTE := B#16#F;
+   laenge : BYTE := B#16#8;
+   END_STRUCT ;
+
+ Ch1_lag_AX3:
+   STRUCT
+   SYNTAX_ID : BYTE := B#16#82;
+   bereich_u_einheit : BYTE := B#16#41;
+   spalte : WORD := W#16#A;
+   zeile : WORD := W#16#3;
+   bausteintyp : BYTE := B#16#71;
+   ZEILENANZAHL : BYTE := B#16#1;
+   typ : BYTE := B#16#F;
+   laenge : BYTE := B#16#8;
+   END_STRUCT ;
+
+ Ch1_actFeedRate_AX4:
+   STRUCT
+   SYNTAX_ID : BYTE := B#16#82;
+   bereich_u_einheit : BYTE := B#16#41;
+   spalte : WORD := W#16#3;
+   zeile : WORD := W#16#4;
+   bausteintyp : BYTE := B#16#70;
+   ZEILENANZAHL : BYTE := B#16#1;
+   typ : BYTE := B#16#F;
+   laenge : BYTE := B#16#8;
+   END_STRUCT ;
+
+ Ch1_actPos_MCS_AX4:
+   STRUCT
+   SYNTAX_ID : BYTE := B#16#82;
+   bereich_u_einheit : BYTE := B#16#41;
+   spalte : WORD := W#16#2;
+   zeile : WORD := W#16#4;
+   bausteintyp : BYTE := B#16#74;
+   ZEILENANZAHL : BYTE := B#16#1;
+   typ : BYTE := B#16#F;
+   laenge : BYTE := B#16#8;
+   END_STRUCT ;
+
+ Ch1_actPos_WCS_AX4:
+   STRUCT
+   SYNTAX_ID : BYTE := B#16#82;
+   bereich_u_einheit : BYTE := B#16#41;
+   spalte : WORD := W#16#2;
+   zeile : WORD := W#16#4;
+   bausteintyp : BYTE := B#16#73;
+   ZEILENANZAHL : BYTE := B#16#1;
+   typ : BYTE := B#16#F;
+   laenge : BYTE := B#16#8;
+   END_STRUCT ;
+
+ Ch1_lag_AX4:
+   STRUCT
+   SYNTAX_ID : BYTE := B#16#82;
+   bereich_u_einheit : BYTE := B#16#41;
+   spalte : WORD := W#16#A;
+   zeile : WORD := W#16#4;
+   bausteintyp : BYTE := B#16#71;
+   ZEILENANZAHL : BYTE := B#16#1;
+   typ : BYTE := B#16#F;
+   laenge : BYTE := B#16#8;
+   END_STRUCT ;
+
+ V1_M_LINK_VOLTAGE_1701:
+   STRUCT
+   SYNTAX_ID : BYTE := B#16#82;
+   bereich_u_einheit : BYTE := B#16#A1;
+   spalte : WORD := W#16#6A5;
+   zeile : WORD := W#16#1;
+   bausteintyp : BYTE := B#16#1A;
+   ZEILENANZAHL : BYTE := B#16#1;
+   typ : BYTE := B#16#4;
+   laenge : BYTE := B#16#2;
+   END_STRUCT ;
+
+ V1_M_MOTOR_TEMP_1702:
+   STRUCT
+   SYNTAX_ID : BYTE := B#16#82;
+   bereich_u_einheit : BYTE := B#16#A1;
+   spalte : WORD := W#16#6A6;
+   zeile : WORD := W#16#1;
+   bausteintyp : BYTE := B#16#1A;
+   ZEILENANZAHL : BYTE := B#16#1;
+   typ : BYTE := B#16#5;
+   laenge : BYTE := B#16#2;
+   END_STRUCT ;
+
+ V1_M_ACTUAL_SPEED_1707:
+   STRUCT
+   SYNTAX_ID : BYTE := B#16#82;
+   bereich_u_einheit : BYTE := B#16#A1;
+   spalte : WORD := W#16#6AB;
+   zeile : WORD := W#16#1;
+   bausteintyp : BYTE := B#16#1A;
+   ZEILENANZAHL : BYTE := B#16#1;
+   typ : BYTE := B#16#8;
+   laenge : BYTE := B#16#4;
+   END_STRUCT ;
+
+ V1_M_ABS_ACT_CURR_1719:
+   STRUCT
+   SYNTAX_ID : BYTE := B#16#82;
+   bereich_u_einheit : BYTE := B#16#A1;
+   spalte : WORD := W#16#6B7;
+   zeile : WORD := W#16#1;
+   bausteintyp : BYTE := B#16#1A;
+   ZEILENANZAHL : BYTE := B#16#1;
+   typ : BYTE := B#16#8;
+   laenge : BYTE := B#16#4;
+   END_STRUCT ;
+
+ V1_M_LOAD_1722:
+   STRUCT
+   SYNTAX_ID : BYTE := B#16#82;
+   bereich_u_einheit : BYTE := B#16#A1;
+   spalte : WORD := W#16#6BA;
+   zeile : WORD := W#16#1;
+   bausteintyp : BYTE := B#16#1A;
+   ZEILENANZAHL : BYTE := B#16#1;
+   typ : BYTE := B#16#8;
+   laenge : BYTE := B#16#4;
+   END_STRUCT ;
+
+ V2_M_LINK_VOLTAGE_1701:
+   STRUCT
+   SYNTAX_ID : BYTE := B#16#82;
+   bereich_u_einheit : BYTE := B#16#A2;
+   spalte : WORD := W#16#6A5;
+   zeile : WORD := W#16#1;
+   bausteintyp : BYTE := B#16#1A;
+   ZEILENANZAHL : BYTE := B#16#1;
+   typ : BYTE := B#16#4;
+   laenge : BYTE := B#16#2;
+   END_STRUCT ;
+
+ V2_M_MOTOR_TEMP_1702:
+   STRUCT
+   SYNTAX_ID : BYTE := B#16#82;
+   bereich_u_einheit : BYTE := B#16#A2;
+   spalte : WORD := W#16#6A6;
+   zeile : WORD := W#16#1;
+   bausteintyp : BYTE := B#16#1A;
+   ZEILENANZAHL : BYTE := B#16#1;
+   typ : BYTE := B#16#5;
+   laenge : BYTE := B#16#2;
+   END_STRUCT ;
+
+ V2_M_ACTUAL_SPEED_1707:
+   STRUCT
+   SYNTAX_ID : BYTE := B#16#82;
+   bereich_u_einheit : BYTE := B#16#A2;
+   spalte : WORD := W#16#6AB;
+   zeile : WORD := W#16#1;
+   bausteintyp : BYTE := B#16#1A;
+   ZEILENANZAHL : BYTE := B#16#1;
+   typ : BYTE := B#16#8;
+   laenge : BYTE := B#16#4;
+   END_STRUCT ;
+
+ V2_M_ABS_ACT_CURR_1719:
+   STRUCT
+   SYNTAX_ID : BYTE := B#16#82;
+   bereich_u_einheit : BYTE := B#16#A2;
+   spalte : WORD := W#16#6B7;
+   zeile : WORD := W#16#1;
+   bausteintyp : BYTE := B#16#1A;
+   ZEILENANZAHL : BYTE := B#16#1;
+   typ : BYTE := B#16#8;
+   laenge : BYTE := B#16#4;
+   END_STRUCT ;
+
+ V2_M_LOAD_1722:
+   STRUCT
+   SYNTAX_ID : BYTE := B#16#82;
+   bereich_u_einheit : BYTE := B#16#A2;
+   spalte : WORD := W#16#6BA;
+   zeile : WORD := W#16#1;
+   bausteintyp : BYTE := B#16#1A;
+   ZEILENANZAHL : BYTE := B#16#1;
+   typ : BYTE := B#16#8;
+   laenge : BYTE := B#16#4;
+   END_STRUCT ;
+
+ V3_M_LINK_VOLTAGE_1701:
+   STRUCT
+   SYNTAX_ID : BYTE := B#16#82;
+   bereich_u_einheit : BYTE := B#16#A3;
+   spalte : WORD := W#16#6A5;
+   zeile : WORD := W#16#1;
+   bausteintyp : BYTE := B#16#1A;
+   ZEILENANZAHL : BYTE := B#16#1;
+   typ : BYTE := B#16#4;
+   laenge : BYTE := B#16#2;
+   END_STRUCT ;
+
+ V3_M_MOTOR_TEMP_1702:
+   STRUCT
+   SYNTAX_ID : BYTE := B#16#82;
+   bereich_u_einheit : BYTE := B#16#A3;
+   spalte : WORD := W#16#6A6;
+   zeile : WORD := W#16#1;
+   bausteintyp : BYTE := B#16#1A;
+   ZEILENANZAHL : BYTE := B#16#1;
+   typ : BYTE := B#16#5;
+   laenge : BYTE := B#16#2;
+   END_STRUCT ;
+
+ V3_M_ACTUAL_SPEED_1707:
+   STRUCT
+   SYNTAX_ID : BYTE := B#16#82;
+   bereich_u_einheit : BYTE := B#16#A3;
+   spalte : WORD := W#16#6AB;
+   zeile : WORD := W#16#1;
+   bausteintyp : BYTE := B#16#1A;
+   ZEILENANZAHL : BYTE := B#16#1;
+   typ : BYTE := B#16#8;
+   laenge : BYTE := B#16#4;
+   END_STRUCT ;
+
+ V3_M_ABS_ACT_CURR_1719:
+   STRUCT
+   SYNTAX_ID : BYTE := B#16#82;
+   bereich_u_einheit : BYTE := B#16#A3;
+   spalte : WORD := W#16#6B7;
+   zeile : WORD := W#16#1;
+   bausteintyp : BYTE := B#16#1A;
+   ZEILENANZAHL : BYTE := B#16#1;
+   typ : BYTE := B#16#8;
+   laenge : BYTE := B#16#4;
+   END_STRUCT ;
+
+ V3_M_LOAD_1722:
+   STRUCT
+   SYNTAX_ID : BYTE := B#16#82;
+   bereich_u_einheit : BYTE := B#16#A3;
+   spalte : WORD := W#16#6BA;
+   zeile : WORD := W#16#1;
+   bausteintyp : BYTE := B#16#1A;
+   ZEILENANZAHL : BYTE := B#16#1;
+   typ : BYTE := B#16#8;
+   laenge : BYTE := B#16#4;
+   END_STRUCT ;
+
+ V4_M_LINK_VOLTAGE_1701:
+   STRUCT
+   SYNTAX_ID : BYTE := B#16#82;
+   bereich_u_einheit : BYTE := B#16#A4;
+   spalte : WORD := W#16#6A5;
+   zeile : WORD := W#16#1;
+   bausteintyp : BYTE := B#16#1A;
+   ZEILENANZAHL : BYTE := B#16#1;
+   typ : BYTE := B#16#4;
+   laenge : BYTE := B#16#2;
+   END_STRUCT ;
+
+ V4_M_MOTOR_TEMP_1702:
+   STRUCT
+   SYNTAX_ID : BYTE := B#16#82;
+   bereich_u_einheit : BYTE := B#16#A4;
+   spalte : WORD := W#16#6A6;
+   zeile : WORD := W#16#1;
+   bausteintyp : BYTE := B#16#1A;
+   ZEILENANZAHL : BYTE := B#16#1;
+   typ : BYTE := B#16#5;
+   laenge : BYTE := B#16#2;
+   END_STRUCT ;
+
+ V4_M_ACTUAL_SPEED_1707:
+   STRUCT
+   SYNTAX_ID : BYTE := B#16#82;
+   bereich_u_einheit : BYTE := B#16#A4;
+   spalte : WORD := W#16#6AB;
+   zeile : WORD := W#16#1;
+   bausteintyp : BYTE := B#16#1A;
+   ZEILENANZAHL : BYTE := B#16#1;
+   typ : BYTE := B#16#8;
+   laenge : BYTE := B#16#4;
+   END_STRUCT ;
+
+ V4_M_ABS_ACT_CURR_1719:
+   STRUCT
+   SYNTAX_ID : BYTE := B#16#82;
+   bereich_u_einheit : BYTE := B#16#A4;
+   spalte : WORD := W#16#6B7;
+   zeile : WORD := W#16#1;
+   bausteintyp : BYTE := B#16#1A;
+   ZEILENANZAHL : BYTE := B#16#1;
+   typ : BYTE := B#16#8;
+   laenge : BYTE := B#16#4;
+   END_STRUCT ;
+
+ V4_M_LOAD_1722:
+   STRUCT
+   SYNTAX_ID : BYTE := B#16#82;
+   bereich_u_einheit : BYTE := B#16#A4;
+   spalte : WORD := W#16#6BA;
+   zeile : WORD := W#16#1;
+   bausteintyp : BYTE := B#16#1A;
+   ZEILENANZAHL : BYTE := B#16#1;
+   typ : BYTE := B#16#8;
+   laenge : BYTE := B#16#4;
+   END_STRUCT ;
+
+ END_STRUCT ;
+
+BEGIN
+END_DATA_BLOCK

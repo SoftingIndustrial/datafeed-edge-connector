@@ -1,0 +1,46 @@
+# version: 'Compose specification'
+services:
+
+  edgeconnector:
+    container_name: edgeConnector
+    image: softingindustrial/edgeconnector:latest
+    restart: always
+    volumes:
+      - edgeConnectorVol:/config
+      - edgeConnectorMqtt:/mqtt
+    ports:      
+      - "1443:443"
+      - "4897:4897"      
+    networks:
+      SoftingNetwork: 
+      
+  # license-server:
+  #   container_name: license-server
+  #   image: softingindustrial/license-server:latest
+  #   restart: always
+  #   ports:      
+  #     - "6200:6200"
+  #     - "8200:8000"
+  #   hostname: licenseServer
+  #   volumes:
+  #     - SoftingLicenses:/root/.x-formation
+  #     - SoftingLicSrvConfig:/root/sflm/config
+  #     - SoftingLicSrvLogs:/root/sflm/logs
+  #     - SoftingLicSrvUsers:/root/sflm/users
+  #     - SoftingLicSrvCertificates:/root/sflm/ssl
+  #   networks:
+  #     SoftingNetwork:
+
+      
+volumes: 
+  edgeConnectorVol:
+  edgeConnectorMqtt:  
+  # SoftingLicenses:
+  # SoftingLicSrvConfig:
+  # SoftingLicSrvLogs:
+  # SoftingLicSrvUsers:
+  # SoftingLicSrvCertificates:
+
+networks:
+  SoftingNetwork:    
+    driver: bridge
