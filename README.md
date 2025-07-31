@@ -10,7 +10,7 @@ Each module consists of a webserver for configuration, a protocol driver to conn
 
 For the different controller types, the following specialized connector types are available:
 
-  1. [**dataFEED edgeConnector**](edgeconnector/README.md) Siemens, Allen-Bradley, Modbus TCP, FANUC CNC, and Sinumerik 840D controllers
+  1. [**dataFEED edgeConnector**](edgeconnector/README.md) for Siemens, Allen-Bradley, Modbus TCP, FANUC CNC, and Sinumerik 840D controllers
   2. [**dataFEED edgeConnector Siemens**](edgeconnector-siemens/README.md) for Siemens S7-300/400/1200/1500 PLCs
   3. [**dataFEED edgeConnector 840D**](edgeconnector-840d/README.md) for SINUMERIK 840D PL/SL tooling machines
   4. [**dataFEED edgeConnector Modbus**](edgeconnector-modbus/README.md) for Modbus TCP controllers/sensors
