@@ -1,4 +1,3 @@
-# version: 'Compose specification'
 services:
 
   edgeconnector:
