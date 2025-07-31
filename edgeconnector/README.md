@@ -147,7 +147,7 @@ docker container run -d -v edge-connector-config:/config -v edge-connector-mqtt:
 
 If the environment where you plan to run your container has an option to create a stack/compose file, an example can be found here for this purpose.
 
-[Docker Compose File](./docker-compose.yml)
+[Docker Compose File](./docker-compose.yaml)
 
 ## Configuration
 
